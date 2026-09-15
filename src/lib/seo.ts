@@ -5,7 +5,7 @@ import { MARKETING_PATHS } from "@/i18n/pathnames";
 export function getSiteUrl(): string {
   return (
     process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") ||
-    "https://disclosureledger.atlasag.co"
+    "https://discloseledger.com"
   );
 }
 

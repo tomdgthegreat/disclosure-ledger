@@ -62,7 +62,7 @@ See `.env.example`:
 | `STRIPE_PRICE_ID` | Price id for ~$29/mo |
 | `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Future client use |
 | `OPS_PASSWORD` | Gate `/ops` + `/api/ops` |
-| `NEXT_PUBLIC_APP_URL` | Public base URL |
+| `NEXT_PUBLIC_APP_URL` | Public base URL — production: `https://discloseledger.com` (canonical apex) |
 
 ## What is NOT claimed (copy rules)
 
@@ -70,14 +70,30 @@ See `.env.example`:
 - Every public record states declarations are **self-reported and unverified**.
 - Provenance scan is best-effort and may miss or mis-hint markers.
 
+## Production domain
+
+**Canonical (apex):** `https://discloseledger.com`  
+**www:** `https://www.discloseledger.com` → redirect to apex.
+
+Set `NEXT_PUBLIC_APP_URL=https://discloseledger.com` in Vercel (and locally for prod-like SEO/Stripe redirects). See **DEPLOY.md** for Vercel + DNS steps.
+
+### DNS (Vercel or generic)
+
+| Host | Type | Value | Notes |
+|------|------|-------|-------|
+| `@` (apex) | **A** | `76.76.21.21` | Vercel apex recommendation |
+| `www` | **CNAME** | `cname.vercel-dns.com` | Or your project’s `*.vercel.app` CNAME target |
+| apex / www | — | — | In Vercel Domains: add both; set **Redirect www → discloseledger.com** so canonical stays apex |
+
+Do **not** buy or change DNS from this repo — Tom owns registrar/DNS.
+
 ## Production blockers
 
-1. **Domain** — pick and DNS for the public product.
-2. **Stripe** — live keys, Price ($29/mo), Checkout Session + webhook to unlock paid tier (replace instance-wide free counter with per-customer entitlements).
+1. **Domain** — locked: `discloseledger.com` (see above + DEPLOY.md). Wire DNS at registrar when ready.
+2. **Stripe** — live keys, Price ($29/mo), Checkout Session + webhook to unlock paid tier (replace instance-wide free counter with per-customer entitlements). Success/cancel URLs use `NEXT_PUBLIC_APP_URL`.
 3. **Durable DB / storage** — replace `data/records.json` (ephemeral on many hosts) with Postgres/SQLite on persistent volume; decide whether to store images.
-4. **GitHub repo** — create `tomdgthegreat/disclosure-ledger` when ready; this local repo is initialized but **not pushed**.
-5. **Hosting** — Vercel (or similar) with durable storage story; file DB will not survive serverless without external store.
-6. **Legal review** — counsel for Art. 50 positioning; product remains declaration/audit trail only.
+4. **Hosting** — connect GitHub `tomdgthegreat/disclosure-ledger` to Vercel (see DEPLOY.md); file DB will not survive serverless without external store.
+5. **Legal review** — counsel for Art. 50 positioning; product remains declaration/audit trail only.
 
 
 ## Locales (i18n)

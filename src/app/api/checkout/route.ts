@@ -1,14 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createCheckoutSessionStub } from "@/lib/stripe";
+import { getSiteUrl } from "@/lib/seo";
 
 export async function POST(req: NextRequest) {
   const body = (await req.json().catch(() => ({}))) as {
     email?: string;
   };
-  const origin = req.nextUrl.origin;
+  const base = getSiteUrl();
   const result = await createCheckoutSessionStub({
-    successUrl: `${origin}/create?checkout=success`,
-    cancelUrl: `${origin}/create?checkout=cancel`,
+    successUrl: `${base}/create?checkout=success`,
+    cancelUrl: `${base}/create?checkout=cancel`,
     customerEmail: body.email,
   });
   return NextResponse.json(result);
