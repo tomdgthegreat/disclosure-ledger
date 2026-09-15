@@ -26,6 +26,8 @@ In the Vercel project → **Settings → Environment Variables** (Production at 
 | `STRIPE_WEBHOOK_SECRET` | From Stripe Dashboard → Webhooks → signing secret |
 | `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Optional Day-1 |
 | `OPS_PASSWORD` | Optional; gates `/ops` |
+| `RESEND_API_KEY` | Resend API key (operator sets; do not invent) |
+| `RESEND_FROM` | Default `Disclosure Ledger <hello@discloseledger.com>` |
 
 Redeploy after changing env vars so `NEXT_PUBLIC_*` is baked into the client/SEO build.
 
@@ -37,6 +39,15 @@ After first deploy with `DATABASE_URL`, run migrations once (Vercel build does `
 2. URL: `https://discloseledger.com/api/stripe/webhook`
 3. Events: `checkout.session.completed`, `customer.subscription.created`, `customer.subscription.updated`, `customer.subscription.deleted`
 4. Copy signing secret → `STRIPE_WEBHOOK_SECRET`
+
+
+### Resend (transactional email)
+
+1. Create a Resend account and API key → set `RESEND_API_KEY` on Vercel (never commit).
+2. **Tom must verify `discloseledger.com` in Resend** (Domains → Add → DNS records Resend shows).
+3. Until the domain is verified, sending from `hello@discloseledger.com` will fail — use Resend’s onboarding / test domain temporarily, or set `RESEND_FROM` to that verified sender.
+4. Default from: `Disclosure Ledger <hello@discloseledger.com>` via `RESEND_FROM`.
+5. If `RESEND_API_KEY` is unset, privacy/checkout email helpers **no-op** (log warning only) and never break create/checkout.
 
 ## 3. Add domains
 
@@ -91,3 +102,4 @@ npm run build   # locally before push
 4. Confirm `STRIPE_PRICE_ID=price_1UG5ICJA3LJpXY1w7S3MbOid` on Vercel
 5. Run `npx prisma migrate deploy` against production DB
 6. www may be primary on Vercel short-term — redirect www → apex when convenient (do not block)
+7. Verify **discloseledger.com** in Resend and set `RESEND_API_KEY` / `RESEND_FROM` on Vercel

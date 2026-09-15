@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import type Stripe from "stripe";
 import { getStripe } from "@/lib/stripe";
 import { upsertStripeEntitlement, normalizeEmail } from "@/lib/db";
+import { sendEntitlementConfirmationEmail } from "@/lib/email";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -69,6 +70,14 @@ async function handleCheckoutCompleted(
     stripeSubscriptionId: subscriptionId,
     subscriptionStatus: status,
   });
+
+  // Optional post-checkout confirmation — gated by RESEND_API_KEY; never throws
+  if (email) {
+    await sendEntitlementConfirmationEmail({
+      email,
+      subscriptionStatus: status,
+    });
+  }
 }
 
 async function handleSubscriptionEvent(

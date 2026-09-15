@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createPrivacyRequest, normalizeEmail } from "@/lib/db";
+import { sendPrivacyRequestConfirmation } from "@/lib/email";
 
 type PrivacyRequestType = "access" | "erasure" | "rectification";
 
@@ -36,6 +37,15 @@ export async function POST(req: Request) {
       type,
       note,
     });
+
+    // Gated by RESEND_API_KEY; never throws into this happy path
+    await sendPrivacyRequestConfirmation({
+      id: entry.id,
+      email,
+      type,
+      note,
+    });
+
     return NextResponse.json({ ok: true, id: entry.id }, { status: 200 });
   } catch (e) {
     console.error(e);

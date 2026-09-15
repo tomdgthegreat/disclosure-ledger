@@ -74,6 +74,17 @@ See `.env.example`:
 | `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Optional client use |
 | `OPS_PASSWORD` | Gate `/ops` + `/api/ops` |
 | `NEXT_PUBLIC_APP_URL` | Public base URL — production: `https://discloseledger.com` |
+| `RESEND_API_KEY` | Resend API key — privacy confirmations + optional post-checkout email; unset = no-op |
+| `RESEND_FROM` | From header; default `Disclosure Ledger <hello@discloseledger.com>` |
+
+
+## Email (Resend)
+
+Privacy-request confirmations go to **hello@discloseledger.com** and the requester. After successful Stripe entitlement upsert, an optional confirmation may go to the customer email.
+
+Helpers are gated by `RESEND_API_KEY`: if missing, they log a warning and **no-op** (never throw into create/checkout).
+
+**Tom must verify `discloseledger.com` in Resend** before production From addresses work. Until then, use Resend’s onboarding domain or a verified test sender via `RESEND_FROM`. See **DEPLOY.md**.
 
 ## Production domain
 
