@@ -15,7 +15,15 @@
     "recordTitle": "Public disclosure record — Disclosure Ledger",
     "recordDescription": "Self-reported, unverified disclosure record. Not indexed for search; declaration and audit trail only.",
     "opsTitle": "Ops — Disclosure Ledger",
-    "ogImageAlt": "Disclosure Ledger by Atlas AG"
+    "ogImageAlt": "Disclosure Ledger by Atlas AG",
+    "privacyTitle": "Privacy Policy — Disclosure Ledger",
+    "privacyDescription": "How Atlas AG LLC processes data for Disclosure Ledger: purposes, legal bases, retention, rights, and contact hello@discloseledger.com.",
+    "termsTitle": "Terms of Service — Disclosure Ledger",
+    "termsDescription": "Terms for Disclosure Ledger by Atlas AG LLC: self-reported declarations, €29/mo pricing, liability limits, Idaho law with mandatory EU consumer protections.",
+    "legalTitle": "Legal notice / Impressum — Disclosure Ledger",
+    "legalDescription": "Operator information for Disclosure Ledger: Atlas AG LLC, Melba, ID 83641, United States. Contact hello@discloseledger.com.",
+    "cookiesTitle": "Cookie Policy — Disclosure Ledger",
+    "cookiesDescription": "Disclosure Ledger uses only strictly necessary technical cookies on Day-1. No marketing trackers; no consent banner required for essential-only use."
   },
   "nav": {
     "home": "Home",
@@ -23,7 +31,11 @@
     "art50": "Art. 50 context",
     "pricing": "Pricing",
     "create": "Create record",
-    "language": "Language"
+    "language": "Language",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "legal": "Legal",
+    "cookies": "Cookies"
   },
   "disclaimer": {
     "title": "Self-reported & unverified",
@@ -31,7 +43,7 @@
   },
   "footer": {
     "tagline": "Disclosure Ledger — declaration / audit trail for publish-bound images. Not a compliance product. Not legal advice.",
-    "by": "Built by Atlas AG."
+    "by": "Operated by Atlas AG LLC."
   },
   "home": {
     "eyebrow": "For agencies & brands publishing images",
@@ -151,7 +163,8 @@
     "checkoutStub": "Checkout is env-based and may be stubbed until Stripe keys are set.",
     "submit": "Publish permanent public record",
     "submitting": "Saving record…",
-    "previewAlt": "Selected preview"
+    "previewAlt": "Selected preview",
+    "emailPrivacy": "Optional. Used only for account or billing follow-up. See our <privacy>privacy policy</privacy>."
   },
   "record": {
     "eyebrow": "Public disclosure record",
@@ -195,5 +208,73 @@
     "period": "/mo",
     "body": "After free tier. Stripe Checkout (env-based; stubbed until keys are configured). Built for agencies and brands shipping images regularly.",
     "cta": "Start with 3 free"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lead": "This policy describes how Atlas AG LLC (“we”, “us”) processes personal data when you use Disclosure Ledger at https://discloseledger.com. It is not legal advice.",
+    "controllerTitle": "Controller",
+    "controllerBody": "Atlas AG LLC, Melba, ID 83641, United States. Contact: hello@discloseledger.com. Product: Disclosure Ledger (https://discloseledger.com).",
+    "purposesTitle": "Purposes",
+    "purposesBody": "We process data to operate the declaration and audit-trail service: create and display public disclosure records, provide CSV export, manage the free-tier gate and (when configured) billing, keep security and operational logs, and respond to privacy requests.",
+    "basesTitle": "Legal bases",
+    "basesBody": "Depending on the processing: performance of a contract or steps prior to a contract (providing the service you request); legitimate interests (security, abuse prevention, product improvement that does not override your rights); and, where required, consent (for optional contact email used beyond core record creation).",
+    "dataTitle": "Data we process",
+    "data1": "Content hash (SHA-256), file name, size, and MIME type you submit with a record",
+    "data2": "Self-reported AI declaration, optional notes, and provenance scan summary (method, details, signals)",
+    "data3": "Optional contact email, if you provide one",
+    "data4": "Technical logs (e.g. IP, user agent, timestamps) as needed for hosting, security, and debugging",
+    "dataNote": "Image bytes are not uploaded in this MVP — hashing and provenance scanning run in your browser. Only the hash and your declaration metadata are stored.",
+    "retentionTitle": "Retention",
+    "retentionBody": "Public disclosure records are retained as an audit trail for as long as the service operates the public ledger, unless we are required or lawfully asked to remove or restrict personal data that is not essential to the public record. Optional contact email is kept for account or billing follow-up until no longer needed. Technical logs are kept for a shorter operational period.",
+    "processorsTitle": "Processors",
+    "processorsBody": "We use Vercel for hosting and delivery. When Stripe is configured, Stripe processes payment-related data. Other subprocessors may be added; we will update this policy when material changes occur.",
+    "transfersTitle": "International transfers",
+    "transfersBody": "The operator is based in Idaho, United States. Data may be processed in the US and, depending on hosting configuration, in the EU (for example if the deployment region is set to Frankfurt / EU). Where transfers leave the EEA/UK, appropriate safeguards may apply under applicable law.",
+    "rightsTitle": "Your rights",
+    "rightsBody": "Subject to applicable law (including GDPR where it applies), you may request access, rectification, erasure, restriction, portability, and objection, and you may lodge a complaint with a supervisory authority. Contact hello@discloseledger.com. You may also use our privacy-request endpoint where available.",
+    "publicTitle": "Public records caveat",
+    "publicBody": "Disclosure records you publish are designed to be publicly viewable at /r/[id] (and via CSV/JSON APIs without contact email). Do not include personal data in notes or file names that you do not want public. Contact email is not included in public CSV or public JSON exports.",
+    "claimsTitle": "What this product is not",
+    "claimsBody": "Disclosure Ledger is not an EU AI Act Article 50 compliance product, does not verify or cryptographically sign images, and does not provide legal advice."
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lead": "These terms govern use of Disclosure Ledger operated by Atlas AG LLC. By using the service you agree to them. This is not legal advice.",
+    "serviceTitle": "Service description",
+    "serviceBody": "Disclosure Ledger lets you create self-reported AI declarations paired with a browser-computed content hash and a best-effort provenance scan summary, stored as a public declaration / audit trail (record page and export). Pricing: 3 free records on this instance, then €29 per month (EUR) for continued creation when billing is configured.",
+    "noWarrantyTitle": "No compliance or verification warranty",
+    "noWarrantyBody": "The service does not determine EU AI Act Article 50 adequacy, does not verify authenticity or authorship, does not cryptographically sign or attest images, and does not provide legal advice. Declarations are self-reported by you.",
+    "selfReportedTitle": "Self-reported content",
+    "selfReportedBody": "You are responsible for the accuracy of declarations, notes, and metadata you submit. Records are labeled unverified. Do not submit unlawful content or personal data of others without a lawful basis.",
+    "liabilityTitle": "Liability limits",
+    "liabilityBody": "To the maximum extent permitted by law, Atlas AG LLC is not liable for indirect, incidental, special, consequential, or punitive damages, or for loss of profits, data, or goodwill arising from use of the service. Our aggregate liability for claims relating to the service is limited to the greater of (a) fees you paid us for the service in the three months before the claim or (b) €29. Nothing in these terms excludes liability that cannot be limited under applicable mandatory law (including mandatory EU consumer protections).",
+    "pricingTitle": "Pricing",
+    "pricingBody": "The free tier allows three records on this instance. Thereafter, continued record creation may require a Team subscription at €29/mo (EUR), billed via Stripe when configured. Paid access unlocks continued use of the declaration tool — it does not purchase verification, signing, attestation, or legal advice.",
+    "lawTitle": "Governing law",
+    "lawBody": "These terms are governed by the laws of the State of Idaho, United States, without regard to conflict-of-law rules, subject to mandatory consumer protections that apply in your country of residence in the EU/EEA/UK where those protections cannot be waived.",
+    "contactTitle": "Contact",
+    "contactBody": "Atlas AG LLC, Melba, ID 83641, United States. Email: hello@discloseledger.com."
+  },
+  "legal": {
+    "title": "Legal notice (Impressum)",
+    "lead": "Operator information for Disclosure Ledger.",
+    "operatorTitle": "Operator",
+    "operatorBody": "Atlas AG LLC\nMelba, ID 83641\nUnited States\nEmail: hello@discloseledger.com",
+    "productTitle": "Product",
+    "productBody": "Disclosure Ledger — https://discloseledger.com — a declaration / audit-trail tool for publish-bound images.",
+    "disclaimerTitle": "Disclaimer",
+    "disclaimerBody": "This site and product do not provide legal advice, do not claim EU AI Act Article 50 compliance, and do not verify, sign, or attest images. Declarations are self-reported and unverified."
+  },
+  "cookies": {
+    "title": "Cookie Policy",
+    "lead": "How Disclosure Ledger uses cookies and similar technologies on Day-1.",
+    "essentialTitle": "Strictly necessary only",
+    "essentialBody": "On Day-1 we aim to use only strictly necessary technical cookies or equivalent storage required to operate the site (for example locale preference, security, or load-balancing where the host sets them). These are needed for the service to function.",
+    "marketingTitle": "No marketing trackers (Day-1)",
+    "marketingBody": "We do not use marketing, advertising, or analytics trackers on Day-1. If that changes, we will update this page and implement an appropriate consent mechanism where required.",
+    "bannerTitle": "Consent banner",
+    "bannerBody": "Because Day-1 uses essential-only technical measures and no marketing trackers, a cookie consent banner is not required for that essential-only setup under typical EU guidance. This is not legal advice.",
+    "contactTitle": "Contact",
+    "contactBody": "Questions: hello@discloseledger.com. See also our Privacy Policy."
   }
 }

@@ -37,6 +37,7 @@ next-env.d.ts
 
 # local MVP JSON DB (keep directory)
 /data/records.json
+/data/privacy-requests.json
 .env
 
 gh-auth.log

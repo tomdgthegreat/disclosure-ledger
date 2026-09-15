@@ -96,13 +96,23 @@ Do **not** buy or change DNS from this repo — Tom owns registrar/DNS.
 5. **Legal review** — counsel for Art. 50 positioning; product remains declaration/audit trail only.
 
 
+
+## EU / operator & legal
+
+- **Operator:** Atlas AG LLC, Melba, ID 83641, United States
+- **Contact:** hello@discloseledger.com
+- **Legal pages:** `/privacy`, `/terms`, `/legal` (Impressum), `/cookies` (all locales)
+- **Hosting recommendation:** deploy on **Vercel Frankfurt (`fra1`) / EU**; use **Postgres in the EU** when replacing the JSON file DB
+- Public record CSV/JSON **omit `contactEmail`**; ops API can still export email when authenticated
+- Optional stub: `POST /api/privacy-request` `{ email, type: access|erasure|rectification, note? }` → `data/privacy-requests.json`
+
 ## Locales (i18n)
 
 Uses **next-intl** with `localePrefix: "as-needed"`:
 
 | Locale | URL prefix |
 |--------|------------|
-| English (`en`, default) | none — `/`, `/pricing`, `/art-50`, `/how-it-works`, `/create`, `/r/[id]` |
+| English (`en`, default) | none — `/`, `/pricing`, `/art-50`, `/how-it-works`, `/create`, `/privacy`, `/terms`, `/legal`, `/cookies`, `/r/[id]` |
 | German (`de`) | `/de/...` |
 | French (`fr`) | `/fr/...` |
 | Italian (`it`) | `/it/...` |

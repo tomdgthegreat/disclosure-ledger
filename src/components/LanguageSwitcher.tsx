@@ -18,10 +18,10 @@ export function LanguageSwitcher() {
   const router = useRouter();
 
   return (
-    <label className="flex items-center gap-1 text-sm text-slate-600">
+    <label className="flex items-center gap-1 text-sm text-ink-muted">
       <span className="sr-only">Language</span>
       <select
-        className="rounded-md border border-slate-200 bg-white px-2 py-1 text-xs font-medium text-slate-800"
+        className="rounded-full border border-border bg-white px-2.5 py-1 text-xs font-semibold text-ink shadow-sm"
         value={locale}
         onChange={(e) => {
           const next = e.target.value as (typeof routing.locales)[number];

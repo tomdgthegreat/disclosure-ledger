@@ -3,14 +3,67 @@
 @tailwind utilities;
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  --background: #f7f5f1;
+  --foreground: #0b1220;
+  --ink: #0b1220;
+  --ink-soft: #141e33;
+  --ink-muted: #4a5568;
+  --gold: #d4a017;
+  --gold-bright: #e8b923;
+  --gold-soft: #fef6e0;
+  --cream: #faf8f5;
+  --card: #ffffff;
+  --border: #e8e4dc;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   min-height: 100vh;
+}
+
+@layer base {
+  ::selection {
+    background: color-mix(in srgb, var(--gold) 35%, white);
+    color: var(--ink);
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background:
+      radial-gradient(
+        ellipse 80% 60% at 15% -10%,
+        color-mix(in srgb, var(--gold) 22%, transparent),
+        transparent 55%
+      ),
+      radial-gradient(
+        ellipse 70% 50% at 95% 0%,
+        color-mix(in srgb, #1e3a5f 18%, transparent),
+        transparent 50%
+      ),
+      linear-gradient(180deg, #faf8f5 0%, #f7f5f1 45%, #f7f5f1 100%);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-ink-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-border bg-white px-5 py-2.5 text-sm font-semibold text-ink shadow-sm transition hover:border-ink/20 hover:bg-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
+  }
+
+  .card-surface {
+    @apply rounded-2xl border border-border bg-white shadow-[0_1px_2px_rgba(11,18,32,0.04),0_8px_24px_rgba(11,18,32,0.04)];
+  }
+
+  .section-title {
+    @apply text-2xl font-bold tracking-tight text-ink sm:text-3xl;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.14em] text-gold;
+  }
 }
 
 @layer utilities {

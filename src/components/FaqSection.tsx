@@ -11,15 +11,15 @@ export async function FaqSection() {
   return (
     <section id="faq" className="mt-20 space-y-6">
       <JsonLd data={faqPageJsonLd(items)} />
-      <h2 className="text-2xl font-bold text-slate-900">{t("title")}</h2>
+      <h2 className="section-title">{t("title")}</h2>
       <dl className="space-y-4">
         {items.map((item) => (
           <div
             key={item.question}
-            className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+            className="card-surface p-5"
           >
-            <dt className="font-semibold text-slate-900">{item.question}</dt>
-            <dd className="mt-2 text-sm leading-relaxed text-slate-700">
+            <dt className="font-semibold text-ink">{item.question}</dt>
+            <dd className="mt-2 text-sm leading-relaxed text-ink-muted">
               {item.answer}
             </dd>
           </div>

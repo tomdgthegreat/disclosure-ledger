@@ -15,7 +15,15 @@
     "recordTitle": "Record pubblico di disclosure — Disclosure Ledger",
     "recordDescription": "Record auto-dichiarato e non verificato. Non indicizzato per la ricerca; solo dichiarazione e audit trail.",
     "opsTitle": "Ops — Disclosure Ledger",
-    "ogImageAlt": "Disclosure Ledger di Atlas AG"
+    "ogImageAlt": "Disclosure Ledger di Atlas AG",
+    "privacyTitle": "Informativa sulla privacy — Disclosure Ledger",
+    "privacyDescription": "Come Atlas AG LLC tratta i dati per Disclosure Ledger: finalità, basi giuridiche, conservazione, diritti e contatto hello@discloseledger.com.",
+    "termsTitle": "Termini di servizio — Disclosure Ledger",
+    "termsDescription": "Termini per Disclosure Ledger di Atlas AG LLC: dichiarazioni auto-dichiarate, 29 €/mese, limiti di responsabilità, diritto dell’Idaho con tutele consumatori UE obbligatorie.",
+    "legalTitle": "Note legali / Impressum — Disclosure Ledger",
+    "legalDescription": "Informazioni sull’operatore di Disclosure Ledger: Atlas AG LLC, Melba, ID 83641, Stati Uniti. Contatto hello@discloseledger.com.",
+    "cookiesTitle": "Informativa sui cookie — Disclosure Ledger",
+    "cookiesDescription": "Disclosure Ledger al Day-1 usa solo cookie tecnici strettamente necessari. Nessun tracker di marketing; per l’uso solo essenziale non è richiesto un banner di consenso."
   },
   "nav": {
     "home": "Home",
@@ -23,7 +31,11 @@
     "art50": "Contesto art. 50",
     "pricing": "Prezzi",
     "create": "Crea record",
-    "language": "Lingua"
+    "language": "Lingua",
+    "privacy": "Privacy",
+    "terms": "Termini",
+    "legal": "Note legali",
+    "cookies": "Cookie"
   },
   "disclaimer": {
     "title": "Auto-dichiarato e non verificato",
@@ -31,7 +43,7 @@
   },
   "footer": {
     "tagline": "Disclosure Ledger — dichiarazione / audit trail per immagini destinate alla pubblicazione. Non un prodotto di conformità. Non consulenza legale.",
-    "by": "Di Atlas AG."
+    "by": "Gestito da Atlas AG LLC."
   },
   "home": {
     "eyebrow": "Per agenzie e brand che pubblicano immagini",
@@ -151,7 +163,8 @@
     "checkoutStub": "Checkout è basato su env e può essere stub finché le chiavi Stripe non sono impostate.",
     "submit": "Pubblica record pubblico permanente",
     "submitting": "Salvataggio record…",
-    "previewAlt": "Anteprima selezionata"
+    "previewAlt": "Anteprima selezionata",
+    "emailPrivacy": "Facoltativo. Solo per account o fatturazione. Vedi la nostra <privacy>informativa sulla privacy</privacy>."
   },
   "record": {
     "eyebrow": "Record pubblico di disclosure",
@@ -195,5 +208,73 @@
     "period": "/mese",
     "body": "Dopo il free tier. Stripe Checkout (basato su env; stub finché le chiavi non sono configurate). Per agenzie e brand che spediscono immagini regolarmente.",
     "cta": "Inizia con 3 gratis"
+  },
+  "privacy": {
+    "title": "Informativa sulla privacy",
+    "lead": "Questa informativa descrive come Atlas AG LLC («noi») tratta i dati personali quando usi Disclosure Ledger su https://discloseledger.com. Non costituisce consulenza legale.",
+    "controllerTitle": "Titolare del trattamento",
+    "controllerBody": "Atlas AG LLC, Melba, ID 83641, Stati Uniti. Contatto: hello@discloseledger.com. Prodotto: Disclosure Ledger (https://discloseledger.com).",
+    "purposesTitle": "Finalità",
+    "purposesBody": "Trattiamo i dati per gestire il servizio di dichiarazione e audit trail: creare e mostrare schede pubbliche, fornire l’export CSV, gestire il limite gratuito e (se configurato) la fatturazione, conservare log di sicurezza e operativi, e rispondere alle richieste privacy.",
+    "basesTitle": "Basi giuridiche",
+    "basesBody": "A seconda del trattamento: esecuzione di un contratto o misure precontrattuali (fornitura del servizio richiesto); interessi legittimi (sicurezza, prevenzione abusi, miglioramento del prodotto senza prevalere sui tuoi diritti); e, ove richiesto, consenso (per l’e-mail di contatto facoltativa oltre la semplice creazione della scheda).",
+    "dataTitle": "Dati trattati",
+    "data1": "Hash del contenuto (SHA-256), nome file, dimensione e tipo MIME inviati con una scheda",
+    "data2": "Dichiarazione AI auto-dichiarata, note facoltative e riepilogo della scansione di provenienza (metodo, dettagli, segnali)",
+    "data3": "E-mail di contatto facoltativa, se fornita",
+    "data4": "Log tecnici (ad es. IP, user agent, timestamp) per hosting, sicurezza e debug",
+    "dataNote": "I byte dell’immagine non vengono caricati in questo MVP — hashing e scansione di provenienza avvengono nel browser. Vengono memorizzati solo l’hash e i metadati della dichiarazione.",
+    "retentionTitle": "Conservazione",
+    "retentionBody": "Le schede pubbliche sono conservate come audit trail finché il registro pubblico è operativo, salvo obbligo o richiesta legittima di rimuovere o limitare dati personali non essenziali alla scheda pubblica. L’e-mail di contatto facoltativa è conservata per follow-up di account/fatturazione finché necessaria. I log tecnici sono conservati per un periodo operativo più breve.",
+    "processorsTitle": "Responsabili del trattamento",
+    "processorsBody": "Usiamo Vercel per hosting e distribuzione. Quando Stripe è configurato, Stripe tratta i dati relativi ai pagamenti. Altri sub-responsabili possono essere aggiunti; aggiorneremo questa informativa in caso di cambiamenti rilevanti.",
+    "transfersTitle": "Trasferimenti internazionali",
+    "transfersBody": "L’operatore ha sede in Idaho, Stati Uniti. I dati possono essere trattati negli USA e, a seconda della configurazione di hosting, nell’UE (ad es. regione Francoforte / UE). Quando i trasferimenti escono da SEE/UK, possono applicarsi garanzie adeguate ai sensi della legge applicabile.",
+    "rightsTitle": "I tuoi diritti",
+    "rightsBody": "Fermo restando il diritto applicabile (incluso il GDPR ove applicabile), puoi richiedere accesso, rettifica, cancellazione, limitazione, portabilità e opposizione, e presentare reclamo a un’autorità di controllo. Contatto: hello@discloseledger.com. Puoi anche usare il nostro endpoint per richieste privacy se disponibile.",
+    "publicTitle": "Avvertenza sulle schede pubbliche",
+    "publicBody": "Le schede che pubblichi sono pensate per essere consultabili pubblicamente su /r/[id] (e tramite API CSV/JSON senza e-mail di contatto). Non includere dati personali in note o nomi file che non vuoi rendere pubblici. L’e-mail di contatto non è inclusa negli export CSV o JSON pubblici.",
+    "claimsTitle": "Cosa non è questo prodotto",
+    "claimsBody": "Disclosure Ledger non è un prodotto di conformità all’art. 50 del regolamento UE sull’IA, non verifica né firma crittograficamente le immagini e non fornisce consulenza legale."
+  },
+  "terms": {
+    "title": "Termini di servizio",
+    "lead": "Questi termini regolano l’uso di Disclosure Ledger gestito da Atlas AG LLC. Usando il servizio li accetti. Non costituiscono consulenza legale.",
+    "serviceTitle": "Descrizione del servizio",
+    "serviceBody": "Disclosure Ledger consente di creare dichiarazioni AI auto-dichiarate associate a un hash del contenuto calcolato nel browser e a un riepilogo best-effort della scansione di provenienza, memorizzati come dichiarazione / audit trail pubblici (pagina scheda ed export). Prezzi: 3 schede gratuite su questa istanza, poi 29 € al mese (EUR) per la creazione continua quando la fatturazione è configurata.",
+    "noWarrantyTitle": "Nessuna garanzia di conformità o verifica",
+    "noWarrantyBody": "Il servizio non determina l’adeguatezza all’art. 50 del regolamento UE sull’IA, non verifica autenticità o paternità, non firma né attesta crittograficamente le immagini e non fornisce consulenza legale. Le dichiarazioni sono auto-dichiarate da te.",
+    "selfReportedTitle": "Contenuto auto-dichiarato",
+    "selfReportedBody": "Sei responsabile dell’accuratezza di dichiarazioni, note e metadati inviati. Le schede sono etichettate come non verificate. Non inviare contenuti illeciti né dati personali di terzi senza base giuridica.",
+    "liabilityTitle": "Limiti di responsabilità",
+    "liabilityBody": "Nella misura massima consentita dalla legge, Atlas AG LLC non è responsabile per danni indiretti, incidentali, speciali, consequenziali o punitivi, né per perdita di profitti, dati o avviamento derivanti dall’uso del servizio. La nostra responsabilità aggregata per reclami relativi al servizio è limitata al maggiore tra (a) le somme pagateci per il servizio nei tre mesi precedenti il reclamo o (b) 29 €. Nulla esclude responsabilità che non possono essere limitate ai sensi del diritto cogente applicabile (incluse le tutele consumatori UE obbligatorie).",
+    "pricingTitle": "Prezzi",
+    "pricingBody": "Il piano gratuito consente tre schede su questa istanza. Successivamente, la creazione continua può richiedere un abbonamento Team a 29 €/mese (EUR), fatturato tramite Stripe se configurato. L’accesso a pagamento sblocca l’uso continuo dello strumento di dichiarazione — non acquista verifica, firma, attestazione o consulenza legale.",
+    "lawTitle": "Legge applicabile",
+    "lawBody": "Questi termini sono regolati dalle leggi dello Stato dell’Idaho, Stati Uniti, senza riguardo alle norme di conflitto di leggi, fatte salve le tutele consumatori obbligatorie applicabili nel paese di residenza in UE/SEE/UK ove non rinunciabili.",
+    "contactTitle": "Contatto",
+    "contactBody": "Atlas AG LLC, Melba, ID 83641, Stati Uniti. E-mail: hello@discloseledger.com."
+  },
+  "legal": {
+    "title": "Note legali (Impressum)",
+    "lead": "Informazioni sull’operatore di Disclosure Ledger.",
+    "operatorTitle": "Operatore",
+    "operatorBody": "Atlas AG LLC\nMelba, ID 83641\nStati Uniti\nE-mail: hello@discloseledger.com",
+    "productTitle": "Prodotto",
+    "productBody": "Disclosure Ledger — https://discloseledger.com — uno strumento di dichiarazione / audit trail per immagini destinate alla pubblicazione.",
+    "disclaimerTitle": "Disclaimer",
+    "disclaimerBody": "Questo sito e prodotto non forniscono consulenza legale, non rivendicano conformità all’art. 50 del regolamento UE sull’IA e non verificano, firmano o attestano immagini. Le dichiarazioni sono auto-dichiarate e non verificate."
+  },
+  "cookies": {
+    "title": "Informativa sui cookie",
+    "lead": "Come Disclosure Ledger usa cookie e tecnologie simili al Day-1.",
+    "essentialTitle": "Solo strettamente necessari",
+    "essentialBody": "Al Day-1 puntiamo a usare solo cookie tecnici strettamente necessari o memoria equivalente richiesta per far funzionare il sito (ad es. preferenza di lingua, sicurezza o bilanciamento del carico se impostati dall’host). Sono necessari al funzionamento del servizio.",
+    "marketingTitle": "Nessun tracker di marketing (Day-1)",
+    "marketingBody": "Non usiamo tracker di marketing, pubblicità o analytics al Day-1. Se ciò cambia, aggiorneremo questa pagina e implementeremo un meccanismo di consenso adeguato ove richiesto.",
+    "bannerTitle": "Banner di consenso",
+    "bannerBody": "Poiché il Day-1 usa solo misure tecniche essenziali e nessun tracker di marketing, un banner di consenso ai cookie non è in genere richiesto per questa configurazione solo essenziale. Non costituisce consulenza legale.",
+    "contactTitle": "Contatto",
+    "contactBody": "Domande: hello@discloseledger.com. Vedi anche la nostra Informativa sulla privacy."
   }
 }

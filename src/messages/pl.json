@@ -15,7 +15,15 @@
     "recordTitle": "Publiczny rekord ujawnienia — Disclosure Ledger",
     "recordDescription": "Samodzielnie zgłoszony, niezweryfikowany rekord. Nieindeksowany w wyszukiwarkach; tylko deklaracja i ślad audytowy.",
     "opsTitle": "Ops — Disclosure Ledger",
-    "ogImageAlt": "Disclosure Ledger od Atlas AG"
+    "ogImageAlt": "Disclosure Ledger od Atlas AG",
+    "privacyTitle": "Polityka prywatności — Disclosure Ledger",
+    "privacyDescription": "Jak Atlas AG LLC przetwarza dane w Disclosure Ledger: cele, podstawy prawne, okres przechowywania, prawa i kontakt hello@discloseledger.com.",
+    "termsTitle": "Regulamin — Disclosure Ledger",
+    "termsDescription": "Warunki Disclosure Ledger firmy Atlas AG LLC: deklaracje własne, 29 €/mies., limity odpowiedzialności, prawo Idaho z obligatoryjną ochroną konsumentów UE.",
+    "legalTitle": "Informacje prawne / Impressum — Disclosure Ledger",
+    "legalDescription": "Dane operatora Disclosure Ledger: Atlas AG LLC, Melba, ID 83641, Stany Zjednoczone. Kontakt hello@discloseledger.com.",
+    "cookiesTitle": "Polityka plików cookie — Disclosure Ledger",
+    "cookiesDescription": "Disclosure Ledger w Day-1 używa wyłącznie niezbędnych technicznie plików cookie. Bez trackerów marketingowych; przy samym użyciu niezbędnym baner zgody nie jest wymagany."
   },
   "nav": {
     "home": "Start",
@@ -23,7 +31,11 @@
     "art50": "Kontekst art. 50",
     "pricing": "Cennik",
     "create": "Utwórz rekord",
-    "language": "Język"
+    "language": "Język",
+    "privacy": "Prywatność",
+    "terms": "Regulamin",
+    "legal": "Informacje prawne",
+    "cookies": "Cookies"
   },
   "disclaimer": {
     "title": "Samodzielnie zgłoszone i niezweryfikowane",
@@ -31,7 +43,7 @@
   },
   "footer": {
     "tagline": "Disclosure Ledger — deklaracja / ślad audytowy dla obrazów przeznaczonych do publikacji. Nie produkt zgodności. Nie porada prawna.",
-    "by": "Od Atlas AG."
+    "by": "Operowane przez Atlas AG LLC."
   },
   "home": {
     "eyebrow": "Dla agencji i marek publikujących obrazy",
@@ -151,7 +163,8 @@
     "checkoutStub": "Checkout oparty na env i może być stub, dopóki nie ustawisz kluczy Stripe.",
     "submit": "Opublikuj trwały rekord publiczny",
     "submitting": "Zapisywanie rekordu…",
-    "previewAlt": "Wybrany podgląd"
+    "previewAlt": "Wybrany podgląd",
+    "emailPrivacy": "Opcjonalnie. Tylko na potrzeby konta lub rozliczeń. Zobacz naszą <privacy>politykę prywatności</privacy>."
   },
   "record": {
     "eyebrow": "Publiczny rekord ujawnienia",
@@ -195,5 +208,73 @@
     "period": "/mies.",
     "body": "Po darmowym limicie. Stripe Checkout (oparty na env; stub do czasu konfiguracji kluczy). Dla agencji i marek regularnie wysyłających obrazy.",
     "cta": "Zacznij od 3 darmowych"
+  },
+  "privacy": {
+    "title": "Polityka prywatności",
+    "lead": "Niniejsza polityka opisuje, w jaki sposób Atlas AG LLC („my”) przetwarza dane osobowe podczas korzystania z Disclosure Ledger pod adresem https://discloseledger.com. Nie stanowi porady prawnej.",
+    "controllerTitle": "Administrator",
+    "controllerBody": "Atlas AG LLC, Melba, ID 83641, Stany Zjednoczone. Kontakt: hello@discloseledger.com. Produkt: Disclosure Ledger (https://discloseledger.com).",
+    "purposesTitle": "Cele",
+    "purposesBody": "Przetwarzamy dane w celu prowadzenia usługi deklaracji i śladu audytowego: tworzenia i wyświetlania publicznych rekordów, eksportu CSV, zarządzania limitem darmowym oraz (gdy skonfigurowane) rozliczeniami, prowadzenia logów bezpieczeństwa i operacyjnych oraz odpowiadania na wnioski dotyczące prywatności.",
+    "basesTitle": "Podstawy prawne",
+    "basesBody": "W zależności od przetwarzania: wykonanie umowy lub działania przedumowne (świadczenie żądanej usługi); prawnie uzasadnione interesy (bezpieczeństwo, zapobieganie nadużyciom, ulepszanie produktu bez nadrzędności nad Twoimi prawami); oraz, gdy wymagane, zgoda (dla opcjonalnego e-maila kontaktowego poza samym utworzeniem rekordu).",
+    "dataTitle": "Przetwarzane dane",
+    "data1": "Skrót treści (SHA-256), nazwa pliku, rozmiar i typ MIME przesłane z rekordem",
+    "data2": "Samodzielnie zgłoszona deklaracja AI, opcjonalne notatki oraz podsumowanie skanu proweniencji (metoda, szczegóły, sygnały)",
+    "data3": "Opcjonalny e-mail kontaktowy, jeśli go podasz",
+    "data4": "Logi techniczne (np. IP, user agent, znaczniki czasu) na potrzeby hostingu, bezpieczeństwa i diagnostyki",
+    "dataNote": "Bajty obrazu nie są przesyłane w tym MVP — hashowanie i skan proweniencji działają w przeglądarce. Przechowywany jest tylko skrót i metadane deklaracji.",
+    "retentionTitle": "Okres przechowywania",
+    "retentionBody": "Publiczne rekordy są przechowywane jako ślad audytowy tak długo, jak działa publiczny rejestr, chyba że jesteśmy zobowiązani lub zgodnie z prawem poproszeni o usunięcie lub ograniczenie danych osobowych nieistotnych dla publicznego rekordu. Opcjonalny e-mail kontaktowy jest przechowywany na potrzeby konta/rozliczeń do czasu, gdy przestanie być potrzebny. Logi techniczne są przechowywane krócej.",
+    "processorsTitle": "Podmioty przetwarzające",
+    "processorsBody": "Korzystamy z Vercel do hostingu i dostarczania. Gdy Stripe jest skonfigurowany, Stripe przetwarza dane związane z płatnościami. Mogą zostać dodani inni podwykonawcy; zaktualizujemy tę politykę przy istotnych zmianach.",
+    "transfersTitle": "Transfery międzynarodowe",
+    "transfersBody": "Operator ma siedzibę w Idaho, Stany Zjednoczone. Dane mogą być przetwarzane w USA oraz — w zależności od konfiguracji hostingu — w UE (np. region Frankfurt / UE). Gdy transfery wychodzą poza EOG/Wielką Brytanię, mogą obowiązywać odpowiednie zabezpieczenia zgodnie z obowiązującym prawem.",
+    "rightsTitle": "Twoje prawa",
+    "rightsBody": "Zgodnie z obowiązującym prawem (w tym RODO, o ile ma zastosowanie) możesz żądać dostępu, sprostowania, usunięcia, ograniczenia, przenoszenia i sprzeciwu oraz złożyć skargę do organu nadzorczego. Kontakt: hello@discloseledger.com. Możesz też skorzystać z naszego endpointu wniosków o prywatność, jeśli jest dostępny.",
+    "publicTitle": "Zastrzeżenie dotyczące rekordów publicznych",
+    "publicBody": "Publikowane rekordy są przeznaczone do publicznego wglądu pod /r/[id] (oraz przez API CSV/JSON bez e-maila kontaktowego). Nie umieszczaj w notatkach ani nazwach plików danych osobowych, których nie chcesz upubliczniać. E-mail kontaktowy nie jest uwzględniany w publicznych eksportach CSV ani JSON.",
+    "claimsTitle": "Czym ten produkt nie jest",
+    "claimsBody": "Disclosure Ledger nie jest produktem zgodności z art. 50 rozporządzenia UE w sprawie AI, nie weryfikuje ani nie podpisuje kryptograficznie obrazów i nie świadczy porad prawnych."
+  },
+  "terms": {
+    "title": "Regulamin",
+    "lead": "Niniejszy regulamin określa zasady korzystania z Disclosure Ledger prowadzonego przez Atlas AG LLC. Korzystając z usługi, akceptujesz go. Nie stanowi porady prawnej.",
+    "serviceTitle": "Opis usługi",
+    "serviceBody": "Disclosure Ledger umożliwia tworzenie samodzielnie zgłoszonych deklaracji AI wraz ze skrótem treści obliczonym w przeglądarce oraz best-effort podsumowaniem skanu proweniencji, przechowywanych jako publiczna deklaracja / ślad audytowy (strona rekordu i eksport). Cennik: 3 darmowe rekordy na tej instancji, potem 29 € miesięcznie (EUR) za dalsze tworzenie, gdy rozliczenia są skonfigurowane.",
+    "noWarrantyTitle": "Brak gwarancji zgodności lub weryfikacji",
+    "noWarrantyBody": "Usługa nie ustala adekwatności wobec art. 50 rozporządzenia UE w sprawie AI, nie weryfikuje autentyczności ani autorstwa, nie podpisuje ani nie poświadcza kryptograficznie obrazów i nie świadczy porad prawnych. Deklaracje są zgłaszane samodzielnie przez Ciebie.",
+    "selfReportedTitle": "Treść zgłaszana samodzielnie",
+    "selfReportedBody": "Odpowiadasz za dokładność deklaracji, notatek i metadanych. Rekordy są oznaczone jako niezweryfikowane. Nie przesyłaj treści bezprawnych ani danych osobowych osób trzecich bez podstawy prawnej.",
+    "liabilityTitle": "Ograniczenie odpowiedzialności",
+    "liabilityBody": "W maksymalnym zakresie dozwolonym przez prawo Atlas AG LLC nie ponosi odpowiedzialności za szkody pośrednie, przypadkowe, szczególne, wynikowe lub karne ani za utratę zysków, danych lub renomy wynikającą z korzystania z usługi. Nasza łączna odpowiedzialność z tytułu roszczeń związanych z usługą jest ograniczona do wyższej z kwot: (a) opłat zapłaconych nam za usługę w ciągu trzech miesięcy przed roszczeniem lub (b) 29 €. Nic nie wyłącza odpowiedzialności, której nie można ograniczyć na mocy bezwzględnie obowiązującego prawa (w tym obligatoryjnej ochrony konsumentów UE).",
+    "pricingTitle": "Cennik",
+    "pricingBody": "Warstwa darmowa pozwala na trzy rekordy na tej instancji. Następnie dalsze tworzenie może wymagać subskrypcji Team za 29 €/mies. (EUR), rozliczanej przez Stripe, gdy jest skonfigurowany. Płatny dostęp odblokowuje dalsze korzystanie z narzędzia deklaracji — nie kupuje weryfikacji, podpisu, poświadczenia ani porady prawnej.",
+    "lawTitle": "Prawo właściwe",
+    "lawBody": "Niniejszy regulamin podlega prawu stanu Idaho, Stany Zjednoczone, z wyłączeniem norm kolizyjnych, z zastrzeżeniem obligatoryjnych praw konsumenta obowiązujących w kraju zamieszkania w UE/EOG/Wielkiej Brytanii, o ile nie można z nich zrezygnować.",
+    "contactTitle": "Kontakt",
+    "contactBody": "Atlas AG LLC, Melba, ID 83641, Stany Zjednoczone. E-mail: hello@discloseledger.com."
+  },
+  "legal": {
+    "title": "Informacje prawne (Impressum)",
+    "lead": "Dane operatora Disclosure Ledger.",
+    "operatorTitle": "Operator",
+    "operatorBody": "Atlas AG LLC\nMelba, ID 83641\nStany Zjednoczone\nE-mail: hello@discloseledger.com",
+    "productTitle": "Produkt",
+    "productBody": "Disclosure Ledger — https://discloseledger.com — narzędzie deklaracji / śladu audytowego dla obrazów przeznaczonych do publikacji.",
+    "disclaimerTitle": "Zastrzeżenie",
+    "disclaimerBody": "Ta witryna i produkt nie świadczą porad prawnych, nie twierdzą o zgodności z art. 50 rozporządzenia UE w sprawie AI oraz nie weryfikują, nie podpisują ani nie poświadczają obrazów. Deklaracje są zgłaszane samodzielnie i niezweryfikowane."
+  },
+  "cookies": {
+    "title": "Polityka plików cookie",
+    "lead": "Jak Disclosure Ledger używa plików cookie i podobnych technologii w Day-1.",
+    "essentialTitle": "Tylko ściśle niezbędne",
+    "essentialBody": "W Day-1 dążymy do używania wyłącznie ściśle niezbędnych plików cookie technicznych lub równoważnego magazynu wymaganego do działania witryny (np. preferencja języka, bezpieczeństwo lub równoważenie obciążenia, jeśli ustawia je host). Są one potrzebne do działania usługi.",
+    "marketingTitle": "Bez trackerów marketingowych (Day-1)",
+    "marketingBody": "Nie używamy trackerów marketingowych, reklamowych ani analitycznych w Day-1. Jeśli to się zmieni, zaktualizujemy tę stronę i wdrożymy odpowiedni mechanizm zgody, gdy będzie wymagany.",
+    "bannerTitle": "Baner zgody",
+    "bannerBody": "Ponieważ Day-1 używa tylko niezbędnych środków technicznych i żadnych trackerów marketingowych, baner zgody na pliki cookie zwykle nie jest wymagany dla takiej konfiguracji tylko niezbędnej. To nie jest porada prawna.",
+    "contactTitle": "Kontakt",
+    "contactBody": "Pytania: hello@discloseledger.com. Zobacz także naszą Politykę prywatności."
   }
 }

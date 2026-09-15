@@ -5,7 +5,11 @@ export const MARKETING_PATHS = [
   "/art-50",
   "/how-it-works",
   "/create",
+  "/privacy",
+  "/terms",
+  "/legal",
+  "/cookies",
 ] as const;
 
 export const SITE_NAME = "Disclosure Ledger";
-export const ORG_NAME = "Atlas AG";
+export const ORG_NAME = "Atlas AG LLC";

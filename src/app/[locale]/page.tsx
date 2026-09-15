@@ -44,147 +44,137 @@ export default async function HomePage({
   ];
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-12">
-      <HreflangLinks path="/" />
-      <JsonLd data={organizationJsonLd(siteUrl)} />
-      <JsonLd
-        data={softwareApplicationJsonLd(siteUrl, tMeta("homeDescription"))}
-      />
+    <div>
+      <div className="hero-gradient">
+        <div className="mx-auto max-w-5xl px-4 pb-16 pt-14 sm:pt-20">
+          <HreflangLinks path="/" />
+          <JsonLd data={organizationJsonLd(siteUrl)} />
+          <JsonLd
+            data={softwareApplicationJsonLd(siteUrl, tMeta("homeDescription"))}
+          />
 
-      <section className="space-y-6">
-        <p className="text-sm font-medium uppercase tracking-wider text-slate-500">
-          {t("eyebrow")}
-        </p>
-        <h1 className="text-balance text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-          {t("title")}
-        </h1>
-        <p className="max-w-2xl text-lg leading-relaxed text-slate-600">
-          {t("lead")}
-        </p>
-        <DisclaimerBanner />
-        <div className="flex flex-wrap gap-3 pt-2">
-          <Link
-            href="/create"
-            className="rounded-md bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
-          >
-            {t("ctaCreate")}
-          </Link>
-          <Link
-            href="/pricing"
-            className="rounded-md border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-800 hover:bg-slate-50"
-          >
-            {t("ctaPricing")}
-          </Link>
-          <Link
-            href="/art-50"
-            className="rounded-md border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-800 hover:bg-slate-50"
-          >
-            {t("art50Link")}
-          </Link>
-        </div>
-      </section>
-
-      <section id="problem" className="mt-20 space-y-4">
-        <h2 className="text-2xl font-bold text-slate-900">{t("problemTitle")}</h2>
-        <ul className="list-inside list-disc space-y-2 text-slate-700">
-          <li>{t("problem1")}</li>
-          <li>{t("problem2")}</li>
-          <li>{t("problem3")}</li>
-        </ul>
-        <p className="text-sm text-slate-500">{t("problemNote")}</p>
-      </section>
-
-      <section id="how" className="mt-20 space-y-6">
-        <div className="flex flex-wrap items-end justify-between gap-3">
-          <h2 className="text-2xl font-bold text-slate-900">{t("howTitle")}</h2>
-          <Link
-            href="/how-it-works"
-            className="text-sm font-medium text-slate-700 underline hover:text-slate-900"
-          >
-            {t("howMore")}
-          </Link>
-        </div>
-        <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((item) => (
-            <li
-              key={item.step}
-              className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
-            >
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                {item.step}
-              </span>
-              <h3 className="mt-1 font-semibold text-slate-900">{item.title}</h3>
-              <p className="mt-2 text-sm text-slate-600">{item.body}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      <section id="definitions" className="mt-20 space-y-4">
-        <h2 className="text-2xl font-bold text-slate-900">
-          {t("definitionsTitle")}
-        </h2>
-        <blockquote className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-relaxed text-slate-800 shadow-sm">
-          {t("defLedger")}
-        </blockquote>
-        <blockquote className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-relaxed text-slate-800 shadow-sm">
-          {t("defArt50")}
-        </blockquote>
-        <blockquote className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-relaxed text-slate-800 shadow-sm">
-          {t("defAtlas")}
-        </blockquote>
-      </section>
-
-      <section id="pricing" className="mt-20 space-y-4">
-        <div className="flex flex-wrap items-end justify-between gap-3">
-          <h2 className="text-2xl font-bold text-slate-900">
-            {t("pricingTitle")}
-          </h2>
-          <Link
-            href="/pricing"
-            className="text-sm font-medium text-slate-700 underline hover:text-slate-900"
-          >
-            {t("pricingMore")}
-          </Link>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-            <h3 className="font-semibold text-slate-900">{tp("freeTitle")}</h3>
-            <p className="mt-2 text-3xl font-bold text-slate-900">
-              {tp("freePrice")}
+          <section className="space-y-6">
+            <p className="eyebrow">{t("eyebrow")}</p>
+            <h1 className="text-balance max-w-3xl text-4xl font-bold tracking-tight text-ink sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
+              {t("title")}
+            </h1>
+            <p className="max-w-2xl text-lg leading-relaxed text-ink-muted">
+              {t("lead")}
             </p>
-            <p className="mt-2 text-sm text-slate-600">{tp("freeBody")}</p>
-          </div>
-          <div className="rounded-xl border-2 border-slate-900 bg-white p-6 shadow-sm">
-            <h3 className="font-semibold text-slate-900">{tp("teamTitle")}</h3>
-            <p className="mt-2 text-3xl font-bold text-slate-900">
-              {tp("teamPrice")}
-              <span className="text-base font-medium text-slate-500">
-                {tp("teamPeriod")}
-              </span>
-            </p>
-            <p className="mt-2 text-sm text-slate-600">{tp("teamBody")}</p>
+            <DisclaimerBanner />
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Link href="/create" className="btn-primary">
+                {t("ctaCreate")}
+              </Link>
+              <Link href="/pricing" className="btn-secondary">
+                {t("ctaPricing")}
+              </Link>
+              <Link href="/art-50" className="btn-secondary">
+                {t("art50Link")}
+              </Link>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-5xl px-4 pb-16">
+        <section id="problem" className="mt-16 space-y-5">
+          <h2 className="section-title">{t("problemTitle")}</h2>
+          <ul className="grid gap-3 sm:grid-cols-3">
+            {[t("problem1"), t("problem2"), t("problem3")].map((item) => (
+              <li key={item} className="card-surface p-5 text-sm text-ink-muted">
+                <span className="mb-2 inline-block h-1 w-8 rounded-full bg-gold" />
+                <p className="leading-relaxed text-ink">{item}</p>
+              </li>
+            ))}
+          </ul>
+          <p className="text-sm text-ink-muted">{t("problemNote")}</p>
+        </section>
+
+        <section id="how" className="mt-20 space-y-6">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <h2 className="section-title">{t("howTitle")}</h2>
             <Link
-              href="/create"
-              className="mt-4 inline-block rounded-md bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800"
+              href="/how-it-works"
+              className="text-sm font-semibold text-ink underline decoration-gold/60 underline-offset-4 hover:decoration-gold"
             >
-              {tp("cta")}
+              {t("howMore")}
             </Link>
           </div>
-        </div>
-      </section>
+          <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {steps.map((item) => (
+              <li key={item.step} className="card-surface p-5">
+                <span className="text-xs font-bold uppercase tracking-[0.14em] text-gold">
+                  {item.step}
+                </span>
+                <h3 className="mt-2 font-semibold text-ink">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                  {item.body}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </section>
 
-      <FaqSection />
+        <section id="definitions" className="mt-20 space-y-4">
+          <h2 className="section-title">{t("definitionsTitle")}</h2>
+          <blockquote className="card-surface border-l-4 border-l-gold p-5 text-sm leading-relaxed text-ink">
+            {t("defLedger")}
+          </blockquote>
+          <blockquote className="card-surface p-5 text-sm leading-relaxed text-ink">
+            {t("defArt50")}
+          </blockquote>
+          <blockquote className="card-surface p-5 text-sm leading-relaxed text-ink">
+            {t("defAtlas")}
+          </blockquote>
+        </section>
 
-      <section className="mt-20 space-y-3 rounded-xl border border-slate-200 bg-white p-6">
-        <h2 className="text-lg font-bold text-slate-900">{t("neverTitle")}</h2>
-        <ul className="list-inside list-disc space-y-1 text-sm text-slate-700">
-          <li>{t("never1")}</li>
-          <li>{t("never2")}</li>
-          <li>{t("never3")}</li>
-          <li>{t("never4")}</li>
-        </ul>
-      </section>
+        <section id="pricing" className="mt-20 space-y-4">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <h2 className="section-title">{t("pricingTitle")}</h2>
+            <Link
+              href="/pricing"
+              className="text-sm font-semibold text-ink underline decoration-gold/60 underline-offset-4 hover:decoration-gold"
+            >
+              {t("pricingMore")}
+            </Link>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="card-surface p-6">
+              <h3 className="font-semibold text-ink">{tp("freeTitle")}</h3>
+              <p className="mt-2 text-3xl font-bold tracking-tight text-ink">
+                {tp("freePrice")}
+              </p>
+              <p className="mt-2 text-sm text-ink-muted">{tp("freeBody")}</p>
+            </div>
+            <div className="card-surface border-ink/15 p-6 shadow-glow ring-1 ring-ink/10">
+              <h3 className="font-semibold text-ink">{tp("teamTitle")}</h3>
+              <p className="mt-2 text-3xl font-bold tracking-tight text-ink">
+                {tp("teamPrice")}
+                <span className="text-base font-medium text-ink-muted">
+                  {tp("teamPeriod")}
+                </span>
+              </p>
+              <p className="mt-2 text-sm text-ink-muted">{tp("teamBody")}</p>
+              <Link href="/create" className="btn-primary mt-5 !px-4">
+                {tp("cta")}
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <FaqSection />
+
+        <section className="mt-20 space-y-3 card-surface border-gold/25 bg-gold-soft/40 p-6">
+          <h2 className="text-lg font-bold text-ink">{t("neverTitle")}</h2>
+          <ul className="list-inside list-disc space-y-1 text-sm text-ink-muted">
+            <li>{t("never1")}</li>
+            <li>{t("never2")}</li>
+            <li>{t("never3")}</li>
+            <li>{t("never4")}</li>
+          </ul>
+        </section>
+      </div>
     </div>
   );
 }

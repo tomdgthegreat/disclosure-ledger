@@ -5,26 +5,41 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 export async function SiteHeader() {
   const t = await getTranslations("nav");
   return (
-    <header className="border-b border-slate-200 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-4 py-4">
-        <Link href="/" className="font-semibold tracking-tight text-slate-900">
-          Disclosure Ledger
+    <header className="sticky top-0 z-40 border-b border-border/80 bg-cream/85 backdrop-blur-md">
+      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-4 py-3.5">
+        <Link
+          href="/"
+          className="group flex items-center gap-2 font-semibold tracking-tight text-ink"
+        >
+          <span
+            className="inline-block h-2 w-2 rounded-full bg-gold shadow-[0_0_0_3px_rgba(212,160,23,0.25)]"
+            aria-hidden
+          />
+          <span className="transition group-hover:text-ink-soft">
+            Disclosure Ledger
+          </span>
         </Link>
-        <nav className="flex flex-wrap items-center gap-3 text-sm text-slate-600 sm:gap-4">
-          <Link href="/how-it-works" className="hover:text-slate-900">
+        <nav className="flex flex-wrap items-center gap-1 text-sm text-ink-muted sm:gap-2">
+          <Link
+            href="/how-it-works"
+            className="rounded-full px-3 py-1.5 transition hover:bg-white hover:text-ink"
+          >
             {t("how")}
           </Link>
-          <Link href="/art-50" className="hover:text-slate-900">
+          <Link
+            href="/art-50"
+            className="rounded-full px-3 py-1.5 transition hover:bg-white hover:text-ink"
+          >
             {t("art50")}
           </Link>
-          <Link href="/pricing" className="hover:text-slate-900">
+          <Link
+            href="/pricing"
+            className="rounded-full px-3 py-1.5 transition hover:bg-white hover:text-ink"
+          >
             {t("pricing")}
           </Link>
           <LanguageSwitcher />
-          <Link
-            href="/create"
-            className="rounded-md bg-slate-900 px-3 py-1.5 font-medium text-white hover:bg-slate-800"
-          >
+          <Link href="/create" className="btn-primary ml-1 !px-4 !py-1.5">
             {t("create")}
           </Link>
         </nav>

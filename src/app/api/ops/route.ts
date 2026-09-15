@@ -23,7 +23,8 @@ export async function GET(req: NextRequest) {
   const records = await listRecords();
   const format = req.nextUrl.searchParams.get("format");
   if (format === "csv") {
-    return new NextResponse(recordsToCsv(records), {
+    // Ops CSV may include contactEmail
+    return new NextResponse(recordsToCsv(records, { public: false }), {
       headers: {
         "Content-Type": "text/csv; charset=utf-8",
         "Content-Disposition": 'attachment; filename="disclosure-records.csv"',

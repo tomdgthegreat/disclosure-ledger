@@ -7,7 +7,16 @@ function escapeCsv(value: string): string {
   return value;
 }
 
-export function recordsToCsv(records: DisclosureRecord[]): string {
+/**
+ * Serialize records to CSV.
+ * @param publicExport default true — omits contactEmail from headers and rows.
+ * Ops may pass `{ public: false }` to include contactEmail.
+ */
+export function recordsToCsv(
+  records: DisclosureRecord[],
+  options?: { public?: boolean }
+): string {
+  const isPublic = options?.public !== false;
   const headers = [
     "id",
     "createdAt",
@@ -17,7 +26,7 @@ export function recordsToCsv(records: DisclosureRecord[]): string {
     "mimeType",
     "aiDeclaration",
     "notes",
-    "contactEmail",
+    ...(isPublic ? [] : ["contactEmail"]),
     "provenanceFound",
     "provenanceMethod",
     "provenanceDetails",
@@ -25,25 +34,22 @@ export function recordsToCsv(records: DisclosureRecord[]): string {
   ];
   const lines = [headers.join(",")];
   for (const r of records) {
-    lines.push(
-      [
-        r.id,
-        r.createdAt,
-        r.contentHashSha256,
-        r.fileName,
-        String(r.fileSizeBytes),
-        r.mimeType,
-        r.aiDeclaration,
-        r.notes,
-        r.contactEmail ?? "",
-        r.provenance.found ? "true" : "false",
-        r.provenance.method,
-        r.provenance.details,
-        r.provenance.signals.join("; "),
-      ]
-        .map(escapeCsv)
-        .join(",")
-    );
+    const cells = [
+      r.id,
+      r.createdAt,
+      r.contentHashSha256,
+      r.fileName,
+      String(r.fileSizeBytes),
+      r.mimeType,
+      r.aiDeclaration,
+      r.notes,
+      ...(isPublic ? [] : [r.contactEmail ?? ""]),
+      r.provenance.found ? "true" : "false",
+      r.provenance.method,
+      r.provenance.details,
+      r.provenance.signals.join("; "),
+    ];
+    lines.push(cells.map(escapeCsv).join(","));
   }
   return lines.join("\n") + "\n";
 }

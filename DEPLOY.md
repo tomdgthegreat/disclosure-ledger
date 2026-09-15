@@ -49,13 +49,21 @@ After DNS propagates, confirm:
 - `https://www.discloseledger.com` redirects to the apex
 - Sitemap / OG / hreflang / Stripe success-cancel use `https://discloseledger.com` via `NEXT_PUBLIC_APP_URL`
 
+
+## Region & data residency (recommended)
+
+- Prefer **Vercel region Frankfurt (`fra1`) / EU** for the production deployment so EU visitors hit nearby edge/compute where possible.
+- When replacing `data/records.json`, provision **Postgres in the EU** (same region family) and document the region in env notes.
+- Operator contact for privacy / legal: **hello@discloseledger.com** (Atlas AG LLC, Melba, ID 83641, United States).
+- Ship legal pages: `/privacy`, `/terms`, `/legal`, `/cookies` (localized).
+
 ## 4. Post-deploy checks
 
 ```bash
 npm run build   # locally before push
 ```
 
-- Open `/`, `/pricing`, `/sitemap.xml`, `/robots.txt`
+- Open `/`, `/pricing`, `/privacy`, `/terms`, `/legal`, `/cookies`, `/sitemap.xml`, `/robots.txt`
 - Spot-check a locale (e.g. `/de`) and hreflang/canonical pointing at apex
 - Remember: local `data/records.json` is **not** durable on serverless — plan Postgres (or similar) before relying on production writes
 
