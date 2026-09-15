@@ -164,7 +164,8 @@
     "submit": "Publicar registro público permanente",
     "submitting": "Guardando registro…",
     "previewAlt": "Vista previa seleccionada",
-    "emailPrivacy": "Opcional. Solo para cuenta o facturación. Consulta nuestra <privacy>política de privacidad</privacy>."
+    "emailPrivacy": "Opcional. Solo para cuenta o facturación. Consulta nuestra <privacy>política de privacidad</privacy>.",
+    "emailRequired": "Contact email is required. Free tier is 3 records per email."
   },
   "record": {
     "eyebrow": "Registro público de divulgación",

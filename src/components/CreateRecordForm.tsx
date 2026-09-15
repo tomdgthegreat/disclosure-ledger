@@ -77,6 +77,10 @@ export function CreateRecordForm() {
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!file || !provenance || !hash) return;
+    if (!email.trim() || !email.includes("@")) {
+      setError(t("emailRequired") || "Email is required for the free tier (3 records per email).");
+      return;
+    }
     setPhase("submitting");
     setError(null);
     setGateMessage(null);
@@ -91,7 +95,7 @@ export function CreateRecordForm() {
           mimeType: file.type || "application/octet-stream",
           aiDeclaration,
           notes,
-          contactEmail: email || null,
+          contactEmail: email.trim(),
           provenance,
         }),
       });
@@ -117,10 +121,15 @@ export function CreateRecordForm() {
   }
 
   async function startCheckout() {
+    const trimmedEmail = email.trim();
+    if (!trimmedEmail || !trimmedEmail.includes("@")) {
+      setGateMessage(t("emailRequired") || "Email is required to start Checkout.");
+      return;
+    }
     const res = await fetch("/api/checkout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: email || undefined }),
+      body: JSON.stringify({ email: trimmedEmail }),
     });
     const data = (await res.json()) as {
       url?: string | null;
@@ -133,7 +142,7 @@ export function CreateRecordForm() {
     }
     setGateMessage(
       data.message ??
-        "Stripe Checkout is stubbed. Configure STRIPE_SECRET_KEY and STRIPE_PRICE_ID."
+        "Stripe Checkout is not configured. Set STRIPE_SECRET_KEY and STRIPE_PRICE_ID on the server."
     );
   }
 
@@ -271,6 +280,7 @@ export function CreateRecordForm() {
             <input
               id="email"
               type="email"
+              required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="mt-1 w-full rounded-xl border border-border bg-white px-3 py-2 text-sm text-ink shadow-sm"

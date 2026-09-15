@@ -164,7 +164,8 @@
     "submit": "Opublikuj trwały rekord publiczny",
     "submitting": "Zapisywanie rekordu…",
     "previewAlt": "Wybrany podgląd",
-    "emailPrivacy": "Opcjonalnie. Tylko na potrzeby konta lub rozliczeń. Zobacz naszą <privacy>politykę prywatności</privacy>."
+    "emailPrivacy": "Opcjonalnie. Tylko na potrzeby konta lub rozliczeń. Zobacz naszą <privacy>politykę prywatności</privacy>.",
+    "emailRequired": "Contact email is required. Free tier is 3 records per email."
   },
   "record": {
     "eyebrow": "Publiczny rekord ujawnienia",

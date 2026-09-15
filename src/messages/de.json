@@ -164,7 +164,8 @@
     "submit": "Dauerhaften öffentlichen Eintrag veröffentlichen",
     "submitting": "Eintrag wird gespeichert…",
     "previewAlt": "Ausgewählte Vorschau",
-    "emailPrivacy": "Optional. Nur für Konto- oder Abrechnungszwecke. Siehe unsere <privacy>Datenschutzerklärung</privacy>."
+    "emailPrivacy": "Optional. Nur für Konto- oder Abrechnungszwecke. Siehe unsere <privacy>Datenschutzerklärung</privacy>.",
+    "emailRequired": "Contact email is required. Free tier is 3 records per email."
   },
   "record": {
     "eyebrow": "Öffentlicher Disclosure-Eintrag",

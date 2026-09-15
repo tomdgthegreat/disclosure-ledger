@@ -1,18 +1,36 @@
 /**
- * Stripe Checkout stub for €29/mo after free tier.
- * Set STRIPE_SECRET_KEY + STRIPE_PRICE_ID to enable live checkout sessions.
- * Without keys, the UI still shows pricing and soft-gates create after 3 records.
+ * Stripe Checkout (€29/mo EUR subscription) + entitlement helpers.
+ * Requires STRIPE_SECRET_KEY + STRIPE_PRICE_ID (see .env.example).
+ * Never invent or hardcode secret keys — only read process.env.
  */
+
+import Stripe from "stripe";
 
 export const MONTHLY_PRICE_EUR = 29;
 
+/** Documented EUR €29/mo price id (not a secret). Override via STRIPE_PRICE_ID. */
+export const DOCUMENTED_STRIPE_PRICE_ID = "price_1UG5ICJA3LJpXY1w7S3MbOid";
+
+export function getStripePriceId(): string {
+  return process.env.STRIPE_PRICE_ID?.trim() || DOCUMENTED_STRIPE_PRICE_ID;
+}
+
 export function isStripeConfigured(): boolean {
   return Boolean(
-    process.env.STRIPE_SECRET_KEY && process.env.STRIPE_PRICE_ID
+    process.env.STRIPE_SECRET_KEY?.trim() && getStripePriceId()
   );
 }
 
-export async function createCheckoutSessionStub(params: {
+export function getStripe(): Stripe | null {
+  const key = process.env.STRIPE_SECRET_KEY?.trim();
+  if (!key) return null;
+  return new Stripe(key, {
+    apiVersion: "2025-02-24.acacia",
+    typescript: true,
+  });
+}
+
+export async function createCheckoutSession(params: {
   successUrl: string;
   cancelUrl: string;
   customerEmail?: string;
@@ -22,17 +40,51 @@ export async function createCheckoutSessionStub(params: {
       url: null,
       stub: true,
       message:
-        "Stripe is not configured. Set STRIPE_SECRET_KEY and STRIPE_PRICE_ID to enable Checkout. Soft-gate only for local MVP.",
+        "Stripe is not configured. Set STRIPE_SECRET_KEY and STRIPE_PRICE_ID (EUR €29/mo) to enable Checkout.",
     };
   }
 
-  // Stub: real Stripe SDK call would go here once keys + price are set.
-  // Intentionally not importing stripe package yet to keep Day-1 deps light.
-  void params;
+  const stripe = getStripe();
+  if (!stripe) {
+    return {
+      url: null,
+      stub: true,
+      message: "STRIPE_SECRET_KEY missing.",
+    };
+  }
+
+  const session = await stripe.checkout.sessions.create({
+    mode: "subscription",
+    line_items: [{ price: getStripePriceId(), quantity: 1 }],
+    success_url: params.successUrl,
+    cancel_url: params.cancelUrl,
+    ...(params.customerEmail
+      ? { customer_email: params.customerEmail.trim().toLowerCase() }
+      : {}),
+    allow_promotion_codes: true,
+    billing_address_collection: "auto",
+    metadata: {
+      app: "disclosure-ledger",
+      ...(params.customerEmail
+        ? { customer_email: params.customerEmail.trim().toLowerCase() }
+        : {}),
+    },
+    subscription_data: {
+      metadata: {
+        app: "disclosure-ledger",
+        ...(params.customerEmail
+          ? { customer_email: params.customerEmail.trim().toLowerCase() }
+          : {}),
+      },
+    },
+  });
+
   return {
-    url: null,
-    stub: true,
-    message:
-      "Stripe keys detected but Checkout integration is stubbed for Day-1. Wire stripe.checkout.sessions.create next.",
+    url: session.url,
+    stub: false,
+    message: "Checkout session created",
   };
 }
+
+/** @deprecated use createCheckoutSession */
+export const createCheckoutSessionStub = createCheckoutSession;
