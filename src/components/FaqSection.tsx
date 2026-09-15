@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { JsonLd, faqPageJsonLd } from "./JsonLd";
+import { IconChat } from "./MarketingIcons";
 
 export async function FaqSection() {
   const t = await getTranslations("faq");
@@ -21,8 +22,8 @@ export async function FaqSection() {
       <JsonLd data={faqPageJsonLd(items)} />
       <div className="flex flex-wrap items-center gap-3">
         <h2 className="section-title">{t("title")}</h2>
-        <span className="pill-soft-azure" aria-hidden>
-          💬
+        <span className="pill-soft-azure inline-flex" aria-hidden>
+          <IconChat size={16} />
         </span>
       </div>
       <dl className="grid gap-4">

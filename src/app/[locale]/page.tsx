@@ -8,8 +8,26 @@ import {
   softwareApplicationJsonLd,
 } from "@/components/JsonLd";
 import { HreflangLinks } from "@/components/HreflangLinks";
+import {
+  IconBan,
+  IconBolt,
+  IconBook,
+  IconClock,
+  IconEu,
+  IconGrow,
+  IconInsight,
+  IconLink,
+  IconMark,
+  IconModules,
+  IconReceipt,
+  IconSeal,
+  IconShield,
+  IconTag,
+  IconUpload,
+} from "@/components/MarketingIcons";
 import { buildPageMetadata, getSiteUrl } from "@/lib/seo";
 import type { AppLocale } from "@/i18n/routing";
+import type { ReactNode } from "react";
 
 export async function generateMetadata({
   params,
@@ -36,14 +54,21 @@ export default async function HomePage({
   const tp = await getTranslations("pricing");
   const siteUrl = getSiteUrl();
 
-  const steps = [
+  const steps: {
+    step: string;
+    title: string;
+    body: string;
+    panel: string;
+    badge: string;
+    icon: ReactNode;
+  }[] = [
     {
       step: "1",
       title: t("step1Title"),
       body: t("step1Body"),
       panel: "card-tinted",
       badge: "pill-azure",
-      emoji: "📤",
+      icon: <IconUpload size={14} />,
     },
     {
       step: "2",
@@ -51,7 +76,7 @@ export default async function HomePage({
       body: t("step2Body"),
       panel: "card-coral",
       badge: "pill-coral",
-      emoji: "🔏",
+      icon: <IconSeal size={14} />,
     },
     {
       step: "3",
@@ -59,7 +84,7 @@ export default async function HomePage({
       body: t("step3Body"),
       panel: "card-amber",
       badge: "pill-amber",
-      emoji: "🧾",
+      icon: <IconReceipt size={14} />,
     },
     {
       step: "4",
@@ -67,14 +92,34 @@ export default async function HomePage({
       body: t("step4Body"),
       panel: "card-tinted",
       badge: "pill-azure",
-      emoji: "🔗",
+      icon: <IconLink size={14} />,
     },
   ];
 
-  const problems = [
-    { item: t("problem1"), panel: "card-tinted", chip: "pill-soft-azure", emoji: "🧩" },
-    { item: t("problem2"), panel: "card-coral", chip: "pill-soft-coral", emoji: "⏱️" },
-    { item: t("problem3"), panel: "card-amber", chip: "pill-amber", emoji: "🛡️" },
+  const problems: {
+    item: string;
+    panel: string;
+    chip: string;
+    icon: ReactNode;
+  }[] = [
+    {
+      item: t("problem1"),
+      panel: "card-tinted",
+      chip: "pill-soft-azure",
+      icon: <IconModules size={16} />,
+    },
+    {
+      item: t("problem2"),
+      panel: "card-coral",
+      chip: "pill-soft-coral",
+      icon: <IconClock size={16} />,
+    },
+    {
+      item: t("problem3"),
+      panel: "card-amber",
+      chip: "pill-amber",
+      icon: <IconShield size={16} />,
+    },
   ];
 
   return (
@@ -96,7 +141,7 @@ export default async function HomePage({
           />
 
           <section className="space-y-6">
-            <p className="eyebrow-on-dark">✨ {t("eyebrow")}</p>
+            <p className="eyebrow-on-dark">{t("eyebrow")}</p>
             <h1 className="text-balance max-w-3xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-[3.35rem] lg:leading-[1.08]">
               {t("title")}
             </h1>
@@ -118,9 +163,16 @@ export default async function HomePage({
               </Link>
             </div>
             <div className="flex flex-wrap gap-2 pt-2" aria-hidden>
-              <span className="rounded-full bg-white/20 px-3 py-1 text-sm">🇪🇺</span>
-              <span className="rounded-full bg-white/15 px-3 py-1 text-sm">⚡</span>
-              <span className="rounded-full bg-coral/35 px-3 py-1 text-sm">🎨</span>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 px-3 py-1 text-sm text-white">
+                <IconEu size={14} />
+                EU
+              </span>
+              <span className="inline-flex items-center rounded-full bg-white/15 px-3 py-1 text-white">
+                <IconBolt size={14} />
+              </span>
+              <span className="inline-flex items-center rounded-full bg-coral/35 px-3 py-1 text-white">
+                <IconMark size={14} />
+              </span>
             </div>
           </section>
         </div>
@@ -130,12 +182,14 @@ export default async function HomePage({
         <section id="problem" className="mt-16 space-y-6">
           <div className="flex flex-wrap items-end justify-between gap-3">
             <h2 className="section-title">{t("problemTitle")}</h2>
-            <span className="pill-soft-coral" aria-hidden>💡</span>
+            <span className="pill-soft-coral" aria-hidden>
+              <IconInsight size={16} />
+            </span>
           </div>
           <ul className="grid gap-4 sm:grid-cols-3">
-            {problems.map(({ item, panel, chip, emoji }) => (
+            {problems.map(({ item, panel, chip, icon }) => (
               <li key={item} className={`${panel} relative p-6`}>
-                <span className={`${chip} mb-3`}>{emoji}</span>
+                <span className={`${chip} mb-3 inline-flex`}>{icon}</span>
                 <p className="leading-relaxed font-semibold text-ink">{item}</p>
               </li>
             ))}
@@ -160,8 +214,9 @@ export default async function HomePage({
                 className={`${item.panel} relative p-5 ${i % 2 === 1 ? "lg:translate-y-3" : ""}`}
               >
                 <div className="flex items-center gap-2">
-                  <span className={item.badge}>
-                    {item.emoji} {item.step}
+                  <span className={`${item.badge} inline-flex items-center gap-1.5`}>
+                    {item.icon}
+                    {item.step}
                   </span>
                 </div>
                 <h3 className="mt-3 text-base font-bold text-ink">{item.title}</h3>
@@ -176,7 +231,9 @@ export default async function HomePage({
         <section id="definitions" className="mt-20 space-y-4">
           <div className="flex flex-wrap items-center gap-3">
             <h2 className="section-title">{t("definitionsTitle")}</h2>
-            <span className="pill-soft-azure" aria-hidden>📚</span>
+            <span className="pill-soft-azure inline-flex" aria-hidden>
+              <IconBook size={16} />
+            </span>
           </div>
           <blockquote className="card-tinted p-6 text-sm leading-relaxed text-ink">
             {t("defLedger")}
@@ -201,7 +258,9 @@ export default async function HomePage({
           </div>
           <div className="grid gap-5 sm:grid-cols-2">
             <div className="card-amber relative overflow-hidden p-7">
-              <span className="pill-amber mb-3" aria-hidden>🆓</span>
+              <span className="pill-amber mb-3 inline-flex" aria-hidden>
+                <IconTag size={16} />
+              </span>
               <h3 className="font-bold text-ink">{tp("freeTitle")}</h3>
               <p className="mt-2 text-4xl font-extrabold tracking-tight text-ink">
                 {tp("freePrice")}
@@ -213,7 +272,9 @@ export default async function HomePage({
                 className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-coral/40 blur-2xl"
                 aria-hidden
               />
-              <span className="pill-coral relative mb-3" aria-hidden>🚀</span>
+              <span className="pill-coral relative mb-3 inline-flex" aria-hidden>
+                <IconGrow size={16} />
+              </span>
               <h3 className="relative font-bold text-white">{tp("teamTitle")}</h3>
               <p className="relative mt-2 text-4xl font-extrabold tracking-tight text-white">
                 {tp("teamPrice")}
@@ -238,7 +299,9 @@ export default async function HomePage({
           />
           <div className="relative flex flex-wrap items-center gap-2">
             <h2 className="text-lg font-extrabold text-ink">{t("neverTitle")}</h2>
-            <span className="pill-coral" aria-hidden>✋</span>
+            <span className="pill-coral inline-flex" aria-hidden>
+              <IconBan size={16} />
+            </span>
           </div>
           <ul className="relative mt-4 grid gap-2 sm:grid-cols-2">
             {[t("never1"), t("never2"), t("never3"), t("never4")].map((item) => (

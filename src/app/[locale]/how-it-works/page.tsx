@@ -2,8 +2,16 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 import { HreflangLinks } from "@/components/HreflangLinks";
+import {
+  IconCompass,
+  IconLink,
+  IconReceipt,
+  IconSeal,
+  IconUpload,
+} from "@/components/MarketingIcons";
 import { buildPageMetadata } from "@/lib/seo";
 import type { AppLocale } from "@/i18n/routing";
+import type { ReactNode } from "react";
 
 export async function generateMetadata({
   params,
@@ -28,14 +36,21 @@ export default async function HowItWorksPage({
   const t = await getTranslations("how");
   const nav = await getTranslations("nav");
 
-  const steps = [
+  const steps: {
+    n: string;
+    title: string;
+    body: string;
+    panel: string;
+    badge: string;
+    icon: ReactNode;
+  }[] = [
     {
       n: "1",
       title: t("step1Title"),
       body: t("step1Body"),
       panel: "card-tinted",
       badge: "pill-azure",
-      emoji: "📤",
+      icon: <IconUpload size={14} />,
     },
     {
       n: "2",
@@ -43,7 +58,7 @@ export default async function HowItWorksPage({
       body: t("step2Body"),
       panel: "card-coral",
       badge: "pill-coral",
-      emoji: "🔏",
+      icon: <IconSeal size={14} />,
     },
     {
       n: "3",
@@ -51,7 +66,7 @@ export default async function HowItWorksPage({
       body: t("step3Body"),
       panel: "card-amber",
       badge: "pill-amber",
-      emoji: "🧾",
+      icon: <IconReceipt size={14} />,
     },
     {
       n: "4",
@@ -59,7 +74,7 @@ export default async function HowItWorksPage({
       body: t("step4Body"),
       panel: "card-tinted",
       badge: "pill-azure",
-      emoji: "🔗",
+      icon: <IconLink size={14} />,
     },
   ];
 
@@ -78,8 +93,8 @@ export default async function HowItWorksPage({
           <h1 className="text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
             {t("title")}
           </h1>
-          <span className="pill-soft-azure" aria-hidden>
-            🧭
+          <span className="pill-soft-azure inline-flex" aria-hidden>
+            <IconCompass size={16} />
           </span>
         </div>
         <p className="mt-3 text-ink-muted">{t("lead")}</p>
@@ -89,8 +104,9 @@ export default async function HowItWorksPage({
         <ol className="mt-10 space-y-5">
           {steps.map((s) => (
             <li key={s.n} className={`${s.panel} p-6`}>
-              <span className={s.badge}>
-                {s.emoji} {t("stepLabel", { step: s.n })}
+              <span className={`${s.badge} inline-flex items-center gap-1.5`}>
+                {s.icon}
+                {t("stepLabel", { step: s.n })}
               </span>
               <h2 className="mt-3 text-lg font-bold text-ink">{s.title}</h2>
               <p className="mt-2 text-sm leading-relaxed text-ink-muted">

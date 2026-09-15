@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 import { HreflangLinks } from "@/components/HreflangLinks";
+import { IconEuro, IconGrow, IconTag } from "@/components/MarketingIcons";
 import { buildPageMetadata } from "@/lib/seo";
 import type { AppLocale } from "@/i18n/routing";
 
@@ -43,8 +44,8 @@ export default async function PricingPage({
           <h1 className="text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
             {t("title")}
           </h1>
-          <span className="pill-coral" aria-hidden>
-            💶
+          <span className="pill-coral inline-flex" aria-hidden>
+            <IconEuro size={16} />
           </span>
         </div>
         <p className="mt-3 max-w-2xl text-ink-muted">{t("lead")}</p>
@@ -57,8 +58,8 @@ export default async function PricingPage({
               className="pointer-events-none absolute -left-6 -top-6 h-28 w-28 rounded-full bg-white/50 blur-2xl"
               aria-hidden
             />
-            <span className="pill-amber relative mb-3" aria-hidden>
-              🆓
+            <span className="pill-amber relative mb-3 inline-flex" aria-hidden>
+              <IconTag size={16} />
             </span>
             <h2 className="relative font-bold text-ink">{t("freeTitle")}</h2>
             <p className="relative mt-2 text-4xl font-extrabold text-ink">
@@ -75,8 +76,8 @@ export default async function PricingPage({
               className="pointer-events-none absolute -bottom-10 left-10 h-28 w-28 rounded-full bg-amber/35 blur-2xl"
               aria-hidden
             />
-            <span className="pill-coral relative mb-3" aria-hidden>
-              🚀
+            <span className="pill-coral relative mb-3 inline-flex" aria-hidden>
+              <IconGrow size={16} />
             </span>
             <h2 className="relative font-bold text-white">{t("teamTitle")}</h2>
             <p className="relative mt-2 text-4xl font-extrabold text-white">
