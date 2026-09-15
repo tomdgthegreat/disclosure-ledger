@@ -16,7 +16,7 @@ export async function FaqSection() {
         {items.map((item) => (
           <div
             key={item.question}
-            className="card-surface p-5"
+            className="card-accent p-5 pl-6"
           >
             <dt className="font-semibold text-ink">{item.question}</dt>
             <dd className="mt-2 text-sm leading-relaxed text-ink-muted">

@@ -30,38 +30,39 @@ export default async function Art50Page({
   const nav = await getTranslations("nav");
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12">
+    <div className="hero-gradient-light">
+      <div className="mx-auto max-w-3xl px-4 py-12">
       <HreflangLinks path="/art-50" />
-      <p className="text-sm text-slate-500">
-        <Link href="/" className="hover:underline">
+      <p className="text-sm text-ink-muted">
+        <Link href="/" className="font-medium text-azure hover:underline">
           {nav("home")}
         </Link>
         {" / "}
         {t("title")}
       </p>
-      <h1 className="mt-2 text-3xl font-bold text-slate-900">{t("title")}</h1>
-      <p className="mt-3 text-slate-600">{t("lead")}</p>
+      <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-ink">{t("title")}</h1>
+      <p className="mt-3 text-ink-muted">{t("lead")}</p>
       <div className="mt-6">
         <DisclaimerBanner />
       </div>
 
       <section className="mt-10 space-y-3">
-        <h2 className="text-xl font-bold text-slate-900">{t("whatTitle")}</h2>
-        <p className="text-sm leading-relaxed text-slate-700">{t("whatBody")}</p>
+        <h2 className="text-xl font-bold text-ink">{t("whatTitle")}</h2>
+        <p className="text-sm leading-relaxed text-ink-muted">{t("whatBody")}</p>
       </section>
 
       <section className="mt-10 space-y-3">
-        <h2 className="text-xl font-bold text-slate-900">
+        <h2 className="text-xl font-bold text-ink">
           {t("whatWeAreTitle")}
         </h2>
-        <p className="text-sm leading-relaxed text-slate-700">{t("whatWeAre")}</p>
+        <p className="text-sm leading-relaxed text-ink-muted">{t("whatWeAre")}</p>
       </section>
 
       <section className="mt-10 space-y-3">
-        <h2 className="text-xl font-bold text-slate-900">
+        <h2 className="text-xl font-bold text-ink">
           {t("whatWeAreNotTitle")}
         </h2>
-        <ul className="list-inside list-disc space-y-1 text-sm text-slate-700">
+        <ul className="list-inside list-disc space-y-1 text-sm text-ink-muted">
           <li>{t("not1")}</li>
           <li>{t("not2")}</li>
           <li>{t("not3")}</li>
@@ -69,25 +70,27 @@ export default async function Art50Page({
         </ul>
       </section>
 
-      <blockquote className="mt-10 rounded-xl border border-slate-200 bg-white p-5 text-sm leading-relaxed text-slate-800 shadow-sm">
+      <blockquote className="card-tinted mt-10 p-5 text-sm leading-relaxed text-ink">
         {t("geoDef")}
       </blockquote>
 
       <FaqSection />
 
-      <p className="mt-10 text-sm text-slate-600">
-        <Link href="/how-it-works" className="underline">
+      <p className="mt-10 text-sm text-ink-muted">
+        <Link href="/how-it-works" className="font-medium text-azure underline">
           {nav("how")}
         </Link>
         {" · "}
-        <Link href="/pricing" className="underline">
+        <Link href="/pricing" className="font-medium text-azure underline">
           {nav("pricing")}
         </Link>
         {" · "}
-        <Link href="/create" className="underline">
+        <Link href="/create" className="font-medium text-azure underline">
           {nav("create")}
         </Link>
       </p>
+      </div>
     </div>
   );
 }
+

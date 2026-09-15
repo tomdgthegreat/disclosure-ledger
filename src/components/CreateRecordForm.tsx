@@ -144,7 +144,7 @@ export function CreateRecordForm() {
       <div
         onDragOver={(e) => e.preventDefault()}
         onDrop={onDrop}
-        className="card-surface border-2 border-dashed border-border p-8 text-center transition hover:border-gold/50"
+        className="card-surface border-2 border-dashed border-azure/30 bg-azure-soft/20 p-8 text-center transition hover:border-azure/60 hover:bg-azure-soft/40"
       >
         <p className="text-sm font-medium text-ink">{t("dropTitle")}</p>
         <p className="mt-1 text-xs text-ink-muted">{t("dropHint")}</p>
@@ -162,7 +162,7 @@ export function CreateRecordForm() {
           <img
             src={previewUrl}
             alt={t("previewAlt")}
-            className="mx-auto mt-4 max-h-48 rounded-lg border border-border object-contain"
+            className="mx-auto mt-4 max-h-48 rounded-lg border border-azure/20 object-contain"
           />
         )}
         {phase === "hashing" && (
@@ -179,7 +179,7 @@ export function CreateRecordForm() {
             <h3 className="text-sm font-semibold text-ink">
               {t("hashTitle")}
             </h3>
-            <code className="mt-1 block break-all rounded bg-cream p-2 text-xs text-ink-muted">
+            <code className="mt-1 block break-all rounded-lg bg-azure-soft/60 p-2 text-xs text-ink-muted">
               {hash}
             </code>
             <p className="mt-1 text-xs text-ink-muted">
@@ -225,8 +225,8 @@ export function CreateRecordForm() {
                   key={value}
                   className={`flex cursor-pointer items-center gap-2 rounded-lg border px-3 py-2 text-sm ${
                     aiDeclaration === value
-                      ? "border-ink bg-ink text-white shadow-sm"
-                      : "border-border bg-white text-ink"
+                      ? "border-azure bg-azure text-white shadow-[0_4px_12px_rgba(37,99,235,0.3)]"
+                      : "border-border bg-white text-ink hover:border-azure/40"
                   }`}
                 >
                   <input
@@ -256,7 +256,7 @@ export function CreateRecordForm() {
               onChange={(e) => setNotes(e.target.value)}
               maxLength={2000}
               rows={3}
-              className="mt-1 w-full rounded-xl border border-border bg-white px-3 py-2 text-sm text-ink shadow-sm"
+              className="mt-1 w-full rounded-xl border border-border bg-white px-3 py-2 text-sm text-ink shadow-sm focus:border-azure focus:outline-none focus:ring-2 focus:ring-azure/25"
               placeholder={t("notesPlaceholder")}
             />
           </div>
@@ -273,7 +273,7 @@ export function CreateRecordForm() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-border bg-white px-3 py-2 text-sm text-ink shadow-sm"
+              className="mt-1 w-full rounded-xl border border-border bg-white px-3 py-2 text-sm text-ink shadow-sm focus:border-azure focus:outline-none focus:ring-2 focus:ring-azure/25"
               placeholder={t("emailPlaceholder")}
             />
             <p className="mt-1 text-xs text-ink-muted">
@@ -294,7 +294,7 @@ export function CreateRecordForm() {
           )}
 
           {phase === "gated" && (
-            <div className="space-y-3 rounded-md border border-border bg-cream p-4">
+            <div className="space-y-3 rounded-xl border border-coral/30 bg-coral-soft p-4">
               <p className="text-sm text-ink">
                 {gateMessage ?? t("gatedDefault")}
               </p>

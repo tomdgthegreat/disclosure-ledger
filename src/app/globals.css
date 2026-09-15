@@ -3,17 +3,28 @@
 @tailwind utilities;
 
 :root {
-  --background: #f7f5f1;
-  --foreground: #0b1220;
-  --ink: #0b1220;
-  --ink-soft: #141e33;
-  --ink-muted: #4a5568;
-  --gold: #d4a017;
-  --gold-bright: #e8b923;
-  --gold-soft: #fef6e0;
-  --cream: #faf8f5;
+  /* Cool European trust base — deep navy + vivid azure + warm coral */
+  --background: #eef3fb;
+  --foreground: #0a1628;
+  --ink: #0a1628;
+  --ink-soft: #12233f;
+  --ink-muted: #475569;
+  --azure: #2563eb;
+  --azure-bright: #3b82f6;
+  --azure-deep: #1d4ed8;
+  --azure-soft: #dbeafe;
+  --coral: #f97356;
+  --coral-bright: #fb8a6e;
+  --coral-soft: #fff1ed;
+  --amber: #f59e0b;
+  --amber-soft: #fef3c7;
+  /* Legacy aliases → coral energy (replaces timid gold-on-beige) */
+  --gold: #f97356;
+  --gold-bright: #fb8a6e;
+  --gold-soft: #fff1ed;
+  --cream: #f8fafc;
   --card: #ffffff;
-  --border: #e8e4dc;
+  --border: #c8d4e8;
 }
 
 body {
@@ -24,45 +35,114 @@ body {
 
 @layer base {
   ::selection {
-    background: color-mix(in srgb, var(--gold) 35%, white);
+    background: color-mix(in srgb, var(--azure) 32%, white);
     color: var(--ink);
   }
 }
 
 @layer components {
+  /* Dark navy→cobalt hero for landing impact */
   .hero-gradient {
     background:
       radial-gradient(
-        ellipse 80% 60% at 15% -10%,
-        color-mix(in srgb, var(--gold) 22%, transparent),
+        ellipse 90% 70% at 8% -15%,
+        color-mix(in srgb, var(--azure-bright) 45%, transparent),
+        transparent 58%
+      ),
+      radial-gradient(
+        ellipse 70% 55% at 92% 5%,
+        color-mix(in srgb, var(--coral) 32%, transparent),
+        transparent 52%
+      ),
+      radial-gradient(
+        ellipse 50% 40% at 55% 110%,
+        color-mix(in srgb, var(--amber) 18%, transparent),
+        transparent 55%
+      ),
+      linear-gradient(
+        165deg,
+        #07101f 0%,
+        #0a1628 22%,
+        #12233f 48%,
+        #1a3a6e 72%,
+        #1d4ed8 100%
+      );
+  }
+
+  /* Soft tinted hero for forms / secondary pages */
+  .hero-gradient-light {
+    background:
+      radial-gradient(
+        ellipse 85% 65% at 12% -10%,
+        color-mix(in srgb, var(--azure) 28%, transparent),
         transparent 55%
       ),
       radial-gradient(
-        ellipse 70% 50% at 95% 0%,
-        color-mix(in srgb, #1e3a5f 18%, transparent),
+        ellipse 65% 50% at 95% 0%,
+        color-mix(in srgb, var(--coral) 20%, transparent),
         transparent 50%
       ),
-      linear-gradient(180deg, #faf8f5 0%, #f7f5f1 45%, #f7f5f1 100%);
+      radial-gradient(
+        ellipse 40% 35% at 60% 100%,
+        color-mix(in srgb, var(--amber) 12%, transparent),
+        transparent 50%
+      ),
+      linear-gradient(180deg, #e8f0fe 0%, #eef3fb 45%, #eef3fb 100%);
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-ink-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
+    @apply inline-flex items-center justify-center rounded-full bg-azure px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(37,99,235,0.35)] transition hover:bg-azure-deep hover:shadow-[0_6px_20px_rgba(37,99,235,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azure-bright;
+  }
+
+  .btn-coral {
+    @apply inline-flex items-center justify-center rounded-full bg-coral px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(249,115,86,0.35)] transition hover:bg-[#e85f42] hover:shadow-[0_6px_20px_rgba(249,115,86,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coral-bright;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-border bg-white px-5 py-2.5 text-sm font-semibold text-ink shadow-sm transition hover:border-ink/20 hover:bg-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
+    @apply inline-flex items-center justify-center rounded-full border border-azure/25 bg-white/90 px-5 py-2.5 text-sm font-semibold text-ink shadow-sm transition hover:border-azure/45 hover:bg-azure-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azure;
+  }
+
+  .btn-secondary-on-dark {
+    @apply inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white shadow-sm backdrop-blur-sm transition hover:border-white/60 hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
   }
 
   .card-surface {
-    @apply rounded-2xl border border-border bg-white shadow-[0_1px_2px_rgba(11,18,32,0.04),0_8px_24px_rgba(11,18,32,0.04)];
+    @apply rounded-2xl border border-border/80 bg-white/95 shadow-[0_2px_4px_rgba(10,22,40,0.05),0_12px_32px_rgba(37,99,235,0.08)];
+  }
+
+  .card-tinted {
+    @apply rounded-2xl border border-azure/20 bg-azure-soft/50 shadow-[0_2px_4px_rgba(10,22,40,0.04),0_10px_28px_rgba(37,99,235,0.1)];
+  }
+
+  .card-coral {
+    @apply rounded-2xl border border-coral/25 bg-coral-soft/70 shadow-[0_2px_4px_rgba(10,22,40,0.04),0_10px_28px_rgba(249,115,86,0.1)];
+  }
+
+  .card-accent {
+    @apply relative overflow-hidden rounded-2xl border border-border/80 bg-white shadow-[0_2px_4px_rgba(10,22,40,0.05),0_12px_32px_rgba(37,99,235,0.1)];
+  }
+
+  .card-accent::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--azure), var(--coral));
+    border-radius: 2px 0 0 2px;
   }
 
   .section-title {
-    @apply text-2xl font-bold tracking-tight text-ink sm:text-3xl;
+    @apply text-2xl font-extrabold tracking-tight text-ink sm:text-3xl;
   }
 
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.14em] text-gold;
+    @apply text-xs font-bold uppercase tracking-[0.16em] text-coral;
+  }
+
+  .eyebrow-on-dark {
+    @apply text-xs font-bold uppercase tracking-[0.16em] text-coral-bright;
   }
 }
 

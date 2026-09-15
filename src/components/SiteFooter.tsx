@@ -7,38 +7,38 @@ export async function SiteFooter() {
   const t = await getTranslations("footer");
   const nav = await getTranslations("nav");
   return (
-    <footer className="mt-auto border-t border-border bg-ink text-cream">
+    <footer className="mt-auto border-t border-azure/20 bg-ink text-cream">
       <div className="mx-auto max-w-5xl space-y-6 px-4 py-10">
         <DisclaimerBanner variant="inverse" />
-        <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-cream/75">
-          <Link href="/" className="hover:text-gold-bright">
+        <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-cream/80">
+          <Link href="/" className="transition hover:text-azure-bright">
             {nav("home")}
           </Link>
-          <Link href="/how-it-works" className="hover:text-gold-bright">
+          <Link href="/how-it-works" className="transition hover:text-azure-bright">
             {nav("how")}
           </Link>
-          <Link href="/art-50" className="hover:text-gold-bright">
+          <Link href="/art-50" className="transition hover:text-azure-bright">
             {nav("art50")}
           </Link>
-          <Link href="/pricing" className="hover:text-gold-bright">
+          <Link href="/pricing" className="transition hover:text-azure-bright">
             {nav("pricing")}
           </Link>
-          <Link href="/create" className="hover:text-gold-bright">
+          <Link href="/create" className="transition hover:text-coral-bright">
             {nav("create")}
           </Link>
-          <Link href="/privacy" className="hover:text-gold-bright">
+          <Link href="/privacy" className="transition hover:text-azure-bright">
             {nav("privacy")}
           </Link>
-          <Link href="/terms" className="hover:text-gold-bright">
+          <Link href="/terms" className="transition hover:text-azure-bright">
             {nav("terms")}
           </Link>
-          <Link href="/legal" className="hover:text-gold-bright">
+          <Link href="/legal" className="transition hover:text-azure-bright">
             {nav("legal")}
           </Link>
-          <Link href="/cookies" className="hover:text-gold-bright">
+          <Link href="/cookies" className="transition hover:text-azure-bright">
             {nav("cookies")}
           </Link>
-          <LanguageSwitcher />
+          <LanguageSwitcher variant="dark" />
         </nav>
         <p className="text-xs text-cream/55">
           {t("tagline")} {t("by")} © {new Date().getFullYear()}

@@ -12,21 +12,38 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         ink: {
-          DEFAULT: "#0b1220",
-          soft: "#141e33",
-          muted: "#4a5568",
+          DEFAULT: "#0a1628",
+          soft: "#12233f",
+          muted: "#475569",
+        },
+        azure: {
+          DEFAULT: "#2563eb",
+          bright: "#3b82f6",
+          deep: "#1d4ed8",
+          soft: "#dbeafe",
+        },
+        coral: {
+          DEFAULT: "#f97356",
+          bright: "#fb8a6e",
+          soft: "#fff1ed",
+        },
+        amber: {
+          DEFAULT: "#f59e0b",
+          soft: "#fef3c7",
         },
         gold: {
-          DEFAULT: "#d4a017",
-          bright: "#e8b923",
-          soft: "#fef6e0",
+          DEFAULT: "#f97356",
+          bright: "#fb8a6e",
+          soft: "#fff1ed",
         },
-        cream: "#faf8f5",
-        border: "#e8e4dc",
+        cream: "#f8fafc",
+        border: "#c8d4e8",
       },
       boxShadow: {
-        card: "0 1px 2px rgba(11,18,32,0.04), 0 8px 24px rgba(11,18,32,0.04)",
-        glow: "0 0 0 1px rgba(212,160,23,0.25), 0 8px 28px rgba(11,18,32,0.08)",
+        card: "0 2px 4px rgba(10,22,40,0.05), 0 12px 32px rgba(37,99,235,0.08)",
+        glow: "0 0 0 1px rgba(37,99,235,0.28), 0 10px 32px rgba(37,99,235,0.18)",
+        "glow-coral":
+          "0 0 0 1px rgba(249,115,86,0.3), 0 10px 28px rgba(249,115,86,0.15)",
       },
       borderRadius: {
         "2xl": "1rem",

@@ -29,60 +29,58 @@ export default async function HowItWorksPage({
   const nav = await getTranslations("nav");
 
   const steps = [
-    { n: "1", title: t("step1Title"), body: t("step1Body") },
-    { n: "2", title: t("step2Title"), body: t("step2Body") },
-    { n: "3", title: t("step3Title"), body: t("step3Body") },
-    { n: "4", title: t("step4Title"), body: t("step4Body") },
+    { n: "1", title: t("step1Title"), body: t("step1Body"), accent: "text-azure" },
+    { n: "2", title: t("step2Title"), body: t("step2Body"), accent: "text-coral" },
+    { n: "3", title: t("step3Title"), body: t("step3Body"), accent: "text-amber" },
+    { n: "4", title: t("step4Title"), body: t("step4Body"), accent: "text-azure" },
   ];
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12">
-      <HreflangLinks path="/how-it-works" />
-      <p className="text-sm text-slate-500">
-        <Link href="/" className="hover:underline">
-          {nav("home")}
+    <div className="hero-gradient-light">
+      <div className="mx-auto max-w-3xl px-4 py-12">
+        <HreflangLinks path="/how-it-works" />
+        <p className="text-sm text-ink-muted">
+          <Link href="/" className="font-medium text-azure hover:underline">
+            {nav("home")}
+          </Link>
+          {" / "}
+          {t("title")}
+        </p>
+        <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
+          {t("title")}
+        </h1>
+        <p className="mt-3 text-ink-muted">{t("lead")}</p>
+        <div className="mt-6">
+          <DisclaimerBanner />
+        </div>
+        <ol className="mt-10 space-y-6">
+          {steps.map((s) => (
+            <li key={s.n} className="card-accent p-6 pl-7">
+              <p
+                className={`text-xs font-bold uppercase tracking-wider ${s.accent}`}
+              >
+                {t("stepLabel", { step: s.n })}
+              </p>
+              <h2 className="mt-1 text-lg font-bold text-ink">{s.title}</h2>
+              <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                {s.body}
+              </p>
+            </li>
+          ))}
+        </ol>
+        <Link href="/create" className="btn-coral mt-10">
+          {t("cta")}
         </Link>
-        {" / "}
-        {t("title")}
-      </p>
-      <h1 className="mt-2 text-3xl font-bold text-slate-900">{t("title")}</h1>
-      <p className="mt-3 text-slate-600">{t("lead")}</p>
-      <div className="mt-6">
-        <DisclaimerBanner />
+        <p className="mt-8 text-sm text-ink-muted">
+          <Link href="/art-50" className="font-medium text-azure underline">
+            {nav("art50")}
+          </Link>
+          {" · "}
+          <Link href="/pricing" className="font-medium text-azure underline">
+            {nav("pricing")}
+          </Link>
+        </p>
       </div>
-      <ol className="mt-10 space-y-6">
-        {steps.map((s) => (
-          <li
-            key={s.n}
-            className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
-          >
-            <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
-              {t("stepLabel", { step: s.n })}
-            </p>
-            <h2 className="mt-1 text-lg font-semibold text-slate-900">
-              {s.title}
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-slate-700">
-              {s.body}
-            </p>
-          </li>
-        ))}
-      </ol>
-      <Link
-        href="/create"
-        className="mt-10 inline-block rounded-md bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
-      >
-        {t("cta")}
-      </Link>
-      <p className="mt-8 text-sm text-slate-600">
-        <Link href="/art-50" className="underline">
-          {nav("art50")}
-        </Link>
-        {" · "}
-        <Link href="/pricing" className="underline">
-          {nav("pricing")}
-        </Link>
-      </p>
     </div>
   );
 }
