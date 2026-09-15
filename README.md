@@ -79,6 +79,22 @@ See `.env.example`:
 5. **Hosting** — Vercel (or similar) with durable storage story; file DB will not survive serverless without external store.
 6. **Legal review** — counsel for Art. 50 positioning; product remains declaration/audit trail only.
 
+
+## Locales (i18n)
+
+Uses **next-intl** with `localePrefix: "as-needed"`:
+
+| Locale | URL prefix |
+|--------|------------|
+| English (`en`, default) | none — `/`, `/pricing`, `/art-50`, `/how-it-works`, `/create`, `/r/[id]` |
+| German (`de`) | `/de/...` |
+| French (`fr`) | `/fr/...` |
+| Italian (`it`) | `/it/...` |
+| Spanish (`es`) | `/es/...` |
+| Polish (`pl`) | `/pl/...` |
+
+Marketing pages are indexable with hreflang + sitemap. Public records `/r/[id]` (and locale-prefixed equivalents) are **noindex**. Message catalogs live in `src/messages/{locale}.json`.
+
 ## Hard isolation
 
 This project is **greenfield**. Do not remix Bytewitness / pngify.pro engines. Do not couple to DealClear / WinRoom.

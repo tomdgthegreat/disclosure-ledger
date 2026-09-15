@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import type { DisclosureRecord } from "@/lib/types";
 import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 
 export default function OpsPage() {
+  const t = useTranslations("ops");
   const [password, setPassword] = useState("");
   const [records, setRecords] = useState<DisclosureRecord[] | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -28,14 +30,12 @@ export default function OpsPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">
-      <h1 className="text-2xl font-bold text-slate-900">Ops (minimal)</h1>
-      <p className="mt-2 text-sm text-slate-600">
-        Password-gated list of records. Set <code>OPS_PASSWORD</code> in env.
-      </p>
+      <h1 className="text-2xl font-bold text-slate-900">{t("title")}</h1>
+      <p className="mt-2 text-sm text-slate-600">{t("lead")}</p>
       <div className="mt-4">
         <DisclaimerBanner />
       </div>
-      <div className="mt-6 flex gap-2">
+      <div className="mt-6 flex flex-wrap gap-2">
         <input
           type="password"
           value={password}
@@ -48,30 +48,28 @@ export default function OpsPage() {
           onClick={() => void load()}
           className="rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white"
         >
-          Load
+          {t("load")}
         </button>
         {password && (
           <a
             href={`/api/ops?format=csv&password=${encodeURIComponent(password)}`}
             className="rounded-md border border-slate-300 px-4 py-2 text-sm"
           >
-            CSV export all
+            {t("csv")}
           </a>
         )}
       </div>
-      {error && (
-        <p className="mt-4 text-sm text-red-700">{error}</p>
-      )}
+      {error && <p className="mt-4 text-sm text-red-700">{error}</p>}
       {records && (
         <div className="mt-6 overflow-x-auto rounded-lg border border-slate-200 bg-white">
           <table className="min-w-full text-left text-sm">
             <thead className="border-b bg-slate-50 text-xs uppercase text-slate-500">
               <tr>
-                <th className="px-3 py-2">ID</th>
-                <th className="px-3 py-2">Created</th>
-                <th className="px-3 py-2">Hash</th>
-                <th className="px-3 py-2">AI</th>
-                <th className="px-3 py-2">File</th>
+                <th className="px-3 py-2">{t("colId")}</th>
+                <th className="px-3 py-2">{t("colCreated")}</th>
+                <th className="px-3 py-2">{t("colHash")}</th>
+                <th className="px-3 py-2">{t("colAi")}</th>
+                <th className="px-3 py-2">{t("colFile")}</th>
               </tr>
             </thead>
             <tbody>
@@ -93,7 +91,7 @@ export default function OpsPage() {
             </tbody>
           </table>
           {records.length === 0 && (
-            <p className="p-4 text-sm text-slate-500">No records yet.</p>
+            <p className="p-4 text-sm text-slate-500">{t("empty")}</p>
           )}
         </div>
       )}

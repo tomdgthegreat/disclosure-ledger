@@ -1,7 +1,8 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { useRouter } from "@/i18n/routing";
 import { sha256File } from "@/lib/clientHash";
 import { probeProvenance } from "@/lib/clientProvenance";
 import type { AiDeclaration, ProvenanceSummary } from "@/lib/types";
@@ -16,6 +17,7 @@ type Phase =
   | "error";
 
 export function CreateRecordForm() {
+  const t = useTranslations("form");
   const router = useRouter();
   const [phase, setPhase] = useState<Phase>("idle");
   const [file, setFile] = useState<File | null>(null);
@@ -28,37 +30,40 @@ export function CreateRecordForm() {
   const [gateMessage, setGateMessage] = useState<string | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
 
-  const onFile = useCallback(async (f: File | null) => {
-    setError(null);
-    setGateMessage(null);
-    if (!f) {
-      setFile(null);
-      setHash("");
-      setProvenance(null);
-      setPreviewUrl(null);
-      setPhase("idle");
-      return;
-    }
-    if (!f.type.startsWith("image/")) {
-      setError("Please drop an image file (JPEG, PNG, WebP, etc.).");
-      return;
-    }
-    setFile(f);
-    setPreviewUrl(URL.createObjectURL(f));
-    setPhase("hashing");
-    try {
-      const [h, prov] = await Promise.all([
-        sha256File(f),
-        probeProvenance(f),
-      ]);
-      setHash(h);
-      setProvenance(prov);
-      setPhase("ready");
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "Failed to process file");
-      setPhase("error");
-    }
-  }, []);
+  const onFile = useCallback(
+    async (f: File | null) => {
+      setError(null);
+      setGateMessage(null);
+      if (!f) {
+        setFile(null);
+        setHash("");
+        setProvenance(null);
+        setPreviewUrl(null);
+        setPhase("idle");
+        return;
+      }
+      if (!f.type.startsWith("image/")) {
+        setError(t("needImage"));
+        return;
+      }
+      setFile(f);
+      setPreviewUrl(URL.createObjectURL(f));
+      setPhase("hashing");
+      try {
+        const [h, prov] = await Promise.all([
+          sha256File(f),
+          probeProvenance(f),
+        ]);
+        setHash(h);
+        setProvenance(prov);
+        setPhase("ready");
+      } catch (e) {
+        setError(e instanceof Error ? e.message : "Failed to process file");
+        setPhase("error");
+      }
+    },
+    [t]
+  );
 
   const onDrop = useCallback(
     (e: React.DragEvent) => {
@@ -97,10 +102,7 @@ export function CreateRecordForm() {
         message?: string;
       };
       if (res.status === 402 || data.gated) {
-        setGateMessage(
-          data.message ??
-            "Free tier used (3 records). Subscribe at ~$29/mo to continue."
-        );
+        setGateMessage(data.message ?? t("gatedDefault"));
         setPhase("gated");
         return;
       }
@@ -144,16 +146,10 @@ export function CreateRecordForm() {
         onDrop={onDrop}
         className="rounded-xl border-2 border-dashed border-slate-300 bg-white p-8 text-center transition hover:border-slate-400"
       >
-        <p className="text-sm font-medium text-slate-800">
-          Drop a publish-bound image here
-        </p>
-        <p className="mt-1 text-xs text-slate-500">
-          Hashing and provenance scan run in your browser. The image bytes are
-          not uploaded for this MVP — only the hash + your declaration are
-          stored.
-        </p>
+        <p className="text-sm font-medium text-slate-800">{t("dropTitle")}</p>
+        <p className="mt-1 text-xs text-slate-500">{t("dropHint")}</p>
         <label className="mt-4 inline-block cursor-pointer rounded-md bg-slate-100 px-4 py-2 text-sm font-medium text-slate-800 hover:bg-slate-200">
-          Choose file
+          {t("chooseFile")}
           <input
             type="file"
             accept="image/*"
@@ -165,20 +161,23 @@ export function CreateRecordForm() {
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={previewUrl}
-            alt="Selected preview"
+            alt={t("previewAlt")}
             className="mx-auto mt-4 max-h-48 rounded-lg border border-slate-200 object-contain"
           />
         )}
         {phase === "hashing" && (
-          <p className="mt-3 text-sm text-slate-600">Computing SHA-256…</p>
+          <p className="mt-3 text-sm text-slate-600">{t("hashing")}</p>
         )}
       </div>
 
       {hash && provenance && (
-        <form onSubmit={onSubmit} className="space-y-5 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+        <form
+          onSubmit={onSubmit}
+          className="space-y-5 rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+        >
           <div>
             <h3 className="text-sm font-semibold text-slate-900">
-              Content hash (SHA-256)
+              {t("hashTitle")}
             </h3>
             <code className="mt-1 block break-all rounded bg-slate-50 p-2 text-xs text-slate-700">
               {hash}
@@ -191,12 +190,10 @@ export function CreateRecordForm() {
 
           <div>
             <h3 className="text-sm font-semibold text-slate-900">
-              Provenance scan (best-effort)
+              {t("provTitle")}
             </h3>
             <p className="mt-1 text-sm text-slate-700">
-              {provenance.found
-                ? "Possible markers found — not validated."
-                : "No clear C2PA/Content Credentials markers found."}
+              {provenance.found ? t("provFound") : t("provNone")}
             </p>
             <p className="mt-1 text-xs text-slate-500">{provenance.details}</p>
             {provenance.signals.length > 0 && (
@@ -207,25 +204,23 @@ export function CreateRecordForm() {
               </ul>
             )}
             <p className="mt-2 text-xs italic text-slate-500">
-              Method: {provenance.method}
+              {t("method", { method: provenance.method })}
             </p>
           </div>
 
           <fieldset>
             <legend className="text-sm font-semibold text-slate-900">
-              Self-reported AI declaration
+              {t("declareLegend")}
             </legend>
-            <p className="mt-1 text-xs text-slate-500">
-              You are declaring this yourself. We do not verify it.
-            </p>
+            <p className="mt-1 text-xs text-slate-500">{t("declareHint")}</p>
             <div className="mt-3 flex flex-wrap gap-3">
               {(
                 [
-                  ["no", "No AI (self-reported)"],
-                  ["yes", "AI-generated / AI-altered (self-reported)"],
-                  ["partial", "Partial / mixed (self-reported)"],
+                  ["no", "aiNo"],
+                  ["yes", "aiYes"],
+                  ["partial", "aiPartial"],
                 ] as const
-              ).map(([value, label]) => (
+              ).map(([value, key]) => (
                 <label
                   key={value}
                   className={`flex cursor-pointer items-center gap-2 rounded-lg border px-3 py-2 text-sm ${
@@ -242,7 +237,7 @@ export function CreateRecordForm() {
                     onChange={() => setAiDeclaration(value)}
                     className="sr-only"
                   />
-                  {label}
+                  {t(key)}
                 </label>
               ))}
             </div>
@@ -253,7 +248,7 @@ export function CreateRecordForm() {
               htmlFor="notes"
               className="text-sm font-semibold text-slate-900"
             >
-              Short notes (optional)
+              {t("notes")}
             </label>
             <textarea
               id="notes"
@@ -262,7 +257,7 @@ export function CreateRecordForm() {
               maxLength={2000}
               rows={3}
               className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm"
-              placeholder="e.g. background inpainted; face untouched"
+              placeholder={t("notesPlaceholder")}
             />
           </div>
 
@@ -271,7 +266,7 @@ export function CreateRecordForm() {
               htmlFor="email"
               className="text-sm font-semibold text-slate-900"
             >
-              Contact email (optional)
+              {t("email")}
             </label>
             <input
               id="email"
@@ -279,7 +274,7 @@ export function CreateRecordForm() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm"
-              placeholder="for account / billing later"
+              placeholder={t("emailPlaceholder")}
             />
           </div>
 
@@ -292,20 +287,16 @@ export function CreateRecordForm() {
           {phase === "gated" && (
             <div className="space-y-3 rounded-md border border-slate-300 bg-slate-50 p-4">
               <p className="text-sm text-slate-800">
-                {gateMessage ??
-                  "Free tier (3 records) used. Continue at ~$29/mo."}
+                {gateMessage ?? t("gatedDefault")}
               </p>
               <button
                 type="button"
                 onClick={() => void startCheckout()}
                 className="rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800"
               >
-                Continue with Stripe Checkout (~$29/mo)
+                {t("checkout")}
               </button>
-              <p className="text-xs text-slate-500">
-                Checkout is env-based and may be stubbed until Stripe keys are
-                set.
-              </p>
+              <p className="text-xs text-slate-500">{t("checkoutStub")}</p>
             </div>
           )}
 
@@ -315,9 +306,7 @@ export function CreateRecordForm() {
               disabled={phase === "submitting"}
               className="w-full rounded-md bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800 disabled:opacity-60"
             >
-              {phase === "submitting"
-                ? "Saving record…"
-                : "Publish permanent public record"}
+              {phase === "submitting" ? t("submitting") : t("submit")}
             </button>
           )}
         </form>
