@@ -30,7 +30,10 @@ export default async function CreatePage({
     <div className="hero-gradient-light">
       <div className="mx-auto max-w-2xl px-4 py-12">
         <HreflangLinks path="/create" />
-        <p className="eyebrow">Disclosure Ledger</p>
+        <div className="flex flex-wrap items-center gap-2">
+          <p className="eyebrow">Disclosure Ledger</p>
+          <span className="pill-soft-coral" aria-hidden>✨</span>
+        </div>
         <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
           {t("title")}
         </h1>

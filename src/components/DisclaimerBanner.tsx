@@ -12,21 +12,21 @@ export function DisclaimerBanner({
   const t = useTranslations("disclaimer");
   const shell =
     variant === "inverse"
-      ? "border-azure/35 bg-ink-soft text-cream"
-      : "border-amber/40 bg-amber-soft/90 text-ink shadow-sm";
+      ? "border-0 bg-white/10 text-cream backdrop-blur-sm"
+      : "border-0 bg-gradient-to-r from-amber-soft to-coral-soft/80 text-ink shadow-[0_6px_20px_rgba(255,176,32,0.2)]";
   const bodyTone =
     variant === "inverse" ? "text-cream/80" : "text-ink-muted";
   const dot =
-    variant === "inverse" ? "bg-coral-bright" : "bg-amber";
+    variant === "inverse" ? "bg-coral-bright" : "bg-coral";
 
   return (
     <aside
-      className={`rounded-2xl border px-4 py-3.5 text-sm ${shell} ${className}`}
+      className={`rounded-3xl px-4 py-3.5 text-sm ${shell} ${className}`}
       role="note"
     >
       <p className="flex items-center gap-2 font-semibold tracking-tight">
         <span
-          className={`inline-block h-1.5 w-1.5 shrink-0 rounded-full ${dot}`}
+          className={`inline-block h-2 w-2 shrink-0 rounded-full ${dot} shadow-[0_0_0_3px_rgba(255,90,60,0.25)]`}
           aria-hidden
         />
         {t("title")}

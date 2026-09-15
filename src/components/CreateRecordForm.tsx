@@ -144,7 +144,7 @@ export function CreateRecordForm() {
       <div
         onDragOver={(e) => e.preventDefault()}
         onDrop={onDrop}
-        className="card-surface border-2 border-dashed border-azure/30 bg-azure-soft/20 p-8 text-center transition hover:border-azure/60 hover:bg-azure-soft/40"
+        className="rounded-3xl bg-gradient-to-br from-azure-soft via-azure-soft/50 to-coral-soft/40 p-8 text-center shadow-[0_8px_32px_rgba(26,108,255,0.14)] ring-2 ring-dashed ring-azure/35 transition hover:from-azure-soft hover:to-coral-soft/60 hover:ring-azure/60"
       >
         <p className="text-sm font-medium text-ink">{t("dropTitle")}</p>
         <p className="mt-1 text-xs text-ink-muted">{t("dropHint")}</p>
@@ -162,7 +162,7 @@ export function CreateRecordForm() {
           <img
             src={previewUrl}
             alt={t("previewAlt")}
-            className="mx-auto mt-4 max-h-48 rounded-lg border border-azure/20 object-contain"
+            className="mx-auto mt-4 max-h-48 rounded-2xl object-contain shadow-[0_8px_24px_rgba(26,108,255,0.2)]"
           />
         )}
         {phase === "hashing" && (
@@ -173,7 +173,7 @@ export function CreateRecordForm() {
       {hash && provenance && (
         <form
           onSubmit={onSubmit}
-          className="card-surface space-y-5 p-6"
+          className="card-tinted space-y-5 p-6 sm:p-7"
         >
           <div>
             <h3 className="text-sm font-semibold text-ink">
@@ -223,10 +223,10 @@ export function CreateRecordForm() {
               ).map(([value, key]) => (
                 <label
                   key={value}
-                  className={`flex cursor-pointer items-center gap-2 rounded-lg border px-3 py-2 text-sm ${
+                  className={`flex cursor-pointer items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition ${
                     aiDeclaration === value
-                      ? "border-azure bg-azure text-white shadow-[0_4px_12px_rgba(37,99,235,0.3)]"
-                      : "border-border bg-white text-ink hover:border-azure/40"
+                      ? "bg-azure text-white shadow-[0_6px_16px_rgba(26,108,255,0.4)]"
+                      : "bg-white/70 text-ink shadow-sm hover:bg-white"
                   }`}
                 >
                   <input
@@ -256,7 +256,7 @@ export function CreateRecordForm() {
               onChange={(e) => setNotes(e.target.value)}
               maxLength={2000}
               rows={3}
-              className="mt-1 w-full rounded-xl border border-border bg-white px-3 py-2 text-sm text-ink shadow-sm focus:border-azure focus:outline-none focus:ring-2 focus:ring-azure/25"
+              className="mt-1 w-full rounded-2xl border-0 bg-white/80 px-3 py-2.5 text-sm text-ink shadow-[0_2px_8px_rgba(26,108,255,0.08)] focus:outline-none focus:ring-2 focus:ring-azure/35"
               placeholder={t("notesPlaceholder")}
             />
           </div>
@@ -273,7 +273,7 @@ export function CreateRecordForm() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-border bg-white px-3 py-2 text-sm text-ink shadow-sm focus:border-azure focus:outline-none focus:ring-2 focus:ring-azure/25"
+              className="mt-1 w-full rounded-2xl border-0 bg-white/80 px-3 py-2.5 text-sm text-ink shadow-[0_2px_8px_rgba(26,108,255,0.08)] focus:outline-none focus:ring-2 focus:ring-azure/35"
               placeholder={t("emailPlaceholder")}
             />
             <p className="mt-1 text-xs text-ink-muted">
@@ -288,13 +288,13 @@ export function CreateRecordForm() {
           </div>
 
           {error && (
-            <p className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-800">
+            <p className="rounded-2xl bg-coral-soft px-3 py-2 text-sm font-medium text-[#b8321a]">
               {error}
             </p>
           )}
 
           {phase === "gated" && (
-            <div className="space-y-3 rounded-xl border border-coral/30 bg-coral-soft p-4">
+            <div className="space-y-3 rounded-3xl bg-gradient-to-br from-coral-soft to-amber-soft/60 p-5 shadow-[0_8px_24px_rgba(255,90,60,0.18)]">
               <p className="text-sm text-ink">
                 {gateMessage ?? t("gatedDefault")}
               </p>

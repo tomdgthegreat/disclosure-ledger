@@ -7,7 +7,7 @@ export async function SiteFooter() {
   const t = await getTranslations("footer");
   const nav = await getTranslations("nav");
   return (
-    <footer className="mt-auto border-t border-azure/20 bg-ink text-cream">
+    <footer className="mt-auto border-t border-azure/30 bg-gradient-to-b from-ink-soft to-ink text-cream">
       <div className="mx-auto max-w-5xl space-y-6 px-4 py-10">
         <DisclaimerBanner variant="inverse" />
         <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-cream/80">

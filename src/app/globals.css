@@ -3,123 +3,132 @@
 @tailwind utilities;
 
 :root {
-  /* Cool European trust base — deep navy + vivid azure + warm coral */
-  --background: #eef3fb;
-  --foreground: #0a1628;
-  --ink: #0a1628;
-  --ink-soft: #12233f;
-  --ink-muted: #475569;
-  --azure: #2563eb;
-  --azure-bright: #3b82f6;
-  --azure-deep: #1d4ed8;
-  --azure-soft: #dbeafe;
-  --coral: #f97356;
-  --coral-bright: #fb8a6e;
-  --coral-soft: #fff1ed;
-  --amber: #f59e0b;
-  --amber-soft: #fef3c7;
-  /* Legacy aliases → coral energy (replaces timid gold-on-beige) */
-  --gold: #f97356;
-  --gold-bright: #fb8a6e;
-  --gold-soft: #fff1ed;
-  --cream: #f8fafc;
+  /* Punchy consumer-fintech palette — azure / coral / amber cranked up */
+  --background: #e8f2ff;
+  --foreground: #06101f;
+  --ink: #06101f;
+  --ink-soft: #0d1b33;
+  --ink-muted: #3d5270;
+  --azure: #1a6cff;
+  --azure-bright: #3d8bff;
+  --azure-deep: #0052e0;
+  --azure-soft: #cfe2ff;
+  --coral: #ff5a3c;
+  --coral-bright: #ff7a62;
+  --coral-soft: #ffe5df;
+  --amber: #ffb020;
+  --amber-soft: #ffe8b0;
+  /* Legacy aliases → coral energy */
+  --gold: #ff5a3c;
+  --gold-bright: #ff7a62;
+  --gold-soft: #ffe5df;
+  --cream: #f4f8ff;
   --card: #ffffff;
-  --border: #c8d4e8;
+  --border: #a8c4f0;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background:
+    radial-gradient(ellipse 80% 50% at 0% 0%, color-mix(in srgb, var(--azure) 14%, transparent), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 10%, color-mix(in srgb, var(--coral) 12%, transparent), transparent 50%),
+    radial-gradient(ellipse 50% 35% at 70% 100%, color-mix(in srgb, var(--amber) 10%, transparent), transparent 50%),
+    var(--background);
   min-height: 100vh;
 }
 
 @layer base {
   ::selection {
-    background: color-mix(in srgb, var(--azure) 32%, white);
+    background: color-mix(in srgb, var(--azure) 38%, white);
     color: var(--ink);
   }
 }
 
 @layer components {
-  /* Dark navy→cobalt hero for landing impact */
+  /* Bold navy→electric azure hero with coral/amber pops */
   .hero-gradient {
     background:
       radial-gradient(
-        ellipse 90% 70% at 8% -15%,
-        color-mix(in srgb, var(--azure-bright) 45%, transparent),
+        ellipse 95% 75% at 5% -20%,
+        color-mix(in srgb, var(--azure-bright) 55%, transparent),
         transparent 58%
       ),
       radial-gradient(
-        ellipse 70% 55% at 92% 5%,
-        color-mix(in srgb, var(--coral) 32%, transparent),
+        ellipse 75% 60% at 95% 0%,
+        color-mix(in srgb, var(--coral) 42%, transparent),
         transparent 52%
       ),
       radial-gradient(
-        ellipse 50% 40% at 55% 110%,
-        color-mix(in srgb, var(--amber) 18%, transparent),
+        ellipse 55% 45% at 50% 115%,
+        color-mix(in srgb, var(--amber) 28%, transparent),
         transparent 55%
       ),
       linear-gradient(
-        165deg,
-        #07101f 0%,
-        #0a1628 22%,
-        #12233f 48%,
-        #1a3a6e 72%,
-        #1d4ed8 100%
+        160deg,
+        #040b18 0%,
+        #0a1628 20%,
+        #123058 48%,
+        #1a6cff 78%,
+        #3d8bff 100%
       );
   }
 
-  /* Soft tinted hero for forms / secondary pages */
+  /* Soft saturated wash for forms / secondary marketing */
   .hero-gradient-light {
     background:
       radial-gradient(
-        ellipse 85% 65% at 12% -10%,
-        color-mix(in srgb, var(--azure) 28%, transparent),
+        ellipse 90% 70% at 8% -12%,
+        color-mix(in srgb, var(--azure) 36%, transparent),
         transparent 55%
       ),
       radial-gradient(
-        ellipse 65% 50% at 95% 0%,
-        color-mix(in srgb, var(--coral) 20%, transparent),
+        ellipse 70% 55% at 98% 0%,
+        color-mix(in srgb, var(--coral) 28%, transparent),
         transparent 50%
       ),
       radial-gradient(
-        ellipse 40% 35% at 60% 100%,
-        color-mix(in srgb, var(--amber) 12%, transparent),
+        ellipse 45% 40% at 55% 100%,
+        color-mix(in srgb, var(--amber) 20%, transparent),
         transparent 50%
       ),
-      linear-gradient(180deg, #e8f0fe 0%, #eef3fb 45%, #eef3fb 100%);
+      linear-gradient(180deg, #d6e8ff 0%, #e8f2ff 42%, #fff5f0 100%);
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-azure px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(37,99,235,0.35)] transition hover:bg-azure-deep hover:shadow-[0_6px_20px_rgba(37,99,235,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azure-bright;
+    @apply inline-flex items-center justify-center rounded-full bg-azure px-5 py-2.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(26,108,255,0.45)] transition hover:bg-azure-deep hover:shadow-[0_8px_28px_rgba(26,108,255,0.55)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azure-bright;
   }
 
   .btn-coral {
-    @apply inline-flex items-center justify-center rounded-full bg-coral px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(249,115,86,0.35)] transition hover:bg-[#e85f42] hover:shadow-[0_6px_20px_rgba(249,115,86,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coral-bright;
+    @apply inline-flex items-center justify-center rounded-full bg-coral px-5 py-2.5 text-sm font-semibold text-white shadow-[0_6px_20px_rgba(255,90,60,0.45)] transition hover:bg-[#e8482e] hover:shadow-[0_8px_28px_rgba(255,90,60,0.55)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coral-bright;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-azure/25 bg-white/90 px-5 py-2.5 text-sm font-semibold text-ink shadow-sm transition hover:border-azure/45 hover:bg-azure-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azure;
+    @apply inline-flex items-center justify-center rounded-full border-0 bg-azure-soft/80 px-5 py-2.5 text-sm font-semibold text-ink shadow-[0_4px_14px_rgba(26,108,255,0.12)] transition hover:bg-azure-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azure;
   }
 
   .btn-secondary-on-dark {
-    @apply inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white shadow-sm backdrop-blur-sm transition hover:border-white/60 hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+    @apply inline-flex items-center justify-center rounded-full border border-white/35 bg-white/15 px-5 py-2.5 text-sm font-semibold text-white shadow-sm backdrop-blur-sm transition hover:border-white/55 hover:bg-white/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
   }
 
+  /* Soft tinted panels — NO Word-style white bordered boxes */
   .card-surface {
-    @apply rounded-2xl border border-border/80 bg-white/95 shadow-[0_2px_4px_rgba(10,22,40,0.05),0_12px_32px_rgba(37,99,235,0.08)];
+    @apply rounded-3xl border-0 bg-gradient-to-br from-azure-soft/70 via-cream/90 to-white/80 shadow-[0_8px_32px_rgba(26,108,255,0.12)];
   }
 
   .card-tinted {
-    @apply rounded-2xl border border-azure/20 bg-azure-soft/50 shadow-[0_2px_4px_rgba(10,22,40,0.04),0_10px_28px_rgba(37,99,235,0.1)];
+    @apply rounded-3xl border-0 bg-gradient-to-br from-azure-soft to-azure-soft/40 shadow-[0_8px_28px_rgba(26,108,255,0.14)];
   }
 
   .card-coral {
-    @apply rounded-2xl border border-coral/25 bg-coral-soft/70 shadow-[0_2px_4px_rgba(10,22,40,0.04),0_10px_28px_rgba(249,115,86,0.1)];
+    @apply rounded-3xl border-0 bg-gradient-to-br from-coral-soft to-coral-soft/50 shadow-[0_8px_28px_rgba(255,90,60,0.14)];
+  }
+
+  .card-amber {
+    @apply rounded-3xl border-0 bg-gradient-to-br from-amber-soft to-amber-soft/45 shadow-[0_8px_28px_rgba(255,176,32,0.16)];
   }
 
   .card-accent {
-    @apply relative overflow-hidden rounded-2xl border border-border/80 bg-white shadow-[0_2px_4px_rgba(10,22,40,0.05),0_12px_32px_rgba(37,99,235,0.1)];
+    @apply relative overflow-hidden rounded-3xl border-0 bg-gradient-to-br from-white/70 via-azure-soft/40 to-cream shadow-[0_8px_32px_rgba(26,108,255,0.12)];
   }
 
   .card-accent::before {
@@ -128,9 +137,37 @@ body {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 4px;
-    background: linear-gradient(180deg, var(--azure), var(--coral));
-    border-radius: 2px 0 0 2px;
+    width: 5px;
+    background: linear-gradient(180deg, var(--azure), var(--coral), var(--amber));
+    border-radius: 999px 0 0 999px;
+  }
+
+  .card-gradient {
+    @apply relative overflow-hidden rounded-3xl border-0 bg-gradient-to-br from-azure via-azure-deep to-[#123058] text-white shadow-[0_12px_40px_rgba(26,108,255,0.4)];
+  }
+
+  .pill-chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold tracking-wide;
+  }
+
+  .pill-azure {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-azure px-3 py-1 text-xs font-bold tracking-wide text-white shadow-[0_4px_12px_rgba(26,108,255,0.35)];
+  }
+
+  .pill-coral {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-coral px-3 py-1 text-xs font-bold tracking-wide text-white shadow-[0_4px_12px_rgba(255,90,60,0.35)];
+  }
+
+  .pill-amber {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-amber px-3 py-1 text-xs font-bold tracking-wide text-ink shadow-[0_4px_12px_rgba(255,176,32,0.4)];
+  }
+
+  .pill-soft-azure {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-azure-soft px-3 py-1 text-xs font-bold tracking-wide text-azure-deep;
+  }
+
+  .pill-soft-coral {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-coral-soft px-3 py-1 text-xs font-bold tracking-wide text-[#c93a22];
   }
 
   .section-title {
@@ -142,7 +179,11 @@ body {
   }
 
   .eyebrow-on-dark {
-    @apply text-xs font-bold uppercase tracking-[0.16em] text-coral-bright;
+    @apply text-xs font-bold uppercase tracking-[0.16em] text-amber;
+  }
+
+  .blob-deco {
+    @apply pointer-events-none absolute -z-0 rounded-full blur-2xl opacity-60;
   }
 }
 
