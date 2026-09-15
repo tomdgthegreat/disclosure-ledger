@@ -5,7 +5,7 @@
     "homeTitle": "Disclosure Ledger — Déclaration d’image & piste d’audit",
     "homeDescription": "Déclarations d’IA auto-déclarées et empreintes de contenu pour images destinées à la publication. Outil de déclaration / piste d’audit uniquement — pas un produit de conformité ou de vérification.",
     "pricingTitle": "Tarifs — Disclosure Ledger",
-    "pricingDescription": "3 dossiers gratuits, puis ~29 $/mois pour les équipes. Déclarations auto-déclarées et piste d’audit par hash — pas un produit de conformité.",
+    "pricingDescription": "3 dossiers gratuits, puis 29 €/mois pour les équipes. Déclarations auto-déclarées et piste d’audit par hash — pas un produit de conformité.",
     "art50Title": "Contexte article 50 du règlement IA de l’UE — Disclosure Ledger",
     "art50Description": "Contexte en langage clair sur les obligations de transparence de l’article 50, et ce que Disclosure Ledger est (et n’est pas).",
     "howTitle": "Comment fonctionne Disclosure Ledger",
@@ -75,7 +75,7 @@
     "freePrice": "3 dossiers",
     "freeBody": "Suffisant pour tester le flux de bout en bout. Aucune carte pour les trois premiers dossiers de cette instance.",
     "teamTitle": "Équipe",
-    "teamPrice": "~29 $",
+    "teamPrice": "29 €",
     "teamPeriod": "/mois",
     "teamBody": "Après l’essai gratuit. Stripe Checkout (basé sur l’environnement ; stub jusqu’à configuration des clés). Pour agences et marques qui publient régulièrement.",
     "cta": "Commencer avec 3 gratuits",
@@ -124,7 +124,7 @@
   },
   "create": {
     "title": "Créer un dossier de divulgation",
-    "lead": "Les 3 premiers dossiers sont gratuits sur cette instance. Ensuite, une porte souple vers ~29 $/mois (Stripe Checkout si configuré)."
+    "lead": "Les 3 premiers dossiers sont gratuits sur cette instance. Ensuite, une porte souple vers 29 €/mois (Stripe Checkout si configuré)."
   },
   "form": {
     "dropTitle": "Déposez ici une image destinée à la publication",
@@ -146,8 +146,8 @@
     "notesPlaceholder": "ex. arrière-plan inpainté ; visage intact",
     "email": "E-mail de contact (optionnel)",
     "emailPlaceholder": "pour compte / facturation plus tard",
-    "gatedDefault": "Essai gratuit utilisé (3 dossiers). Abonnez-vous à ~29 $/mois pour continuer.",
-    "checkout": "Continuer avec Stripe Checkout (~29 $/mois)",
+    "gatedDefault": "Essai gratuit utilisé (3 dossiers). Abonnez-vous à 29 €/mois pour continuer.",
+    "checkout": "Continuer avec Stripe Checkout (29 €/mois)",
     "checkoutStub": "Checkout est basé sur l’environnement et peut être stub jusqu’à la configuration des clés Stripe.",
     "submit": "Publier un dossier public permanent",
     "submitting": "Enregistrement du dossier…",
@@ -191,7 +191,7 @@
   },
   "team": {
     "title": "Équipe",
-    "price": "~29 $",
+    "price": "29 €",
     "period": "/mois",
     "body": "Après l’essai gratuit. Stripe Checkout (basé sur l’environnement ; stub jusqu’à configuration des clés). Pour agences et marques qui publient régulièrement.",
     "cta": "Commencer avec 3 gratuits"

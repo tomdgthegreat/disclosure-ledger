@@ -1,10 +1,10 @@
 /**
- * Stripe Checkout stub for $29/mo after free tier.
+ * Stripe Checkout stub for €29/mo after free tier.
  * Set STRIPE_SECRET_KEY + STRIPE_PRICE_ID to enable live checkout sessions.
  * Without keys, the UI still shows pricing and soft-gates create after 3 records.
  */
 
-export const MONTHLY_PRICE_USD = 29;
+export const MONTHLY_PRICE_EUR = 29;
 
 export function isStripeConfigured(): boolean {
   return Boolean(

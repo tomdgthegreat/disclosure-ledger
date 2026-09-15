@@ -75,7 +75,7 @@ export async function POST(req: NextRequest) {
           gated: true,
           error: "free_tier_exhausted",
           message: stripeReady
-            ? "Free tier (3 records) used. Subscribe via Stripe Checkout (~$29/mo) to continue."
+            ? "Free tier (3 records) used. Subscribe via Stripe Checkout (€29/mo) to continue."
             : "Free tier (3 records) used. Soft-gated: Stripe is not configured yet. Set STRIPE_SECRET_KEY and STRIPE_PRICE_ID, or clear data/records.json for local testing.",
           freeLimit: FREE_TIER_LIMIT,
           stripeConfigured: stripeReady,

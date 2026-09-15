@@ -8,7 +8,7 @@ Built with **Next.js 14 + TypeScript + Tailwind**. Vercel-friendly scaffold.
 
 ## What works (local)
 
-1. **Landing** — honest problem framing, how it works, 3 free then ~$29/mo, hard non-claims.
+1. **Landing** — honest problem framing, how it works, 3 free then €29/mo, hard non-claims.
 2. **Create flow** (`/create`)
    - Client-side image drop
    - Browser SHA-256 of file bytes (Web Crypto)
@@ -59,7 +59,7 @@ See `.env.example`:
 | Var | Purpose |
 |-----|---------|
 | `STRIPE_SECRET_KEY` | Stripe secret (Checkout) |
-| `STRIPE_PRICE_ID` | Price id for ~$29/mo |
+| `STRIPE_PRICE_ID` | Price id for €29/mo (EUR recurring) |
 | `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Future client use |
 | `OPS_PASSWORD` | Gate `/ops` + `/api/ops` |
 | `NEXT_PUBLIC_APP_URL` | Public base URL — production: `https://discloseledger.com` (canonical apex) |
@@ -90,7 +90,7 @@ Do **not** buy or change DNS from this repo — Tom owns registrar/DNS.
 ## Production blockers
 
 1. **Domain** — locked: `discloseledger.com` (see above + DEPLOY.md). Wire DNS at registrar when ready.
-2. **Stripe** — live keys, Price ($29/mo), Checkout Session + webhook to unlock paid tier (replace instance-wide free counter with per-customer entitlements). Success/cancel URLs use `NEXT_PUBLIC_APP_URL`.
+2. **Stripe** — live keys, Price (€29/mo), Checkout Session + webhook to unlock paid tier (replace instance-wide free counter with per-customer entitlements). Success/cancel URLs use `NEXT_PUBLIC_APP_URL`.
 3. **Durable DB / storage** — replace `data/records.json` (ephemeral on many hosts) with Postgres/SQLite on persistent volume; decide whether to store images.
 4. **Hosting** — connect GitHub `tomdgthegreat/disclosure-ledger` to Vercel (see DEPLOY.md); file DB will not survive serverless without external store.
 5. **Legal review** — counsel for Art. 50 positioning; product remains declaration/audit trail only.

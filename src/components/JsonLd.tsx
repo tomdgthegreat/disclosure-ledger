@@ -36,7 +36,7 @@ export function softwareApplicationJsonLd(siteUrl: string, description: string) 
     offers: {
       "@type": "Offer",
       price: "29",
-      priceCurrency: "USD",
+      priceCurrency: "EUR",
       description:
         "Team plan after 3 free records. Declaration / audit-trail tool only — not compliance certification.",
     },

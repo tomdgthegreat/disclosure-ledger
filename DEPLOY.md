@@ -21,7 +21,7 @@ In the Vercel project → **Settings → Environment Variables** (Production at 
 |----------|--------|
 | `NEXT_PUBLIC_APP_URL` | `https://discloseledger.com` |
 | `STRIPE_SECRET_KEY` | (live or test secret when ready) |
-| `STRIPE_PRICE_ID` | (Price id for ~$29/mo) |
+| `STRIPE_PRICE_ID` | (Price id for €29/mo (EUR recurring)) |
 | `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | (optional Day-1) |
 | `OPS_PASSWORD` | (optional; gates `/ops`) |
 

@@ -5,7 +5,7 @@
     "homeTitle": "Disclosure Ledger — Dichiarazione immagine e audit trail",
     "homeDescription": "Dichiarazioni IA auto-dichiarate e hash di contenuto per immagini destinate alla pubblicazione. Solo strumento di dichiarazione/audit trail — non un prodotto di conformità o verifica.",
     "pricingTitle": "Prezzi — Disclosure Ledger",
-    "pricingDescription": "Prova 3 record gratuiti, poi ~29 $/mese per i team. Dichiarazioni auto-dichiarate e audit trail con hash — non un prodotto di conformità.",
+    "pricingDescription": "Prova 3 record gratuiti, poi 29 €/mese per i team. Dichiarazioni auto-dichiarate e audit trail con hash — non un prodotto di conformità.",
     "art50Title": "Contesto art. 50 regolamento IA UE — Disclosure Ledger",
     "art50Description": "Contesto in linguaggio chiaro sugli obblighi di trasparenza dell’articolo 50 e su cosa Disclosure Ledger è (e non è).",
     "howTitle": "Come funziona Disclosure Ledger",
@@ -75,7 +75,7 @@
     "freePrice": "3 record",
     "freeBody": "Abbastanza per provare il flusso end-to-end. Nessuna carta per i primi tre record su questa istanza.",
     "teamTitle": "Team",
-    "teamPrice": "~29 $",
+    "teamPrice": "29 €",
     "teamPeriod": "/mese",
     "teamBody": "Dopo il free tier. Stripe Checkout (basato su env; stub finché le chiavi non sono configurate). Per agenzie e brand che spediscono immagini regolarmente.",
     "cta": "Inizia con 3 gratis",
@@ -124,7 +124,7 @@
   },
   "create": {
     "title": "Crea un record di disclosure",
-    "lead": "I primi 3 record sono gratuiti su questa istanza. Poi vedrete un soft gate a ~29 $/mese (Stripe Checkout se configurato)."
+    "lead": "I primi 3 record sono gratuiti su questa istanza. Poi vedrete un soft gate a 29 €/mese (Stripe Checkout se configurato)."
   },
   "form": {
     "dropTitle": "Rilascia qui un’immagine destinata alla pubblicazione",
@@ -146,8 +146,8 @@
     "notesPlaceholder": "es. sfondo inpainted; volto intatto",
     "email": "Email di contatto (opzionale)",
     "emailPlaceholder": "per account / fatturazione in seguito",
-    "gatedDefault": "Free tier esaurito (3 record). Continuate a ~29 $/mese.",
-    "checkout": "Continua con Stripe Checkout (~29 $/mese)",
+    "gatedDefault": "Free tier esaurito (3 record). Continuate a 29 €/mese.",
+    "checkout": "Continua con Stripe Checkout (29 €/mese)",
     "checkoutStub": "Checkout è basato su env e può essere stub finché le chiavi Stripe non sono impostate.",
     "submit": "Pubblica record pubblico permanente",
     "submitting": "Salvataggio record…",
@@ -191,7 +191,7 @@
   },
   "team": {
     "title": "Team",
-    "price": "~29 $",
+    "price": "29 €",
     "period": "/mese",
     "body": "Dopo il free tier. Stripe Checkout (basato su env; stub finché le chiavi non sono configurate). Per agenzie e brand che spediscono immagini regolarmente.",
     "cta": "Inizia con 3 gratis"

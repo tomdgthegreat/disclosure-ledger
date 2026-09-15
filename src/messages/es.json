@@ -5,7 +5,7 @@
     "homeTitle": "Disclosure Ledger — Declaración de imagen y pista de auditoría",
     "homeDescription": "Declaraciones de IA autoinformadas y hashes de contenido para imágenes destinadas a publicación. Solo herramienta de declaración / pista de auditoría — no un producto de cumplimiento o verificación.",
     "pricingTitle": "Precios — Disclosure Ledger",
-    "pricingDescription": "Prueba 3 registros gratis, luego ~29 $/mes para equipos. Declaraciones autoinformadas y pista de auditoría por hash — no un producto de cumplimiento.",
+    "pricingDescription": "Prueba 3 registros gratis, luego 29 €/mes para equipos. Declaraciones autoinformadas y pista de auditoría por hash — no un producto de cumplimiento.",
     "art50Title": "Contexto artículo 50 del Reglamento de IA de la UE — Disclosure Ledger",
     "art50Description": "Contexto en lenguaje claro sobre las obligaciones de transparencia del artículo 50 y qué es (y no es) Disclosure Ledger.",
     "howTitle": "Cómo funciona Disclosure Ledger",
@@ -75,7 +75,7 @@
     "freePrice": "3 registros",
     "freeBody": "Suficiente para probar el flujo de extremo a extremo. Sin tarjeta para los tres primeros registros de esta instancia.",
     "teamTitle": "Equipo",
-    "teamPrice": "~29 $",
+    "teamPrice": "29 €",
     "teamPeriod": "/mes",
     "teamBody": "Tras el nivel gratuito. Stripe Checkout (basado en env; stub hasta configurar claves). Para agencias y marcas que envían imágenes con regularidad.",
     "cta": "Empezar con 3 gratis",
@@ -124,7 +124,7 @@
   },
   "create": {
     "title": "Crear un registro de divulgación",
-    "lead": "Los primeros 3 registros son gratis en esta instancia. Después verás un soft gate de ~29 $/mes (Stripe Checkout si está configurado)."
+    "lead": "Los primeros 3 registros son gratis en esta instancia. Después verás un soft gate de 29 €/mes (Stripe Checkout si está configurado)."
   },
   "form": {
     "dropTitle": "Suelta aquí una imagen destinada a publicación",
@@ -146,8 +146,8 @@
     "notesPlaceholder": "p. ej. fondo inpainted; rostro intacto",
     "email": "Email de contacto (opcional)",
     "emailPlaceholder": "para cuenta / facturación más adelante",
-    "gatedDefault": "Nivel gratuito usado (3 registros). Suscríbete a ~29 $/mes para continuar.",
-    "checkout": "Continuar con Stripe Checkout (~29 $/mes)",
+    "gatedDefault": "Nivel gratuito usado (3 registros). Suscríbete a 29 €/mes para continuar.",
+    "checkout": "Continuar con Stripe Checkout (29 €/mes)",
     "checkoutStub": "Checkout se basa en el entorno y puede estar stub hasta configurar las claves de Stripe.",
     "submit": "Publicar registro público permanente",
     "submitting": "Guardando registro…",
@@ -191,7 +191,7 @@
   },
   "team": {
     "title": "Equipo",
-    "price": "~29 $",
+    "price": "29 €",
     "period": "/mes",
     "body": "Tras el nivel gratuito. Stripe Checkout (basado en env; stub hasta configurar claves). Para agencias y marcas que envían imágenes con regularidad.",
     "cta": "Empezar con 3 gratis"

@@ -5,7 +5,7 @@
     "homeTitle": "Disclosure Ledger — Deklaracja obrazu i ślad audytowy",
     "homeDescription": "Samodzielnie zgłaszane deklaracje AI i hashe treści dla obrazów przeznaczonych do publikacji. Tylko narzędzie deklaracji / śladu audytowego — nie produkt zgodności ani weryfikacji.",
     "pricingTitle": "Cennik — Disclosure Ledger",
-    "pricingDescription": "Wypróbuj 3 darmowe rekordy, potem ok. 29 $/mies. dla zespołów. Samodzielnie zgłaszane deklaracje i ślad audytowy hashem — nie produkt zgodności.",
+    "pricingDescription": "Wypróbuj 3 darmowe rekordy, potem 29 €/mies. dla zespołów. Samodzielnie zgłaszane deklaracje i ślad audytowy hashem — nie produkt zgodności.",
     "art50Title": "Kontekst art. 50 rozporządzenia AI UE — Disclosure Ledger",
     "art50Description": "Zrozumiały kontekst obowiązków przejrzystości art. 50 oraz tego, czym Disclosure Ledger jest (i nie jest).",
     "howTitle": "Jak działa Disclosure Ledger",
@@ -75,7 +75,7 @@
     "freePrice": "3 rekordy",
     "freeBody": "Wystarczy, by przetestować przepływ end-to-end. Bez karty dla pierwszych trzech rekordów na tej instancji.",
     "teamTitle": "Zespół",
-    "teamPrice": "ok. 29 $",
+    "teamPrice": "29 €",
     "teamPeriod": "/mies.",
     "teamBody": "Po darmowym limicie. Stripe Checkout (oparty na env; stub do czasu konfiguracji kluczy). Dla agencji i marek regularnie wysyłających obrazy.",
     "cta": "Zacznij od 3 darmowych",
@@ -124,7 +124,7 @@
   },
   "create": {
     "title": "Utwórz rekord ujawnienia",
-    "lead": "Pierwsze 3 rekordy są darmowe na tej instancji. Potem zobaczysz soft gate ok. 29 $/mies. (Stripe Checkout, gdy skonfigurowany)."
+    "lead": "Pierwsze 3 rekordy są darmowe na tej instancji. Potem zobaczysz soft gate 29 €/mies. (Stripe Checkout, gdy skonfigurowany)."
   },
   "form": {
     "dropTitle": "Upuść tutaj obraz przeznaczony do publikacji",
@@ -146,8 +146,8 @@
     "notesPlaceholder": "np. tło inpainted; twarz nietknięta",
     "email": "E-mail kontaktowy (opcjonalnie)",
     "emailPlaceholder": "na konto / rozliczenia później",
-    "gatedDefault": "Darmowy limit wykorzystany (3 rekordy). Subskrybuj ok. 29 $/mies., by kontynuować.",
-    "checkout": "Kontynuuj ze Stripe Checkout (ok. 29 $/mies.)",
+    "gatedDefault": "Darmowy limit wykorzystany (3 rekordy). Subskrybuj 29 €/mies., by kontynuować.",
+    "checkout": "Kontynuuj ze Stripe Checkout (29 €/mies.)",
     "checkoutStub": "Checkout oparty na env i może być stub, dopóki nie ustawisz kluczy Stripe.",
     "submit": "Opublikuj trwały rekord publiczny",
     "submitting": "Zapisywanie rekordu…",
@@ -191,7 +191,7 @@
   },
   "team": {
     "title": "Zespół",
-    "price": "ok. 29 $",
+    "price": "29 €",
     "period": "/mies.",
     "body": "Po darmowym limicie. Stripe Checkout (oparty na env; stub do czasu konfiguracji kluczy). Dla agencji i marek regularnie wysyłających obrazy.",
     "cta": "Zacznij od 3 darmowych"

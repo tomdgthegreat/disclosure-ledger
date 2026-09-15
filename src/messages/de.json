@@ -5,7 +5,7 @@
     "homeTitle": "Disclosure Ledger — Bilddeklaration & Audit-Trail",
     "homeDescription": "Selbstberichtete KI-Deklarationen und Content-Hashes für veröffentlichungsgebundene Bilder. Nur Deklarations-/Audit-Trail-Tool — kein Compliance- oder Verifikationsprodukt.",
     "pricingTitle": "Preise — Disclosure Ledger",
-    "pricingDescription": "3 kostenlose Disclosure-Einträge testen, danach ca. 29 $/Monat für Teams. Selbstberichtete Deklarationen und Hash-Audit-Trail — kein Compliance-Produkt.",
+    "pricingDescription": "3 kostenlose Disclosure-Einträge testen, danach 29 €/Monat für Teams. Selbstberichtete Deklarationen und Hash-Audit-Trail — kein Compliance-Produkt.",
     "art50Title": "EU-KI-Verordnung Artikel 50 — Kontext — Disclosure Ledger",
     "art50Description": "Klartext-Kontext zu Transparenzpflichten nach Artikel 50 der EU-KI-Verordnung und was Disclosure Ledger ist (und nicht ist).",
     "howTitle": "So funktioniert Disclosure Ledger",
@@ -75,7 +75,7 @@
     "freePrice": "3 Einträge",
     "freeBody": "Reicht, um den Ablauf end-to-end zu testen. Für die ersten drei Einträge auf dieser Instanz keine Karte nötig.",
     "teamTitle": "Team",
-    "teamPrice": "ca. 29 $",
+    "teamPrice": "29 €",
     "teamPeriod": "/Monat",
     "teamBody": "Nach dem Free-Tier. Stripe Checkout (umgebungsbasiert; stubbed bis Schlüssel konfiguriert). Für Agenturen und Marken mit regelmäßigem Bildversand.",
     "cta": "Mit 3 kostenlos starten",
@@ -124,7 +124,7 @@
   },
   "create": {
     "title": "Disclosure-Eintrag erstellen",
-    "lead": "Die ersten 3 Einträge sind auf dieser Instanz kostenlos. Danach erscheint ein Soft-Gate für ca. 29 $/Monat (Stripe Checkout, wenn konfiguriert)."
+    "lead": "Die ersten 3 Einträge sind auf dieser Instanz kostenlos. Danach erscheint ein Soft-Gate für 29 €/Monat (Stripe Checkout, wenn konfiguriert)."
   },
   "form": {
     "dropTitle": "Veröffentlichungsgebundenes Bild hier ablegen",
@@ -146,8 +146,8 @@
     "notesPlaceholder": "z. B. Hintergrund inpainted; Gesicht unberührt",
     "email": "Kontakt-E-Mail (optional)",
     "emailPlaceholder": "für Konto / Abrechnung später",
-    "gatedDefault": "Free-Tier verbraucht (3 Einträge). Weiter mit ca. 29 $/Monat.",
-    "checkout": "Mit Stripe Checkout fortfahren (ca. 29 $/Monat)",
+    "gatedDefault": "Free-Tier verbraucht (3 Einträge). Weiter mit 29 €/Monat.",
+    "checkout": "Mit Stripe Checkout fortfahren (29 €/Monat)",
     "checkoutStub": "Checkout ist umgebungsbasiert und kann stubbed sein, bis Stripe-Schlüssel gesetzt sind.",
     "submit": "Dauerhaften öffentlichen Eintrag veröffentlichen",
     "submitting": "Eintrag wird gespeichert…",
@@ -191,7 +191,7 @@
   },
   "team": {
     "title": "Team",
-    "price": "ca. 29 $",
+    "price": "29 €",
     "period": "/Monat",
     "body": "Nach dem Free-Tier. Stripe Checkout (umgebungsbasiert; stubbed bis Schlüssel konfiguriert). Für Agenturen und Marken mit regelmäßigem Bildversand.",
     "cta": "Mit 3 kostenlos starten"

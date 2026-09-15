@@ -5,7 +5,7 @@
     "homeTitle": "Disclosure Ledger — Image declaration & audit trail",
     "homeDescription": "Self-reported AI declarations and content hashes for publish-bound images. Declaration and audit-trail tool only — not a compliance or verification product.",
     "pricingTitle": "Pricing — Disclosure Ledger",
-    "pricingDescription": "Try 3 free disclosure records, then ~$29/mo for teams. Self-reported declarations and content-hash audit trail — not a compliance product.",
+    "pricingDescription": "Try 3 free disclosure records, then €29/mo for teams. Self-reported declarations and content-hash audit trail — not a compliance product.",
     "art50Title": "EU AI Act Article 50 context — Disclosure Ledger",
     "art50Description": "Plain-language context on EU AI Act Article 50 transparency obligations for AI-involved imagery, and what Disclosure Ledger is (and is not).",
     "howTitle": "How Disclosure Ledger works",
@@ -75,7 +75,7 @@
     "freePrice": "3 records",
     "freeBody": "Enough to try the flow end-to-end. No card required for the first three records on this instance.",
     "teamTitle": "Team",
-    "teamPrice": "~$29",
+    "teamPrice": "€29",
     "teamPeriod": "/mo",
     "teamBody": "After free tier. Stripe Checkout (env-based; stubbed until keys are configured). Built for agencies and brands shipping images regularly.",
     "cta": "Start with 3 free",
@@ -124,7 +124,7 @@
   },
   "create": {
     "title": "Create a disclosure record",
-    "lead": "First 3 records are free on this instance. After that you will see a soft gate for ~$29/mo (Stripe Checkout when configured)."
+    "lead": "First 3 records are free on this instance. After that you will see a soft gate for €29/mo (Stripe Checkout when configured)."
   },
   "form": {
     "dropTitle": "Drop a publish-bound image here",
@@ -146,8 +146,8 @@
     "notesPlaceholder": "e.g. background inpainted; face untouched",
     "email": "Contact email (optional)",
     "emailPlaceholder": "for account / billing later",
-    "gatedDefault": "Free tier used (3 records). Subscribe at ~$29/mo to continue.",
-    "checkout": "Continue with Stripe Checkout (~$29/mo)",
+    "gatedDefault": "Free tier used (3 records). Subscribe at €29/mo to continue.",
+    "checkout": "Continue with Stripe Checkout (€29/mo)",
     "checkoutStub": "Checkout is env-based and may be stubbed until Stripe keys are set.",
     "submit": "Publish permanent public record",
     "submitting": "Saving record…",
@@ -191,7 +191,7 @@
   },
   "team": {
     "title": "Team",
-    "price": "~$29",
+    "price": "€29",
     "period": "/mo",
     "body": "After free tier. Stripe Checkout (env-based; stubbed until keys are configured). Built for agencies and brands shipping images regularly.",
     "cta": "Start with 3 free"

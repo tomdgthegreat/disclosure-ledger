@@ -67,11 +67,29 @@ export function buildPageMetadata(opts: {
       alternateLocale: routing.locales
         .filter((l) => l !== locale)
         .map((l) => (l === "en" ? "en_US" : l)),
+      images: [
+        {
+          url: `${getSiteUrl()}/og.png`,
+          width: 1200,
+          height: 630,
+          alt: "Disclosure Ledger — image declaration and audit trail",
+        },
+      ],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title,
       description,
+      images: [`${getSiteUrl()}/og.png`],
+    },
+    icons: {
+      icon: [
+        { url: "/favicon.ico" },
+        { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+        { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+        { url: "/icon.png", type: "image/png" },
+      ],
+      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
     },
     robots: index
       ? { index: true, follow: true }
