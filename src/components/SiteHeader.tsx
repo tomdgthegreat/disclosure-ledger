@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { LanguageSwitcher } from "./LanguageSwitcher";
-import { IconMark } from "./MarketingIcons";
+import { BrandMark } from "./BrandMark";
 
 export async function SiteHeader() {
   const t = await getTranslations("nav");
@@ -12,12 +12,10 @@ export async function SiteHeader() {
           href="/"
           className="group flex items-center gap-2.5 font-semibold tracking-tight text-ink"
         >
-          <span
-            className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-azure via-azure-bright to-coral text-white shadow-[0_4px_14px_rgba(26,108,255,0.35)]"
-            aria-hidden
-          >
-            <IconMark size={16} />
-          </span>
+          <BrandMark
+            size={36}
+            className="shrink-0 shadow-[0_4px_14px_rgba(255,45,106,0.22)] transition group-hover:scale-[1.04]"
+          />
           <span className="transition group-hover:text-azure-deep">
             Disclosure Ledger
           </span>
