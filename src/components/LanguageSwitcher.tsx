@@ -24,7 +24,7 @@ export function LanguageSwitcher({
   const shell =
     variant === "dark"
       ? "border-white/25 bg-white/10 text-white"
-      : "border-border bg-white text-ink shadow-sm";
+      : "border-azure/30 bg-white/90 text-ink shadow-[0_2px_10px_rgba(26,108,255,0.1)]";
 
   return (
     <label
