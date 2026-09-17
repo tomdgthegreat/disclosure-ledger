@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { DisclaimerBanner } from "@/components/DisclaimerBanner";
+import { ScanForm } from "@/components/ScanForm";
 import { FaqSection } from "@/components/FaqSection";
 import {
   JsonLd,
@@ -179,7 +180,45 @@ export default async function HomePage({
       </div>
 
       <div className="relative mx-auto max-w-5xl px-4 pb-16">
-        <section id="problem" className="mt-16 space-y-6">
+
+        <section id="hygiene-scan" className="mt-16 space-y-6">
+          <div className="card-surface relative overflow-hidden p-6 sm:p-8">
+            <div
+              className="pointer-events-none absolute -right-12 -top-10 h-40 w-40 rounded-full bg-coral/25 blur-3xl"
+              aria-hidden
+            />
+            <div
+              className="pointer-events-none absolute -bottom-16 -left-10 h-44 w-44 rounded-full bg-azure-bright/30 blur-3xl"
+              aria-hidden
+            />
+            <div className="relative grid gap-8 lg:grid-cols-2 lg:items-start">
+              <div className="space-y-4">
+                <p className="eyebrow">{t("scanEyebrow")}</p>
+                <div className="flex flex-wrap items-end justify-between gap-3">
+                  <h2 className="section-title">{t("scanTitle")}</h2>
+                  <span className="pill-soft-azure" aria-hidden>
+                    <IconShield size={16} />
+                  </span>
+                </div>
+                <p className="text-sm leading-relaxed text-ink-muted sm:text-base">
+                  {t("scanLead")}
+                </p>
+                <p className="rounded-2xl bg-azure-soft/50 px-4 py-3 text-sm text-ink-muted">
+                  {t("scanNote")}
+                </p>
+                <Link
+                  href="/scan"
+                  className="inline-flex text-sm font-semibold text-azure-deep underline-offset-4 hover:underline"
+                >
+                  {t("scanLink")}
+                </Link>
+              </div>
+              <ScanForm compact />
+            </div>
+          </div>
+        </section>
+
+        <section id="problem" className="mt-20 space-y-6">
           <div className="flex flex-wrap items-end justify-between gap-3">
             <h2 className="section-title">{t("problemTitle")}</h2>
             <span className="pill-soft-coral" aria-hidden>

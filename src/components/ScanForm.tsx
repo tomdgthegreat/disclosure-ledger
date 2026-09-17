@@ -28,7 +28,7 @@ type PublicScan = {
   summary?: { truncated?: boolean; host?: string };
 };
 
-export function ScanForm() {
+export function ScanForm({ compact = false }: { compact?: boolean }) {
   const t = useTranslations("scan");
   const router = useRouter();
   const [url, setUrl] = useState("");
@@ -111,13 +111,14 @@ export function ScanForm() {
     setGateMessage(data.message ?? t("stripeNotConfigured"));
   }
 
+  const formClass = compact
+    ? "card-tinted border border-azure/25 p-5 shadow-card"
+    : "rounded-2xl border border-azure/20 bg-white/95 p-6 shadow-card";
+
   return (
-    <div className="space-y-6">
-      <DisclaimerBanner />
-      <form
-        onSubmit={onSubmit}
-        className="rounded-2xl border border-azure/20 bg-white/95 p-6 shadow-card"
-      >
+    <div className={compact ? "space-y-4" : "space-y-6"}>
+      {!compact && <DisclaimerBanner />}
+      <form onSubmit={onSubmit} className={formClass}>
         <label className="block text-sm font-semibold text-ink">
           {t("urlLabel")}
           <input
@@ -130,7 +131,7 @@ export function ScanForm() {
             disabled={phase === "running"}
           />
         </label>
-        <label className="mt-4 block text-sm font-semibold text-ink">
+        <label className={`block text-sm font-semibold text-ink ${compact ? "mt-3" : "mt-4"}`}>
           {t("emailLabel")}
           <input
             type="email"
@@ -142,10 +143,12 @@ export function ScanForm() {
             disabled={phase === "running"}
           />
         </label>
-        <p className="mt-3 text-xs leading-relaxed text-ink-muted">{t("fairUse")}</p>
+        <p className={`text-xs leading-relaxed text-ink-muted ${compact ? "mt-2" : "mt-3"}`}>
+          {t("fairUse")}
+        </p>
         <button
           type="submit"
-          className="btn-coral mt-5 w-full sm:w-auto"
+          className={`${compact ? "btn-primary" : "btn-coral"} ${compact ? "mt-4" : "mt-5"} w-full sm:w-auto`}
           disabled={phase === "running"}
         >
           {phase === "running" ? t("running") : t("submit")}
