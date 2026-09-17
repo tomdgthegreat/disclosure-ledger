@@ -141,7 +141,7 @@
   },
   "create": {
     "title": "Utwórz rekord ujawnienia",
-    "lead": "Pierwsze 3 rekordy są darmowe na tej instancji. Potem zobaczysz soft gate 29 €/mies. (Stripe Checkout, gdy skonfigurowany)."
+    "lead": "Pierwsze 3 rekordy są darmowe na e-mail kontaktowy. Potem zobaczysz soft gate 29 €/mies. przez Stripe Checkout."
   },
   "form": {
     "dropTitle": "Upuść tutaj obraz przeznaczony do publikacji",
@@ -221,7 +221,7 @@
     "controllerTitle": "Administrator",
     "controllerBody": "Atlas AG LLC, Melba, ID 83641, Stany Zjednoczone. Kontakt: hello@discloseledger.com. Produkt: Disclosure Ledger (https://discloseledger.com).",
     "purposesTitle": "Cele",
-    "purposesBody": "Przetwarzamy dane w celu prowadzenia usługi deklaracji i śladu audytowego: tworzenia i wyświetlania publicznych rekordów, eksportu CSV, zarządzania limitem darmowym oraz (gdy skonfigurowane) rozliczeniami, prowadzenia logów bezpieczeństwa i operacyjnych oraz odpowiadania na wnioski dotyczące prywatności.",
+    "purposesBody": "Przetwarzamy dane w celu prowadzenia usługi deklaracji i śladu audytowego: tworzenia i wyświetlania publicznych rekordów, eksportu CSV, zarządzania limitem darmowym oraz rozliczeniami Stripe, prowadzenia logów bezpieczeństwa i operacyjnych oraz odpowiadania na wnioski dotyczące prywatności.",
     "basesTitle": "Podstawy prawne",
     "basesBody": "W zależności od przetwarzania: wykonanie umowy lub działania przedumowne (świadczenie żądanej usługi); prawnie uzasadnione interesy (bezpieczeństwo, zapobieganie nadużyciom, ulepszanie produktu bez nadrzędności nad Twoimi prawami); oraz, gdy wymagane, zgoda (dla opcjonalnego e-maila kontaktowego poza samym utworzeniem rekordu).",
     "dataTitle": "Przetwarzane dane",

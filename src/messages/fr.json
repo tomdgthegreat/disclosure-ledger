@@ -141,7 +141,7 @@
   },
   "create": {
     "title": "Créer un dossier de divulgation",
-    "lead": "Les 3 premiers dossiers sont gratuits sur cette instance. Ensuite, une porte souple vers 29 €/mois (Stripe Checkout si configuré)."
+    "lead": "Les 3 premiers dossiers sont gratuits par e-mail de contact. Ensuite, une porte souple vers 29 €/mois via Stripe Checkout."
   },
   "form": {
     "dropTitle": "Déposez ici une image destinée à la publication",
@@ -255,7 +255,7 @@
     "liabilityTitle": "Limitation de responsabilité",
     "liabilityBody": "Dans toute la mesure permise par la loi, Atlas AG LLC n’est pas responsable des dommages indirects, accessoires, spéciaux, consécutifs ou punitifs, ni des pertes de profits, de données ou de clientèle découlant de l’utilisation du service. Notre responsabilité globale pour les réclamations liées au service est limitée au plus élevé de (a) les frais que vous nous avez payés pour le service au cours des trois mois précédant la réclamation ou (b) 29 €. Rien n’exclut une responsabilité qui ne peut être limitée en vertu du droit impératif applicable (y compris les protections consommateurs UE).",
     "pricingTitle": "Tarification",
-    "pricingBody": "L’offre gratuite permet trois fiches sur cette instance. Ensuite, la création continue peut nécessiter un abonnement Team à 29 €/mois (EUR), facturé via Stripe lorsqu’il est configuré. L’accès payant débloque l’usage continu de l’outil de déclaration — il n’achète ni vérification, ni signature, ni attestation, ni conseil juridique.",
+    "pricingBody": "L’offre gratuite permet trois dossiers par e-mail de contact. Ensuite, la création continue peut nécessiter un abonnement Team à 29 €/mois (EUR), facturé via Stripe Checkout. L’accès payant débloque l’usage continu de l’outil de déclaration — il n’achète pas de vérification, signature, attestation ou conseil juridique.",
     "lawTitle": "Droit applicable",
     "lawBody": "Ces conditions sont régies par le droit de l’État de l’Idaho (États-Unis), sans égard aux règles de conflit de lois, sous réserve des protections consommateurs impératives applicables dans votre pays de résidence dans l’UE/EEE/Royaume-Uni lorsqu’elles ne peuvent être écartées.",
     "contactTitle": "Contact",

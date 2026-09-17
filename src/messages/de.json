@@ -141,7 +141,7 @@
   },
   "create": {
     "title": "Disclosure-Eintrag erstellen",
-    "lead": "Die ersten 3 Einträge sind auf dieser Instanz kostenlos. Danach erscheint ein Soft-Gate für 29 €/Monat (Stripe Checkout, wenn konfiguriert)."
+    "lead": "Die ersten 3 Einträge sind pro Kontakt-E-Mail kostenlos. Danach erscheint ein Soft-Gate für 29 €/Monat über Stripe Checkout."
   },
   "form": {
     "dropTitle": "Veröffentlichungsgebundenes Bild hier ablegen",

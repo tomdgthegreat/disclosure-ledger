@@ -141,7 +141,7 @@
   },
   "create": {
     "title": "Crear un registro de divulgación",
-    "lead": "Los primeros 3 registros son gratis en esta instancia. Después verás un soft gate de 29 €/mes (Stripe Checkout si está configurado)."
+    "lead": "Los primeros 3 registros son gratis por correo de contacto. Después verás un soft gate de 29 €/mes vía Stripe Checkout."
   },
   "form": {
     "dropTitle": "Suelta aquí una imagen destinada a publicación",
@@ -221,7 +221,7 @@
     "controllerTitle": "Responsable del tratamiento",
     "controllerBody": "Atlas AG LLC, Melba, ID 83641, Estados Unidos. Contacto: hello@discloseledger.com. Producto: Disclosure Ledger (https://discloseledger.com).",
     "purposesTitle": "Finalidades",
-    "purposesBody": "Tratamos datos para operar el servicio de declaración y pista de auditoría: crear y mostrar registros públicos, proporcionar exportación CSV, gestionar el límite gratuito y (si está configurado) la facturación, mantener registros de seguridad y operación, y responder a solicitudes de privacidad.",
+    "purposesBody": "Tratamos datos para operar el servicio de declaración y pista de auditoría: crear y mostrar registros públicos, proporcionar exportación CSV, gestionar el límite gratuito y la facturación con Stripe, mantener registros de seguridad y operación, y responder a solicitudes de privacidad.",
     "basesTitle": "Bases jurídicas",
     "basesBody": "Según el tratamiento: ejecución de un contrato o medidas precontractuales (prestación del servicio solicitado); intereses legítimos (seguridad, prevención de abusos, mejora del producto sin prevalecer sobre tus derechos); y, cuando proceda, consentimiento (para el correo de contacto opcional más allá de la creación del registro).",
     "dataTitle": "Datos que tratamos",

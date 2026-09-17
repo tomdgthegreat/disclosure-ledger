@@ -141,7 +141,7 @@
   },
   "create": {
     "title": "Crea un record di disclosure",
-    "lead": "I primi 3 record sono gratuiti su questa istanza. Poi vedrete un soft gate a 29 €/mese (Stripe Checkout se configurato)."
+    "lead": "I primi 3 record sono gratuiti per e-mail di contatto. Poi vedrete un soft gate a 29 €/mese tramite Stripe Checkout."
   },
   "form": {
     "dropTitle": "Rilascia qui un’immagine destinata alla pubblicazione",
@@ -221,7 +221,7 @@
     "controllerTitle": "Titolare del trattamento",
     "controllerBody": "Atlas AG LLC, Melba, ID 83641, Stati Uniti. Contatto: hello@discloseledger.com. Prodotto: Disclosure Ledger (https://discloseledger.com).",
     "purposesTitle": "Finalità",
-    "purposesBody": "Trattiamo i dati per gestire il servizio di dichiarazione e audit trail: creare e mostrare schede pubbliche, fornire l’export CSV, gestire il limite gratuito e (se configurato) la fatturazione, conservare log di sicurezza e operativi, e rispondere alle richieste privacy.",
+    "purposesBody": "Trattiamo i dati per gestire il servizio di dichiarazione e audit trail: creare e mostrare schede pubbliche, fornire l’export CSV, gestire il limite gratuito e la fatturazione Stripe, conservare log di sicurezza e operativi, e rispondere alle richieste privacy.",
     "basesTitle": "Basi giuridiche",
     "basesBody": "A seconda del trattamento: esecuzione di un contratto o misure precontrattuali (fornitura del servizio richiesto); interessi legittimi (sicurezza, prevenzione abusi, miglioramento del prodotto senza prevalere sui tuoi diritti); e, ove richiesto, consenso (per l’e-mail di contatto facoltativa oltre la semplice creazione della scheda).",
     "dataTitle": "Dati trattati",
@@ -255,7 +255,7 @@
     "liabilityTitle": "Limiti di responsabilità",
     "liabilityBody": "Nella misura massima consentita dalla legge, Atlas AG LLC non è responsabile per danni indiretti, incidentali, speciali, consequenziali o punitivi, né per perdita di profitti, dati o avviamento derivanti dall’uso del servizio. La nostra responsabilità aggregata per reclami relativi al servizio è limitata al maggiore tra (a) le somme pagateci per il servizio nei tre mesi precedenti il reclamo o (b) 29 €. Nulla esclude responsabilità che non possono essere limitate ai sensi del diritto cogente applicabile (incluse le tutele consumatori UE obbligatorie).",
     "pricingTitle": "Prezzi",
-    "pricingBody": "Il piano gratuito consente tre schede su questa istanza. Successivamente, la creazione continua può richiedere un abbonamento Team a 29 €/mese (EUR), fatturato tramite Stripe se configurato. L’accesso a pagamento sblocca l’uso continuo dello strumento di dichiarazione — non acquista verifica, firma, attestazione o consulenza legale.",
+    "pricingBody": "Il piano gratuito consente tre schede per e-mail di contatto. Successivamente, la creazione continua può richiedere un abbonamento Team a 29 €/mese (EUR), fatturato tramite Stripe Checkout. L’accesso a pagamento sblocca l’uso continuo dello strumento di dichiarazione — non acquista verifica, firma, attestazione o consulenza legale.",
     "lawTitle": "Legge applicabile",
     "lawBody": "Questi termini sono regolati dalle leggi dello Stato dell’Idaho, Stati Uniti, senza riguardo alle norme di conflitto di leggi, fatte salve le tutele consumatori obbligatorie applicabili nel paese di residenza in UE/SEE/UK ove non rinunciabili.",
     "contactTitle": "Contatto",
