@@ -19,6 +19,7 @@ model Entitlement {
   createdAt            DateTime @default(now()) @map("created_at")
   updatedAt            DateTime @updatedAt @map("updated_at")
   records              DisclosureRecord[]
+  scans                Scan[]
 
   @@map("entitlements")
 }
@@ -56,3 +57,45 @@ model PrivacyRequest {
   @@index([createdAt])
   @@map("privacy_requests")
 }
+
+
+/// Public-site hygiene scan (possible disclosure gaps to review — not an audit)
+model Scan {
+  id            String        @id
+  createdAt     DateTime      @default(now()) @map("created_at")
+  contactEmail  String        @map("contact_email")
+  targetUrl     String        @map("target_url")
+  /// completed | failed
+  status        String        @default("completed")
+  pagesCrawled  Int           @default(0) @map("pages_crawled")
+  imagesChecked Int           @default(0) @map("images_checked")
+  /// Crawl caps / summary JSON
+  summary       Json
+  entitlementId String?       @map("entitlement_id")
+  entitlement   Entitlement?  @relation(fields: [entitlementId], references: [id], onDelete: SetNull)
+  findings      ScanFinding[]
+
+  @@index([contactEmail])
+  @@index([createdAt])
+  @@index([entitlementId])
+  @@map("scans")
+}
+
+model ScanFinding {
+  id       String  @id
+  scanId   String  @map("scan_id")
+  scan     Scan    @relation(fields: [scanId], references: [id], onDelete: Cascade)
+  /// no_nearby_disclosure | no_ledger_link | missing_provenance_hints
+  kind     String
+  /// review (possible gap)
+  severity String  @default("review")
+  pageUrl  String? @map("page_url")
+  assetUrl String? @map("asset_url")
+  message  String
+  evidence Json?
+
+  @@index([scanId])
+  @@index([kind])
+  @@map("scan_findings")
+}
+

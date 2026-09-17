@@ -23,7 +23,11 @@
     "legalTitle": "Impressum — Disclosure Ledger",
     "legalDescription": "Anbieterkennzeichnung für Disclosure Ledger: Atlas AG LLC, Melba, ID 83641, Vereinigte Staaten. Kontakt hello@discloseledger.com.",
     "cookiesTitle": "Cookie-Richtlinie — Disclosure Ledger",
-    "cookiesDescription": "Disclosure Ledger nutzt am Day-1 nur technisch notwendige Cookies. Keine Marketing-Tracker; für rein essentielle Nutzung kein Consent-Banner erforderlich."
+    "cookiesDescription": "Disclosure Ledger nutzt am Day-1 nur technisch notwendige Cookies. Keine Marketing-Tracker; für rein essentielle Nutzung kein Consent-Banner erforderlich.",
+    "scanTitle": "Hygiene scan — Disclosure Ledger",
+    "scanDescription": "Crawl a public site for possible disclosure gaps to review: nearby notices, ledger links, and lightweight provenance hints. Not an audit or compliance product.",
+    "scanResultTitle": "Hygiene scan results — Disclosure Ledger",
+    "scanResultDescription": "Possible disclosure gaps to review from a public-site hygiene scan. Not an audit or Art. 50 certification."
   },
   "nav": {
     "home": "Start",
@@ -35,7 +39,8 @@
     "privacy": "Datenschutz",
     "terms": "Bedingungen",
     "legal": "Impressum",
-    "cookies": "Cookies"
+    "cookies": "Cookies",
+    "scan": "Scan"
   },
   "disclaimer": {
     "title": "Selbstberichtet & unverifiziert",
@@ -89,7 +94,7 @@
     "teamTitle": "Team",
     "teamPrice": "29 €",
     "teamPeriod": "/Monat",
-    "teamBody": "Nach dem Free-Tier. Stripe Checkout (umgebungsbasiert; stubbed bis Schlüssel konfiguriert). Für Agenturen und Marken mit regelmäßigem Bildversand.",
+    "teamBody": "Nach dem Free-Tier. Live Stripe Checkout für €29/Monat — für Agenturen und Marken mit regelmäßigem Bildversand.",
     "cta": "Mit 3 kostenlos starten",
     "note": "Bezahlter Zugang ermöglicht weiteres Erstellen von Einträgen. Er kauft keine Verifikation, Signierung, Attestierung oder Rechtsberatung."
   },
@@ -136,7 +141,7 @@
   },
   "create": {
     "title": "Disclosure-Eintrag erstellen",
-    "lead": "Die ersten 3 Einträge sind auf dieser Instanz kostenlos. Danach erscheint ein Soft-Gate für 29 €/Monat (Stripe Checkout, wenn konfiguriert)."
+    "lead": "Die ersten 3 Einträge sind pro Kontakt-E-Mail kostenlos. Danach erscheint ein Soft-Gate für 29 €/Monat über Stripe Checkout."
   },
   "form": {
     "dropTitle": "Veröffentlichungsgebundenes Bild hier ablegen",
@@ -160,7 +165,7 @@
     "emailPlaceholder": "für Konto / Abrechnung später",
     "gatedDefault": "Free-Tier verbraucht (3 Einträge). Weiter mit 29 €/Monat.",
     "checkout": "Mit Stripe Checkout fortfahren (29 €/Monat)",
-    "checkoutStub": "Checkout ist umgebungsbasiert und kann stubbed sein, bis Stripe-Schlüssel gesetzt sind.",
+    "checkoutStub": "Öffnet Stripe Checkout für €29/Monat. Zahlung schließt du bei Stripe ab.",
     "submit": "Dauerhaften öffentlichen Eintrag veröffentlichen",
     "submitting": "Eintrag wird gespeichert…",
     "previewAlt": "Ausgewählte Vorschau",
@@ -207,7 +212,7 @@
     "title": "Team",
     "price": "29 €",
     "period": "/Monat",
-    "body": "Nach dem Free-Tier. Stripe Checkout (umgebungsbasiert; stubbed bis Schlüssel konfiguriert). Für Agenturen und Marken mit regelmäßigem Bildversand.",
+    "body": "Nach dem Free-Tier. Live Stripe Checkout für €29/Monat — für Agenturen und Marken mit regelmäßigem Bildversand.",
     "cta": "Mit 3 kostenlos starten"
   },
   "privacy": {
@@ -228,7 +233,7 @@
     "retentionTitle": "Speicherdauer",
     "retentionBody": "Öffentliche Disclosure-Einträge bleiben als Audit-Trail bestehen, solange der öffentliche Ledger betrieben wird, sofern wir nicht verpflichtet oder rechtmäßig gebeten werden, nicht notwendige personenbezogene Daten zu entfernen oder einzuschränken. Optionale Kontakt-E-Mail für Konto/Abrechnung bis zur Entbehrlichkeit. Technische Logs für einen kürzeren Betriebszeitraum.",
     "processorsTitle": "Auftragsverarbeiter",
-    "processorsBody": "Wir nutzen Vercel für Hosting und Auslieferung. Wenn Stripe konfiguriert ist, verarbeitet Stripe zahlungsbezogene Daten. Weitere Unterauftragsverarbeiter können hinzukommen; bei wesentlichen Änderungen aktualisieren wir diese Erklärung.",
+    "processorsBody": "Wir nutzen Vercel für Hosting und Auslieferung. Stripe verarbeitet zahlungsbezogene Daten für Checkout und Abos. Weitere Unterauftragsverarbeiter können hinzukommen; bei wesentlichen Änderungen aktualisieren wir diese Erklärung.",
     "transfersTitle": "Internationale Übermittlungen",
     "transfersBody": "Der Betreiber hat seinen Sitz in Idaho, USA. Daten können in den USA und — je nach Hosting — in der EU verarbeitet werden (z. B. Region Frankfurt / EU). Bei Übermittlungen aus dem EWR/UK können geeignete Garantien nach geltendem Recht greifen.",
     "rightsTitle": "Ihre Rechte",
@@ -277,5 +282,45 @@
     "bannerBody": "Weil Day-1 nur essentielle technische Maßnahmen und keine Marketing-Tracker nutzt, ist für dieses Setup typischerweise kein Cookie-Consent-Banner erforderlich. Dies ist keine Rechtsberatung.",
     "contactTitle": "Kontakt",
     "contactBody": "Fragen: hello@discloseledger.com. Siehe auch unsere Datenschutzerklärung."
+  },
+  "scan": {
+    "eyebrow": "Public-site hygiene check",
+    "title": "Scan for possible disclosure gaps",
+    "lead": "Enter a public URL and contact email. Possible disclosure gaps to review only — not an audit.",
+    "bullet1": "Missing nearby AI / disclosure notice",
+    "bullet2": "No discloseledger.com/r/… link",
+    "bullet3": "Missing readable provenance metadata hints",
+    "notAudit": "Possible disclosure gaps to review only — not an audit, compliance opinion, or Art. 50 certification.",
+    "urlLabel": "Public website URL",
+    "emailLabel": "Contact email",
+    "urlRequired": "URL required",
+    "emailRequired": "Email required",
+    "fairUse": "Free: 1 scan · 8 pages / 15 images. Paid: 20 pages / 40 images · 10 min cooldown.",
+    "submit": "Run hygiene scan",
+    "running": "Scanning…",
+    "failed": "Scan failed",
+    "gatedTitle": "Scan limit reached",
+    "gatedDefault": "Free scan used. Subscribe €29/mo for paid scans.",
+    "cooldownDefault": "Cooldown active — try again shortly.",
+    "checkout": "Stripe Checkout",
+    "seePricing": "Pricing",
+    "stripeNotConfigured": "Stripe not configured",
+    "redirecting": "Opening scan {id}…",
+    "resultEyebrow": "Hygiene scan results",
+    "resultTitle": "Possible disclosure gaps to review",
+    "resultMeta": "Ran {date} · {pages} pages · {images} images",
+    "statPages": "Pages",
+    "statImages": "Images",
+    "statFindings": "To review",
+    "truncatedNote": "Partial results (fair-use caps).",
+    "findingsTitle": "Findings (review only)",
+    "noFindings": "No heuristic gaps observed on checked pages/images.",
+    "kindDisclosure": "Disclosure notice",
+    "kindLedger": "Ledger link",
+    "kindProvenance": "Provenance hints",
+    "severityReview": "review",
+    "page": "Page",
+    "asset": "Asset",
+    "runAnother": "Another scan"
   }
 }

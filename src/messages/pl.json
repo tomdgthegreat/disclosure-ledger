@@ -23,7 +23,11 @@
     "legalTitle": "Informacje prawne / Impressum — Disclosure Ledger",
     "legalDescription": "Dane operatora Disclosure Ledger: Atlas AG LLC, Melba, ID 83641, Stany Zjednoczone. Kontakt hello@discloseledger.com.",
     "cookiesTitle": "Polityka plików cookie — Disclosure Ledger",
-    "cookiesDescription": "Disclosure Ledger w Day-1 używa wyłącznie niezbędnych technicznie plików cookie. Bez trackerów marketingowych; przy samym użyciu niezbędnym baner zgody nie jest wymagany."
+    "cookiesDescription": "Disclosure Ledger w Day-1 używa wyłącznie niezbędnych technicznie plików cookie. Bez trackerów marketingowych; przy samym użyciu niezbędnym baner zgody nie jest wymagany.",
+    "scanTitle": "Hygiene scan — Disclosure Ledger",
+    "scanDescription": "Crawl a public site for possible disclosure gaps to review: nearby notices, ledger links, and lightweight provenance hints. Not an audit or compliance product.",
+    "scanResultTitle": "Hygiene scan results — Disclosure Ledger",
+    "scanResultDescription": "Possible disclosure gaps to review from a public-site hygiene scan. Not an audit or Art. 50 certification."
   },
   "nav": {
     "home": "Start",
@@ -35,7 +39,8 @@
     "privacy": "Prywatność",
     "terms": "Regulamin",
     "legal": "Informacje prawne",
-    "cookies": "Cookies"
+    "cookies": "Cookies",
+    "scan": "Skan"
   },
   "disclaimer": {
     "title": "Samodzielnie zgłoszone i niezweryfikowane",
@@ -89,7 +94,7 @@
     "teamTitle": "Zespół",
     "teamPrice": "29 €",
     "teamPeriod": "/mies.",
-    "teamBody": "Po darmowym limicie. Stripe Checkout (oparty na env; stub do czasu konfiguracji kluczy). Dla agencji i marek regularnie wysyłających obrazy.",
+    "teamBody": "Po darmowym limicie. Działający Stripe Checkout za 29 €/mies. dla agencji i marek regularnie wysyłających obrazy.",
     "cta": "Zacznij od 3 darmowych",
     "note": "Płatny dostęp odblokowuje dalsze tworzenie rekordów. Nie kupuje weryfikacji, podpisu, atestacji ani porady prawnej."
   },
@@ -136,7 +141,7 @@
   },
   "create": {
     "title": "Utwórz rekord ujawnienia",
-    "lead": "Pierwsze 3 rekordy są darmowe na tej instancji. Potem zobaczysz soft gate 29 €/mies. (Stripe Checkout, gdy skonfigurowany)."
+    "lead": "Pierwsze 3 rekordy są darmowe na e-mail kontaktowy. Potem zobaczysz soft gate 29 €/mies. przez Stripe Checkout."
   },
   "form": {
     "dropTitle": "Upuść tutaj obraz przeznaczony do publikacji",
@@ -160,7 +165,7 @@
     "emailPlaceholder": "na konto / rozliczenia później",
     "gatedDefault": "Darmowy limit wykorzystany (3 rekordy). Subskrybuj 29 €/mies., by kontynuować.",
     "checkout": "Kontynuuj ze Stripe Checkout (29 €/mies.)",
-    "checkoutStub": "Checkout oparty na env i może być stub, dopóki nie ustawisz kluczy Stripe.",
+    "checkoutStub": "Otwiera Stripe Checkout za 29 €/mies. Płatność dokończysz w Stripe.",
     "submit": "Opublikuj trwały rekord publiczny",
     "submitting": "Zapisywanie rekordu…",
     "previewAlt": "Wybrany podgląd",
@@ -207,7 +212,7 @@
     "title": "Zespół",
     "price": "29 €",
     "period": "/mies.",
-    "body": "Po darmowym limicie. Stripe Checkout (oparty na env; stub do czasu konfiguracji kluczy). Dla agencji i marek regularnie wysyłających obrazy.",
+    "body": "Po darmowym limicie. Działający Stripe Checkout za 29 €/mies. dla agencji i marek regularnie wysyłających obrazy.",
     "cta": "Zacznij od 3 darmowych"
   },
   "privacy": {
@@ -216,7 +221,7 @@
     "controllerTitle": "Administrator",
     "controllerBody": "Atlas AG LLC, Melba, ID 83641, Stany Zjednoczone. Kontakt: hello@discloseledger.com. Produkt: Disclosure Ledger (https://discloseledger.com).",
     "purposesTitle": "Cele",
-    "purposesBody": "Przetwarzamy dane w celu prowadzenia usługi deklaracji i śladu audytowego: tworzenia i wyświetlania publicznych rekordów, eksportu CSV, zarządzania limitem darmowym oraz (gdy skonfigurowane) rozliczeniami, prowadzenia logów bezpieczeństwa i operacyjnych oraz odpowiadania na wnioski dotyczące prywatności.",
+    "purposesBody": "Przetwarzamy dane w celu prowadzenia usługi deklaracji i śladu audytowego: tworzenia i wyświetlania publicznych rekordów, eksportu CSV, zarządzania limitem darmowym oraz rozliczeniami Stripe, prowadzenia logów bezpieczeństwa i operacyjnych oraz odpowiadania na wnioski dotyczące prywatności.",
     "basesTitle": "Podstawy prawne",
     "basesBody": "W zależności od przetwarzania: wykonanie umowy lub działania przedumowne (świadczenie żądanej usługi); prawnie uzasadnione interesy (bezpieczeństwo, zapobieganie nadużyciom, ulepszanie produktu bez nadrzędności nad Twoimi prawami); oraz, gdy wymagane, zgoda (dla opcjonalnego e-maila kontaktowego poza samym utworzeniem rekordu).",
     "dataTitle": "Przetwarzane dane",
@@ -228,7 +233,7 @@
     "retentionTitle": "Okres przechowywania",
     "retentionBody": "Publiczne rekordy są przechowywane jako ślad audytowy tak długo, jak działa publiczny rejestr, chyba że jesteśmy zobowiązani lub zgodnie z prawem poproszeni o usunięcie lub ograniczenie danych osobowych nieistotnych dla publicznego rekordu. Opcjonalny e-mail kontaktowy jest przechowywany na potrzeby konta/rozliczeń do czasu, gdy przestanie być potrzebny. Logi techniczne są przechowywane krócej.",
     "processorsTitle": "Podmioty przetwarzające",
-    "processorsBody": "Korzystamy z Vercel do hostingu i dostarczania. Gdy Stripe jest skonfigurowany, Stripe przetwarza dane związane z płatnościami. Mogą zostać dodani inni podwykonawcy; zaktualizujemy tę politykę przy istotnych zmianach.",
+    "processorsBody": "Korzystamy z Vercel do hostingu i dostarczania. Stripe przetwarza dane związane z płatnościami dla Checkout i subskrypcji. Mogą zostać dodani inni podwykonawcy; zaktualizujemy tę politykę przy istotnych zmianach.",
     "transfersTitle": "Transfery międzynarodowe",
     "transfersBody": "Operator ma siedzibę w Idaho, Stany Zjednoczone. Dane mogą być przetwarzane w USA oraz — w zależności od konfiguracji hostingu — w UE (np. region Frankfurt / UE). Gdy transfery wychodzą poza EOG/Wielką Brytanię, mogą obowiązywać odpowiednie zabezpieczenia zgodnie z obowiązującym prawem.",
     "rightsTitle": "Twoje prawa",
@@ -277,5 +282,45 @@
     "bannerBody": "Ponieważ Day-1 używa tylko niezbędnych środków technicznych i żadnych trackerów marketingowych, baner zgody na pliki cookie zwykle nie jest wymagany dla takiej konfiguracji tylko niezbędnej. To nie jest porada prawna.",
     "contactTitle": "Kontakt",
     "contactBody": "Pytania: hello@discloseledger.com. Zobacz także naszą Politykę prywatności."
+  },
+  "scan": {
+    "eyebrow": "Public-site hygiene check",
+    "title": "Scan for possible disclosure gaps",
+    "lead": "Enter a public URL and contact email. Possible disclosure gaps to review only — not an audit.",
+    "bullet1": "Missing nearby AI / disclosure notice",
+    "bullet2": "No discloseledger.com/r/… link",
+    "bullet3": "Missing readable provenance metadata hints",
+    "notAudit": "Possible disclosure gaps to review only — not an audit, compliance opinion, or Art. 50 certification.",
+    "urlLabel": "Public website URL",
+    "emailLabel": "Contact email",
+    "urlRequired": "URL required",
+    "emailRequired": "Email required",
+    "fairUse": "Free: 1 scan · 8 pages / 15 images. Paid: 20 pages / 40 images · 10 min cooldown.",
+    "submit": "Run hygiene scan",
+    "running": "Scanning…",
+    "failed": "Scan failed",
+    "gatedTitle": "Scan limit reached",
+    "gatedDefault": "Free scan used. Subscribe €29/mo for paid scans.",
+    "cooldownDefault": "Cooldown active — try again shortly.",
+    "checkout": "Stripe Checkout",
+    "seePricing": "Pricing",
+    "stripeNotConfigured": "Stripe not configured",
+    "redirecting": "Opening scan {id}…",
+    "resultEyebrow": "Hygiene scan results",
+    "resultTitle": "Possible disclosure gaps to review",
+    "resultMeta": "Ran {date} · {pages} pages · {images} images",
+    "statPages": "Pages",
+    "statImages": "Images",
+    "statFindings": "To review",
+    "truncatedNote": "Partial results (fair-use caps).",
+    "findingsTitle": "Findings (review only)",
+    "noFindings": "No heuristic gaps observed on checked pages/images.",
+    "kindDisclosure": "Disclosure notice",
+    "kindLedger": "Ledger link",
+    "kindProvenance": "Provenance hints",
+    "severityReview": "review",
+    "page": "Page",
+    "asset": "Asset",
+    "runAnother": "Another scan"
   }
 }

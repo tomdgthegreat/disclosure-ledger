@@ -23,7 +23,11 @@
     "legalTitle": "Legal notice / Impressum — Disclosure Ledger",
     "legalDescription": "Operator information for Disclosure Ledger: Atlas AG LLC, Melba, ID 83641, United States. Contact hello@discloseledger.com.",
     "cookiesTitle": "Cookie Policy — Disclosure Ledger",
-    "cookiesDescription": "Disclosure Ledger uses only strictly necessary technical cookies on Day-1. No marketing trackers; no consent banner required for essential-only use."
+    "cookiesDescription": "Disclosure Ledger uses only strictly necessary technical cookies on Day-1. No marketing trackers; no consent banner required for essential-only use.",
+    "scanTitle": "Hygiene scan — Disclosure Ledger",
+    "scanDescription": "Crawl a public site for possible disclosure gaps to review: nearby notices, ledger links, and lightweight provenance hints. Not an audit or compliance product.",
+    "scanResultTitle": "Hygiene scan results — Disclosure Ledger",
+    "scanResultDescription": "Possible disclosure gaps to review from a public-site hygiene scan. Not an audit or Art. 50 certification."
   },
   "nav": {
     "home": "Home",
@@ -35,7 +39,8 @@
     "privacy": "Privacy",
     "terms": "Terms",
     "legal": "Legal",
-    "cookies": "Cookies"
+    "cookies": "Cookies",
+    "scan": "Scan"
   },
   "disclaimer": {
     "title": "Self-reported & unverified",
@@ -89,7 +94,7 @@
     "teamTitle": "Team",
     "teamPrice": "€29",
     "teamPeriod": "/mo",
-    "teamBody": "After free tier. Stripe Checkout (env-based; stubbed until keys are configured). Built for agencies and brands shipping images regularly.",
+    "teamBody": "After free tier. Live Stripe Checkout at €29/mo for agencies and brands shipping images regularly.",
     "cta": "Start with 3 free",
     "note": "Paid access unlocks continued record creation on this product. It does not purchase verification, signing, attestation, or legal advice."
   },
@@ -136,7 +141,7 @@
   },
   "create": {
     "title": "Create a disclosure record",
-    "lead": "First 3 records are free per contact email. After that you will see a soft gate for €29/mo (Stripe Checkout when configured)."
+    "lead": "First 3 records are free per contact email. After that you’ll see a soft gate for €29/mo via Stripe Checkout."
   },
   "form": {
     "dropTitle": "Drop a publish-bound image here",
@@ -160,7 +165,7 @@
     "emailPlaceholder": "for account / billing later",
     "gatedDefault": "Free tier used (3 records for this email). Subscribe at €29/mo to continue.",
     "checkout": "Continue with Stripe Checkout (€29/mo)",
-    "checkoutStub": "Checkout is env-based and may be stubbed until Stripe keys are set.",
+    "checkoutStub": "Opens Stripe Checkout for €29/mo. You’ll finish payment on Stripe.",
     "submit": "Publish permanent public record",
     "submitting": "Saving record…",
     "previewAlt": "Selected preview",
@@ -207,7 +212,7 @@
     "title": "Team",
     "price": "€29",
     "period": "/mo",
-    "body": "After free tier. Stripe Checkout (env-based; stubbed until keys are configured). Built for agencies and brands shipping images regularly.",
+    "body": "After free tier. Live Stripe Checkout at €29/mo for agencies and brands shipping images regularly.",
     "cta": "Start with 3 free"
   },
   "privacy": {
@@ -216,7 +221,7 @@
     "controllerTitle": "Controller",
     "controllerBody": "Atlas AG LLC, Melba, ID 83641, United States. Contact: hello@discloseledger.com. Product: Disclosure Ledger (https://discloseledger.com).",
     "purposesTitle": "Purposes",
-    "purposesBody": "We process data to operate the declaration and audit-trail service: create and display public disclosure records, provide CSV export, manage the free-tier gate and (when configured) billing, keep security and operational logs, and respond to privacy requests.",
+    "purposesBody": "We process data to operate the declaration and audit-trail service: create and display public disclosure records, provide CSV export, manage the free-tier gate and Stripe billing, keep security and operational logs, and respond to privacy requests.",
     "basesTitle": "Legal bases",
     "basesBody": "Depending on the processing: performance of a contract or steps prior to a contract (providing the service you request); legitimate interests (security, abuse prevention, product improvement that does not override your rights); and, where required, consent (for optional contact email used beyond core record creation).",
     "dataTitle": "Data we process",
@@ -228,7 +233,7 @@
     "retentionTitle": "Retention",
     "retentionBody": "Public disclosure records are retained as an audit trail for as long as the service operates the public ledger, unless we are required or lawfully asked to remove or restrict personal data that is not essential to the public record. Optional contact email is kept for account or billing follow-up until no longer needed. Technical logs are kept for a shorter operational period.",
     "processorsTitle": "Processors",
-    "processorsBody": "We use Vercel for hosting and delivery. When Stripe is configured, Stripe processes payment-related data. Other subprocessors may be added; we will update this policy when material changes occur.",
+    "processorsBody": "We use Vercel for hosting and delivery. Stripe processes payment-related data for Checkout and subscriptions. Other subprocessors may be added; we will update this policy when material changes occur.",
     "transfersTitle": "International transfers",
     "transfersBody": "The operator is based in Idaho, United States. Data may be processed in the US and, depending on hosting configuration, in the EU (for example if the deployment region is set to Frankfurt / EU). Where transfers leave the EEA/UK, appropriate safeguards may apply under applicable law.",
     "rightsTitle": "Your rights",
@@ -236,7 +241,8 @@
     "publicTitle": "Public records caveat",
     "publicBody": "Disclosure records you publish are designed to be publicly viewable at /r/[id] (and via CSV/JSON APIs without contact email). Do not include personal data in notes or file names that you do not want public. Contact email is not included in public CSV or public JSON exports.",
     "claimsTitle": "What this product is not",
-    "claimsBody": "Disclosure Ledger is not an EU AI Act Article 50 compliance product, does not verify or cryptographically sign images, and does not provide legal advice."
+    "claimsBody": "Disclosure Ledger is not an EU AI Act Article 50 compliance product, does not verify or cryptographically sign images, and does not provide legal advice.",
+    "pricingBody": "The free tier allows three records per contact email. Thereafter, continued record creation may require a Team subscription at €29/mo (EUR), billed via Stripe Checkout. Paid access unlocks continued use of the declaration tool for that email — it does not purchase verification, signing, attestation, or legal advice."
   },
   "terms": {
     "title": "Terms of Service",
@@ -250,7 +256,7 @@
     "liabilityTitle": "Liability limits",
     "liabilityBody": "To the maximum extent permitted by law, Atlas AG LLC is not liable for indirect, incidental, special, consequential, or punitive damages, or for loss of profits, data, or goodwill arising from use of the service. Our aggregate liability for claims relating to the service is limited to the greater of (a) fees you paid us for the service in the three months before the claim or (b) €29. Nothing in these terms excludes liability that cannot be limited under applicable mandatory law (including mandatory EU consumer protections).",
     "pricingTitle": "Pricing",
-    "pricingBody": "The free tier allows three records per contact email. Thereafter, continued record creation may require a Team subscription at €29/mo (EUR), billed via Stripe when configured. Paid access unlocks continued use of the declaration tool for that email — it does not purchase verification, signing, attestation, or legal advice.",
+    "pricingBody": "The free tier allows three records per contact email. Thereafter, continued record creation may require a Team subscription at €29/mo (EUR), billed via Stripe. Paid access unlocks continued use of the declaration tool for that email — it does not purchase verification, signing, attestation, or legal advice.",
     "lawTitle": "Governing law",
     "lawBody": "These terms are governed by the laws of the State of Idaho, United States, without regard to conflict-of-law rules, subject to mandatory consumer protections that apply in your country of residence in the EU/EEA/UK where those protections cannot be waived.",
     "contactTitle": "Contact",
@@ -277,5 +283,45 @@
     "bannerBody": "Because Day-1 uses essential-only technical measures and no marketing trackers, a cookie consent banner is not required for that essential-only setup under typical EU guidance. This is not legal advice.",
     "contactTitle": "Contact",
     "contactBody": "Questions: hello@discloseledger.com. See also our Privacy Policy."
+  },
+  "scan": {
+    "eyebrow": "Public-site hygiene check",
+    "title": "Scan for possible disclosure gaps",
+    "lead": "Enter a public URL and contact email. We crawl same-host public pages and images and flag observable possible gaps to review — never an audit or compliance certificate.",
+    "bullet1": "Missing nearby AI / disclosure notice wording on a page",
+    "bullet2": "No Disclosure Ledger record link (discloseledger.com/r/…)",
+    "bullet3": "Missing lightweight provenance metadata hints when readable (PNG/JPEG/XMP/C2PA string sniff — no ML detectors)",
+    "notAudit": "This lists possible disclosure gaps to review only. It is not an audit, not legal compliance advice, and not an EU AI Act Art. 50 certification.",
+    "urlLabel": "Public website URL",
+    "emailLabel": "Contact email",
+    "urlRequired": "A public http(s) URL is required.",
+    "emailRequired": "Contact email is required (1 free scan per email lifetime).",
+    "fairUse": "Free: 1 scan lifetime · up to 8 pages / 15 images. Paid (€29/mo entitlement): up to 20 pages / 40 images with a 10-minute cooldown between runs. Private/local hosts are blocked.",
+    "submit": "Run hygiene scan",
+    "running": "Scanning public pages…",
+    "failed": "Scan failed. Check the URL and try again.",
+    "gatedTitle": "Scan limit reached",
+    "gatedDefault": "Free hygiene scan already used for this email. Subscribe (€29/mo) for fair-use paid scans.",
+    "cooldownDefault": "Please wait for the paid fair-use cooldown before running another scan.",
+    "checkout": "Continue with Stripe Checkout",
+    "seePricing": "See pricing",
+    "stripeNotConfigured": "Stripe Checkout is not configured on the server.",
+    "redirecting": "Scan {id} ready — opening results…",
+    "resultEyebrow": "Hygiene scan results",
+    "resultTitle": "Possible disclosure gaps to review",
+    "resultMeta": "Ran {date} · {pages} pages · {images} images checked",
+    "statPages": "Pages crawled",
+    "statImages": "Images checked",
+    "statFindings": "Items to review",
+    "truncatedNote": "Crawl stopped at fair-use caps or time budget — results may be partial.",
+    "findingsTitle": "Findings (review only)",
+    "noFindings": "No observable gaps matched our lightweight heuristics on the pages/images checked. That does not mean the site is compliant or disclosure-complete.",
+    "kindDisclosure": "Nearby disclosure notice",
+    "kindLedger": "Ledger record link",
+    "kindProvenance": "Provenance metadata hints",
+    "severityReview": "review",
+    "page": "Page",
+    "asset": "Asset",
+    "runAnother": "Run another scan"
   }
 }

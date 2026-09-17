@@ -23,7 +23,11 @@
     "legalTitle": "Mentions légales / Impressum — Disclosure Ledger",
     "legalDescription": "Informations sur l’éditeur de Disclosure Ledger : Atlas AG LLC, Melba, ID 83641, États-Unis. Contact hello@discloseledger.com.",
     "cookiesTitle": "Politique relative aux cookies — Disclosure Ledger",
-    "cookiesDescription": "Disclosure Ledger n’utilise au Day-1 que des cookies techniques strictement nécessaires. Pas de trackers marketing ; pas de bannière de consentement pour un usage essentiel uniquement."
+    "cookiesDescription": "Disclosure Ledger n’utilise au Day-1 que des cookies techniques strictement nécessaires. Pas de trackers marketing ; pas de bannière de consentement pour un usage essentiel uniquement.",
+    "scanTitle": "Hygiene scan — Disclosure Ledger",
+    "scanDescription": "Crawl a public site for possible disclosure gaps to review: nearby notices, ledger links, and lightweight provenance hints. Not an audit or compliance product.",
+    "scanResultTitle": "Hygiene scan results — Disclosure Ledger",
+    "scanResultDescription": "Possible disclosure gaps to review from a public-site hygiene scan. Not an audit or Art. 50 certification."
   },
   "nav": {
     "home": "Accueil",
@@ -35,7 +39,8 @@
     "privacy": "Confidentialité",
     "terms": "Conditions",
     "legal": "Mentions légales",
-    "cookies": "Cookies"
+    "cookies": "Cookies",
+    "scan": "Scan"
   },
   "disclaimer": {
     "title": "Auto-déclaré et non vérifié",
@@ -89,7 +94,7 @@
     "teamTitle": "Équipe",
     "teamPrice": "29 €",
     "teamPeriod": "/mois",
-    "teamBody": "Après l’essai gratuit. Stripe Checkout (basé sur l’environnement ; stub jusqu’à configuration des clés). Pour agences et marques qui publient régulièrement.",
+    "teamBody": "Après l’essai gratuit. Stripe Checkout en direct à 29 €/mois pour agences et marques qui publient régulièrement.",
     "cta": "Commencer avec 3 gratuits",
     "note": "L’accès payant débloque la création continue de dossiers. Il n’achète ni vérification, ni signature, ni attestation, ni conseil juridique."
   },
@@ -136,7 +141,7 @@
   },
   "create": {
     "title": "Créer un dossier de divulgation",
-    "lead": "Les 3 premiers dossiers sont gratuits sur cette instance. Ensuite, une porte souple vers 29 €/mois (Stripe Checkout si configuré)."
+    "lead": "Les 3 premiers dossiers sont gratuits par e-mail de contact. Ensuite, une porte souple vers 29 €/mois via Stripe Checkout."
   },
   "form": {
     "dropTitle": "Déposez ici une image destinée à la publication",
@@ -160,7 +165,7 @@
     "emailPlaceholder": "pour compte / facturation plus tard",
     "gatedDefault": "Essai gratuit utilisé (3 dossiers). Abonnez-vous à 29 €/mois pour continuer.",
     "checkout": "Continuer avec Stripe Checkout (29 €/mois)",
-    "checkoutStub": "Checkout est basé sur l’environnement et peut être stub jusqu’à la configuration des clés Stripe.",
+    "checkoutStub": "Ouvre Stripe Checkout à 29 €/mois. Vous finalisez le paiement sur Stripe.",
     "submit": "Publier un dossier public permanent",
     "submitting": "Enregistrement du dossier…",
     "previewAlt": "Aperçu sélectionné",
@@ -207,7 +212,7 @@
     "title": "Équipe",
     "price": "29 €",
     "period": "/mois",
-    "body": "Après l’essai gratuit. Stripe Checkout (basé sur l’environnement ; stub jusqu’à configuration des clés). Pour agences et marques qui publient régulièrement.",
+    "body": "Après l’essai gratuit. Stripe Checkout en direct à 29 €/mois pour agences et marques qui publient régulièrement.",
     "cta": "Commencer avec 3 gratuits"
   },
   "privacy": {
@@ -228,7 +233,7 @@
     "retentionTitle": "Conservation",
     "retentionBody": "Les fiches publiques sont conservées comme piste d’audit tant que le registre public est exploité, sauf obligation ou demande légitime de supprimer ou restreindre des données personnelles non essentielles à la fiche publique. L’e-mail de contact optionnel est conservé pour le suivi compte/facturation tant qu’il est nécessaire. Les journaux techniques sont conservés plus brièvement.",
     "processorsTitle": "Sous-traitants",
-    "processorsBody": "Nous utilisons Vercel pour l’hébergement et la diffusion. Lorsque Stripe est configuré, Stripe traite les données liées au paiement. D’autres sous-traitants peuvent s’ajouter ; nous mettrons à jour cette politique en cas de changement matériel.",
+    "processorsBody": "Nous utilisons Vercel pour l’hébergement et la diffusion. Stripe traite les données liées au paiement pour Checkout et les abonnements. D’autres sous-traitants peuvent s’ajouter ; nous mettrons à jour cette politique en cas de changement matériel.",
     "transfersTitle": "Transferts internationaux",
     "transfersBody": "L’opérateur est basé dans l’Idaho (États-Unis). Les données peuvent être traitées aux États-Unis et, selon la configuration d’hébergement, dans l’UE (par ex. région Francfort / UE). Lorsque des transferts quittent l’EEE/Royaume-Uni, des garanties appropriées peuvent s’appliquer.",
     "rightsTitle": "Vos droits",
@@ -250,7 +255,7 @@
     "liabilityTitle": "Limitation de responsabilité",
     "liabilityBody": "Dans toute la mesure permise par la loi, Atlas AG LLC n’est pas responsable des dommages indirects, accessoires, spéciaux, consécutifs ou punitifs, ni des pertes de profits, de données ou de clientèle découlant de l’utilisation du service. Notre responsabilité globale pour les réclamations liées au service est limitée au plus élevé de (a) les frais que vous nous avez payés pour le service au cours des trois mois précédant la réclamation ou (b) 29 €. Rien n’exclut une responsabilité qui ne peut être limitée en vertu du droit impératif applicable (y compris les protections consommateurs UE).",
     "pricingTitle": "Tarification",
-    "pricingBody": "L’offre gratuite permet trois fiches sur cette instance. Ensuite, la création continue peut nécessiter un abonnement Team à 29 €/mois (EUR), facturé via Stripe lorsqu’il est configuré. L’accès payant débloque l’usage continu de l’outil de déclaration — il n’achète ni vérification, ni signature, ni attestation, ni conseil juridique.",
+    "pricingBody": "L’offre gratuite permet trois dossiers par e-mail de contact. Ensuite, la création continue peut nécessiter un abonnement Team à 29 €/mois (EUR), facturé via Stripe Checkout. L’accès payant débloque l’usage continu de l’outil de déclaration — il n’achète pas de vérification, signature, attestation ou conseil juridique.",
     "lawTitle": "Droit applicable",
     "lawBody": "Ces conditions sont régies par le droit de l’État de l’Idaho (États-Unis), sans égard aux règles de conflit de lois, sous réserve des protections consommateurs impératives applicables dans votre pays de résidence dans l’UE/EEE/Royaume-Uni lorsqu’elles ne peuvent être écartées.",
     "contactTitle": "Contact",
@@ -277,5 +282,45 @@
     "bannerBody": "Parce que le Day-1 n’utilise que des mesures techniques essentielles et aucun tracker marketing, une bannière de consentement aux cookies n’est en principe pas requise pour cette configuration essentielle uniquement. Ceci n’est pas un conseil juridique.",
     "contactTitle": "Contact",
     "contactBody": "Questions : hello@discloseledger.com. Voir aussi notre Politique de confidentialité."
+  },
+  "scan": {
+    "eyebrow": "Public-site hygiene check",
+    "title": "Scan for possible disclosure gaps",
+    "lead": "Enter a public URL and contact email. Possible disclosure gaps to review only — not an audit.",
+    "bullet1": "Missing nearby AI / disclosure notice",
+    "bullet2": "No discloseledger.com/r/… link",
+    "bullet3": "Missing readable provenance metadata hints",
+    "notAudit": "Possible disclosure gaps to review only — not an audit, compliance opinion, or Art. 50 certification.",
+    "urlLabel": "Public website URL",
+    "emailLabel": "Contact email",
+    "urlRequired": "URL required",
+    "emailRequired": "Email required",
+    "fairUse": "Free: 1 scan · 8 pages / 15 images. Paid: 20 pages / 40 images · 10 min cooldown.",
+    "submit": "Run hygiene scan",
+    "running": "Scanning…",
+    "failed": "Scan failed",
+    "gatedTitle": "Scan limit reached",
+    "gatedDefault": "Free scan used. Subscribe €29/mo for paid scans.",
+    "cooldownDefault": "Cooldown active — try again shortly.",
+    "checkout": "Stripe Checkout",
+    "seePricing": "Pricing",
+    "stripeNotConfigured": "Stripe not configured",
+    "redirecting": "Opening scan {id}…",
+    "resultEyebrow": "Hygiene scan results",
+    "resultTitle": "Possible disclosure gaps to review",
+    "resultMeta": "Ran {date} · {pages} pages · {images} images",
+    "statPages": "Pages",
+    "statImages": "Images",
+    "statFindings": "To review",
+    "truncatedNote": "Partial results (fair-use caps).",
+    "findingsTitle": "Findings (review only)",
+    "noFindings": "No heuristic gaps observed on checked pages/images.",
+    "kindDisclosure": "Disclosure notice",
+    "kindLedger": "Ledger link",
+    "kindProvenance": "Provenance hints",
+    "severityReview": "review",
+    "page": "Page",
+    "asset": "Asset",
+    "runAnother": "Another scan"
   }
 }

@@ -23,7 +23,11 @@
     "legalTitle": "Note legali / Impressum — Disclosure Ledger",
     "legalDescription": "Informazioni sull’operatore di Disclosure Ledger: Atlas AG LLC, Melba, ID 83641, Stati Uniti. Contatto hello@discloseledger.com.",
     "cookiesTitle": "Informativa sui cookie — Disclosure Ledger",
-    "cookiesDescription": "Disclosure Ledger al Day-1 usa solo cookie tecnici strettamente necessari. Nessun tracker di marketing; per l’uso solo essenziale non è richiesto un banner di consenso."
+    "cookiesDescription": "Disclosure Ledger al Day-1 usa solo cookie tecnici strettamente necessari. Nessun tracker di marketing; per l’uso solo essenziale non è richiesto un banner di consenso.",
+    "scanTitle": "Hygiene scan — Disclosure Ledger",
+    "scanDescription": "Crawl a public site for possible disclosure gaps to review: nearby notices, ledger links, and lightweight provenance hints. Not an audit or compliance product.",
+    "scanResultTitle": "Hygiene scan results — Disclosure Ledger",
+    "scanResultDescription": "Possible disclosure gaps to review from a public-site hygiene scan. Not an audit or Art. 50 certification."
   },
   "nav": {
     "home": "Home",
@@ -35,7 +39,8 @@
     "privacy": "Privacy",
     "terms": "Termini",
     "legal": "Note legali",
-    "cookies": "Cookie"
+    "cookies": "Cookie",
+    "scan": "Scan"
   },
   "disclaimer": {
     "title": "Auto-dichiarato e non verificato",
@@ -89,7 +94,7 @@
     "teamTitle": "Team",
     "teamPrice": "29 €",
     "teamPeriod": "/mese",
-    "teamBody": "Dopo il free tier. Stripe Checkout (basato su env; stub finché le chiavi non sono configurate). Per agenzie e brand che spediscono immagini regolarmente.",
+    "teamBody": "Dopo il free tier. Stripe Checkout live a 29 €/mese per agenzie e brand che spediscono immagini regolarmente.",
     "cta": "Inizia con 3 gratis",
     "note": "L’accesso a pagamento sblocca la creazione continua di record. Non acquista verifica, firma, attestazione o consulenza legale."
   },
@@ -136,7 +141,7 @@
   },
   "create": {
     "title": "Crea un record di disclosure",
-    "lead": "I primi 3 record sono gratuiti su questa istanza. Poi vedrete un soft gate a 29 €/mese (Stripe Checkout se configurato)."
+    "lead": "I primi 3 record sono gratuiti per e-mail di contatto. Poi vedrete un soft gate a 29 €/mese tramite Stripe Checkout."
   },
   "form": {
     "dropTitle": "Rilascia qui un’immagine destinata alla pubblicazione",
@@ -160,7 +165,7 @@
     "emailPlaceholder": "per account / fatturazione in seguito",
     "gatedDefault": "Free tier esaurito (3 record). Continuate a 29 €/mese.",
     "checkout": "Continua con Stripe Checkout (29 €/mese)",
-    "checkoutStub": "Checkout è basato su env e può essere stub finché le chiavi Stripe non sono impostate.",
+    "checkoutStub": "Apre Stripe Checkout a 29 €/mese. Completi il pagamento su Stripe.",
     "submit": "Pubblica record pubblico permanente",
     "submitting": "Salvataggio record…",
     "previewAlt": "Anteprima selezionata",
@@ -207,7 +212,7 @@
     "title": "Team",
     "price": "29 €",
     "period": "/mese",
-    "body": "Dopo il free tier. Stripe Checkout (basato su env; stub finché le chiavi non sono configurate). Per agenzie e brand che spediscono immagini regolarmente.",
+    "body": "Dopo il free tier. Stripe Checkout live a 29 €/mese per agenzie e brand che spediscono immagini regolarmente.",
     "cta": "Inizia con 3 gratis"
   },
   "privacy": {
@@ -216,7 +221,7 @@
     "controllerTitle": "Titolare del trattamento",
     "controllerBody": "Atlas AG LLC, Melba, ID 83641, Stati Uniti. Contatto: hello@discloseledger.com. Prodotto: Disclosure Ledger (https://discloseledger.com).",
     "purposesTitle": "Finalità",
-    "purposesBody": "Trattiamo i dati per gestire il servizio di dichiarazione e audit trail: creare e mostrare schede pubbliche, fornire l’export CSV, gestire il limite gratuito e (se configurato) la fatturazione, conservare log di sicurezza e operativi, e rispondere alle richieste privacy.",
+    "purposesBody": "Trattiamo i dati per gestire il servizio di dichiarazione e audit trail: creare e mostrare schede pubbliche, fornire l’export CSV, gestire il limite gratuito e la fatturazione Stripe, conservare log di sicurezza e operativi, e rispondere alle richieste privacy.",
     "basesTitle": "Basi giuridiche",
     "basesBody": "A seconda del trattamento: esecuzione di un contratto o misure precontrattuali (fornitura del servizio richiesto); interessi legittimi (sicurezza, prevenzione abusi, miglioramento del prodotto senza prevalere sui tuoi diritti); e, ove richiesto, consenso (per l’e-mail di contatto facoltativa oltre la semplice creazione della scheda).",
     "dataTitle": "Dati trattati",
@@ -228,7 +233,7 @@
     "retentionTitle": "Conservazione",
     "retentionBody": "Le schede pubbliche sono conservate come audit trail finché il registro pubblico è operativo, salvo obbligo o richiesta legittima di rimuovere o limitare dati personali non essenziali alla scheda pubblica. L’e-mail di contatto facoltativa è conservata per follow-up di account/fatturazione finché necessaria. I log tecnici sono conservati per un periodo operativo più breve.",
     "processorsTitle": "Responsabili del trattamento",
-    "processorsBody": "Usiamo Vercel per hosting e distribuzione. Quando Stripe è configurato, Stripe tratta i dati relativi ai pagamenti. Altri sub-responsabili possono essere aggiunti; aggiorneremo questa informativa in caso di cambiamenti rilevanti.",
+    "processorsBody": "Usiamo Vercel per hosting e distribuzione. Stripe tratta i dati relativi ai pagamenti per Checkout e abbonamenti. Altri sub-responsabili possono essere aggiunti; aggiorneremo questa informativa in caso di cambiamenti rilevanti.",
     "transfersTitle": "Trasferimenti internazionali",
     "transfersBody": "L’operatore ha sede in Idaho, Stati Uniti. I dati possono essere trattati negli USA e, a seconda della configurazione di hosting, nell’UE (ad es. regione Francoforte / UE). Quando i trasferimenti escono da SEE/UK, possono applicarsi garanzie adeguate ai sensi della legge applicabile.",
     "rightsTitle": "I tuoi diritti",
@@ -250,7 +255,7 @@
     "liabilityTitle": "Limiti di responsabilità",
     "liabilityBody": "Nella misura massima consentita dalla legge, Atlas AG LLC non è responsabile per danni indiretti, incidentali, speciali, consequenziali o punitivi, né per perdita di profitti, dati o avviamento derivanti dall’uso del servizio. La nostra responsabilità aggregata per reclami relativi al servizio è limitata al maggiore tra (a) le somme pagateci per il servizio nei tre mesi precedenti il reclamo o (b) 29 €. Nulla esclude responsabilità che non possono essere limitate ai sensi del diritto cogente applicabile (incluse le tutele consumatori UE obbligatorie).",
     "pricingTitle": "Prezzi",
-    "pricingBody": "Il piano gratuito consente tre schede su questa istanza. Successivamente, la creazione continua può richiedere un abbonamento Team a 29 €/mese (EUR), fatturato tramite Stripe se configurato. L’accesso a pagamento sblocca l’uso continuo dello strumento di dichiarazione — non acquista verifica, firma, attestazione o consulenza legale.",
+    "pricingBody": "Il piano gratuito consente tre schede per e-mail di contatto. Successivamente, la creazione continua può richiedere un abbonamento Team a 29 €/mese (EUR), fatturato tramite Stripe Checkout. L’accesso a pagamento sblocca l’uso continuo dello strumento di dichiarazione — non acquista verifica, firma, attestazione o consulenza legale.",
     "lawTitle": "Legge applicabile",
     "lawBody": "Questi termini sono regolati dalle leggi dello Stato dell’Idaho, Stati Uniti, senza riguardo alle norme di conflitto di leggi, fatte salve le tutele consumatori obbligatorie applicabili nel paese di residenza in UE/SEE/UK ove non rinunciabili.",
     "contactTitle": "Contatto",
@@ -277,5 +282,45 @@
     "bannerBody": "Poiché il Day-1 usa solo misure tecniche essenziali e nessun tracker di marketing, un banner di consenso ai cookie non è in genere richiesto per questa configurazione solo essenziale. Non costituisce consulenza legale.",
     "contactTitle": "Contatto",
     "contactBody": "Domande: hello@discloseledger.com. Vedi anche la nostra Informativa sulla privacy."
+  },
+  "scan": {
+    "eyebrow": "Public-site hygiene check",
+    "title": "Scan for possible disclosure gaps",
+    "lead": "Enter a public URL and contact email. Possible disclosure gaps to review only — not an audit.",
+    "bullet1": "Missing nearby AI / disclosure notice",
+    "bullet2": "No discloseledger.com/r/… link",
+    "bullet3": "Missing readable provenance metadata hints",
+    "notAudit": "Possible disclosure gaps to review only — not an audit, compliance opinion, or Art. 50 certification.",
+    "urlLabel": "Public website URL",
+    "emailLabel": "Contact email",
+    "urlRequired": "URL required",
+    "emailRequired": "Email required",
+    "fairUse": "Free: 1 scan · 8 pages / 15 images. Paid: 20 pages / 40 images · 10 min cooldown.",
+    "submit": "Run hygiene scan",
+    "running": "Scanning…",
+    "failed": "Scan failed",
+    "gatedTitle": "Scan limit reached",
+    "gatedDefault": "Free scan used. Subscribe €29/mo for paid scans.",
+    "cooldownDefault": "Cooldown active — try again shortly.",
+    "checkout": "Stripe Checkout",
+    "seePricing": "Pricing",
+    "stripeNotConfigured": "Stripe not configured",
+    "redirecting": "Opening scan {id}…",
+    "resultEyebrow": "Hygiene scan results",
+    "resultTitle": "Possible disclosure gaps to review",
+    "resultMeta": "Ran {date} · {pages} pages · {images} images",
+    "statPages": "Pages",
+    "statImages": "Images",
+    "statFindings": "To review",
+    "truncatedNote": "Partial results (fair-use caps).",
+    "findingsTitle": "Findings (review only)",
+    "noFindings": "No heuristic gaps observed on checked pages/images.",
+    "kindDisclosure": "Disclosure notice",
+    "kindLedger": "Ledger link",
+    "kindProvenance": "Provenance hints",
+    "severityReview": "review",
+    "page": "Page",
+    "asset": "Asset",
+    "runAnother": "Another scan"
   }
 }
