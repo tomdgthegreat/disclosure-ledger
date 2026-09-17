@@ -5,6 +5,7 @@ export const MARKETING_PATHS = [
   "/art-50",
   "/how-it-works",
   "/create",
+  "/scan",
   "/privacy",
   "/terms",
   "/legal",

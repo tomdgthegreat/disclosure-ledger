@@ -39,6 +39,12 @@ export async function SiteHeader() {
           >
             {t("pricing")}
           </Link>
+          <Link
+            href="/scan"
+            className="rounded-full px-3 py-1.5 transition hover:bg-azure-soft/80 hover:text-azure-deep"
+          >
+            {t("scan")}
+          </Link>
           <LanguageSwitcher variant="light" />
           <Link href="/create" className="btn-coral ml-1 !px-4 !py-1.5">
             {t("create")}

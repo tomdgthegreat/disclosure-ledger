@@ -23,7 +23,11 @@
     "legalTitle": "Note legali / Impressum — Disclosure Ledger",
     "legalDescription": "Informazioni sull’operatore di Disclosure Ledger: Atlas AG LLC, Melba, ID 83641, Stati Uniti. Contatto hello@discloseledger.com.",
     "cookiesTitle": "Informativa sui cookie — Disclosure Ledger",
-    "cookiesDescription": "Disclosure Ledger al Day-1 usa solo cookie tecnici strettamente necessari. Nessun tracker di marketing; per l’uso solo essenziale non è richiesto un banner di consenso."
+    "cookiesDescription": "Disclosure Ledger al Day-1 usa solo cookie tecnici strettamente necessari. Nessun tracker di marketing; per l’uso solo essenziale non è richiesto un banner di consenso.",
+    "scanTitle": "Hygiene scan — Disclosure Ledger",
+    "scanDescription": "Crawl a public site for possible disclosure gaps to review: nearby notices, ledger links, and lightweight provenance hints. Not an audit or compliance product.",
+    "scanResultTitle": "Hygiene scan results — Disclosure Ledger",
+    "scanResultDescription": "Possible disclosure gaps to review from a public-site hygiene scan. Not an audit or Art. 50 certification."
   },
   "nav": {
     "home": "Home",
@@ -35,7 +39,8 @@
     "privacy": "Privacy",
     "terms": "Termini",
     "legal": "Note legali",
-    "cookies": "Cookie"
+    "cookies": "Cookie",
+    "scan": "Scan"
   },
   "disclaimer": {
     "title": "Auto-dichiarato e non verificato",
@@ -277,5 +282,45 @@
     "bannerBody": "Poiché il Day-1 usa solo misure tecniche essenziali e nessun tracker di marketing, un banner di consenso ai cookie non è in genere richiesto per questa configurazione solo essenziale. Non costituisce consulenza legale.",
     "contactTitle": "Contatto",
     "contactBody": "Domande: hello@discloseledger.com. Vedi anche la nostra Informativa sulla privacy."
+  },
+  "scan": {
+    "eyebrow": "Public-site hygiene check",
+    "title": "Scan for possible disclosure gaps",
+    "lead": "Enter a public URL and contact email. Possible disclosure gaps to review only — not an audit.",
+    "bullet1": "Missing nearby AI / disclosure notice",
+    "bullet2": "No discloseledger.com/r/… link",
+    "bullet3": "Missing readable provenance metadata hints",
+    "notAudit": "Possible disclosure gaps to review only — not an audit, compliance opinion, or Art. 50 certification.",
+    "urlLabel": "Public website URL",
+    "emailLabel": "Contact email",
+    "urlRequired": "URL required",
+    "emailRequired": "Email required",
+    "fairUse": "Free: 1 scan · 8 pages / 15 images. Paid: 20 pages / 40 images · 10 min cooldown.",
+    "submit": "Run hygiene scan",
+    "running": "Scanning…",
+    "failed": "Scan failed",
+    "gatedTitle": "Scan limit reached",
+    "gatedDefault": "Free scan used. Subscribe €29/mo for paid scans.",
+    "cooldownDefault": "Cooldown active — try again shortly.",
+    "checkout": "Stripe Checkout",
+    "seePricing": "Pricing",
+    "stripeNotConfigured": "Stripe not configured",
+    "redirecting": "Opening scan {id}…",
+    "resultEyebrow": "Hygiene scan results",
+    "resultTitle": "Possible disclosure gaps to review",
+    "resultMeta": "Ran {date} · {pages} pages · {images} images",
+    "statPages": "Pages",
+    "statImages": "Images",
+    "statFindings": "To review",
+    "truncatedNote": "Partial results (fair-use caps).",
+    "findingsTitle": "Findings (review only)",
+    "noFindings": "No heuristic gaps observed on checked pages/images.",
+    "kindDisclosure": "Disclosure notice",
+    "kindLedger": "Ledger link",
+    "kindProvenance": "Provenance hints",
+    "severityReview": "review",
+    "page": "Page",
+    "asset": "Asset",
+    "runAnother": "Another scan"
   }
 }

@@ -23,7 +23,11 @@
     "legalTitle": "Legal notice / Impressum — Disclosure Ledger",
     "legalDescription": "Operator information for Disclosure Ledger: Atlas AG LLC, Melba, ID 83641, United States. Contact hello@discloseledger.com.",
     "cookiesTitle": "Cookie Policy — Disclosure Ledger",
-    "cookiesDescription": "Disclosure Ledger uses only strictly necessary technical cookies on Day-1. No marketing trackers; no consent banner required for essential-only use."
+    "cookiesDescription": "Disclosure Ledger uses only strictly necessary technical cookies on Day-1. No marketing trackers; no consent banner required for essential-only use.",
+    "scanTitle": "Hygiene scan — Disclosure Ledger",
+    "scanDescription": "Crawl a public site for possible disclosure gaps to review: nearby notices, ledger links, and lightweight provenance hints. Not an audit or compliance product.",
+    "scanResultTitle": "Hygiene scan results — Disclosure Ledger",
+    "scanResultDescription": "Possible disclosure gaps to review from a public-site hygiene scan. Not an audit or Art. 50 certification."
   },
   "nav": {
     "home": "Home",
@@ -35,7 +39,8 @@
     "privacy": "Privacy",
     "terms": "Terms",
     "legal": "Legal",
-    "cookies": "Cookies"
+    "cookies": "Cookies",
+    "scan": "Scan"
   },
   "disclaimer": {
     "title": "Self-reported & unverified",
@@ -277,5 +282,45 @@
     "bannerBody": "Because Day-1 uses essential-only technical measures and no marketing trackers, a cookie consent banner is not required for that essential-only setup under typical EU guidance. This is not legal advice.",
     "contactTitle": "Contact",
     "contactBody": "Questions: hello@discloseledger.com. See also our Privacy Policy."
+  },
+  "scan": {
+    "eyebrow": "Public-site hygiene check",
+    "title": "Scan for possible disclosure gaps",
+    "lead": "Enter a public URL and contact email. We crawl same-host public pages and images and flag observable possible gaps to review — never an audit or compliance certificate.",
+    "bullet1": "Missing nearby AI / disclosure notice wording on a page",
+    "bullet2": "No Disclosure Ledger record link (discloseledger.com/r/…)",
+    "bullet3": "Missing lightweight provenance metadata hints when readable (PNG/JPEG/XMP/C2PA string sniff — no ML detectors)",
+    "notAudit": "This lists possible disclosure gaps to review only. It is not an audit, not legal compliance advice, and not an EU AI Act Art. 50 certification.",
+    "urlLabel": "Public website URL",
+    "emailLabel": "Contact email",
+    "urlRequired": "A public http(s) URL is required.",
+    "emailRequired": "Contact email is required (1 free scan per email lifetime).",
+    "fairUse": "Free: 1 scan lifetime · up to 8 pages / 15 images. Paid (€29/mo entitlement): up to 20 pages / 40 images with a 10-minute cooldown between runs. Private/local hosts are blocked.",
+    "submit": "Run hygiene scan",
+    "running": "Scanning public pages…",
+    "failed": "Scan failed. Check the URL and try again.",
+    "gatedTitle": "Scan limit reached",
+    "gatedDefault": "Free hygiene scan already used for this email. Subscribe (€29/mo) for fair-use paid scans.",
+    "cooldownDefault": "Please wait for the paid fair-use cooldown before running another scan.",
+    "checkout": "Continue with Stripe Checkout",
+    "seePricing": "See pricing",
+    "stripeNotConfigured": "Stripe Checkout is not configured on the server.",
+    "redirecting": "Scan {id} ready — opening results…",
+    "resultEyebrow": "Hygiene scan results",
+    "resultTitle": "Possible disclosure gaps to review",
+    "resultMeta": "Ran {date} · {pages} pages · {images} images checked",
+    "statPages": "Pages crawled",
+    "statImages": "Images checked",
+    "statFindings": "Items to review",
+    "truncatedNote": "Crawl stopped at fair-use caps or time budget — results may be partial.",
+    "findingsTitle": "Findings (review only)",
+    "noFindings": "No observable gaps matched our lightweight heuristics on the pages/images checked. That does not mean the site is compliant or disclosure-complete.",
+    "kindDisclosure": "Nearby disclosure notice",
+    "kindLedger": "Ledger record link",
+    "kindProvenance": "Provenance metadata hints",
+    "severityReview": "review",
+    "page": "Page",
+    "asset": "Asset",
+    "runAnother": "Run another scan"
   }
 }
