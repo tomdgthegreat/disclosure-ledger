@@ -94,7 +94,7 @@
     "teamTitle": "Equipo",
     "teamPrice": "29 €",
     "teamPeriod": "/mes",
-    "teamBody": "Tras el nivel gratuito. Stripe Checkout (basado en env; stub hasta configurar claves). Para agencias y marcas que envían imágenes con regularidad.",
+    "teamBody": "Tras el nivel gratuito. Stripe Checkout en vivo a 29 €/mes para agencias y marcas que envían imágenes con regularidad.",
     "cta": "Empezar con 3 gratis",
     "note": "El acceso de pago desbloquea la creación continua de registros. No compra verificación, firma, atestación ni asesoramiento legal."
   },
@@ -165,7 +165,7 @@
     "emailPlaceholder": "para cuenta / facturación más adelante",
     "gatedDefault": "Nivel gratuito usado (3 registros). Suscríbete a 29 €/mes para continuar.",
     "checkout": "Continuar con Stripe Checkout (29 €/mes)",
-    "checkoutStub": "Checkout se basa en el entorno y puede estar stub hasta configurar las claves de Stripe.",
+    "checkoutStub": "Abre Stripe Checkout a 29 €/mes. Completas el pago en Stripe.",
     "submit": "Publicar registro público permanente",
     "submitting": "Guardando registro…",
     "previewAlt": "Vista previa seleccionada",
@@ -212,7 +212,7 @@
     "title": "Equipo",
     "price": "29 €",
     "period": "/mes",
-    "body": "Tras el nivel gratuito. Stripe Checkout (basado en env; stub hasta configurar claves). Para agencias y marcas que envían imágenes con regularidad.",
+    "body": "Tras el nivel gratuito. Stripe Checkout en vivo a 29 €/mes para agencias y marcas que envían imágenes con regularidad.",
     "cta": "Empezar con 3 gratis"
   },
   "privacy": {

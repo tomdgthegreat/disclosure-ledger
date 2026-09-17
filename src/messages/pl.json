@@ -94,7 +94,7 @@
     "teamTitle": "Zespół",
     "teamPrice": "29 €",
     "teamPeriod": "/mies.",
-    "teamBody": "Po darmowym limicie. Stripe Checkout (oparty na env; stub do czasu konfiguracji kluczy). Dla agencji i marek regularnie wysyłających obrazy.",
+    "teamBody": "Po darmowym limicie. Działający Stripe Checkout za 29 €/mies. dla agencji i marek regularnie wysyłających obrazy.",
     "cta": "Zacznij od 3 darmowych",
     "note": "Płatny dostęp odblokowuje dalsze tworzenie rekordów. Nie kupuje weryfikacji, podpisu, atestacji ani porady prawnej."
   },
@@ -165,7 +165,7 @@
     "emailPlaceholder": "na konto / rozliczenia później",
     "gatedDefault": "Darmowy limit wykorzystany (3 rekordy). Subskrybuj 29 €/mies., by kontynuować.",
     "checkout": "Kontynuuj ze Stripe Checkout (29 €/mies.)",
-    "checkoutStub": "Checkout oparty na env i może być stub, dopóki nie ustawisz kluczy Stripe.",
+    "checkoutStub": "Otwiera Stripe Checkout za 29 €/mies. Płatność dokończysz w Stripe.",
     "submit": "Opublikuj trwały rekord publiczny",
     "submitting": "Zapisywanie rekordu…",
     "previewAlt": "Wybrany podgląd",
@@ -212,7 +212,7 @@
     "title": "Zespół",
     "price": "29 €",
     "period": "/mies.",
-    "body": "Po darmowym limicie. Stripe Checkout (oparty na env; stub do czasu konfiguracji kluczy). Dla agencji i marek regularnie wysyłających obrazy.",
+    "body": "Po darmowym limicie. Działający Stripe Checkout za 29 €/mies. dla agencji i marek regularnie wysyłających obrazy.",
     "cta": "Zacznij od 3 darmowych"
   },
   "privacy": {

@@ -94,7 +94,7 @@
     "teamTitle": "Team",
     "teamPrice": "29 €",
     "teamPeriod": "/mese",
-    "teamBody": "Dopo il free tier. Stripe Checkout (basato su env; stub finché le chiavi non sono configurate). Per agenzie e brand che spediscono immagini regolarmente.",
+    "teamBody": "Dopo il free tier. Stripe Checkout live a 29 €/mese per agenzie e brand che spediscono immagini regolarmente.",
     "cta": "Inizia con 3 gratis",
     "note": "L’accesso a pagamento sblocca la creazione continua di record. Non acquista verifica, firma, attestazione o consulenza legale."
   },
@@ -165,7 +165,7 @@
     "emailPlaceholder": "per account / fatturazione in seguito",
     "gatedDefault": "Free tier esaurito (3 record). Continuate a 29 €/mese.",
     "checkout": "Continua con Stripe Checkout (29 €/mese)",
-    "checkoutStub": "Checkout è basato su env e può essere stub finché le chiavi Stripe non sono impostate.",
+    "checkoutStub": "Apre Stripe Checkout a 29 €/mese. Completi il pagamento su Stripe.",
     "submit": "Pubblica record pubblico permanente",
     "submitting": "Salvataggio record…",
     "previewAlt": "Anteprima selezionata",
@@ -212,7 +212,7 @@
     "title": "Team",
     "price": "29 €",
     "period": "/mese",
-    "body": "Dopo il free tier. Stripe Checkout (basato su env; stub finché le chiavi non sono configurate). Per agenzie e brand che spediscono immagini regolarmente.",
+    "body": "Dopo il free tier. Stripe Checkout live a 29 €/mese per agenzie e brand che spediscono immagini regolarmente.",
     "cta": "Inizia con 3 gratis"
   },
   "privacy": {

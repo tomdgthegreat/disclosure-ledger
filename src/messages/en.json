@@ -94,7 +94,7 @@
     "teamTitle": "Team",
     "teamPrice": "€29",
     "teamPeriod": "/mo",
-    "teamBody": "After free tier. Stripe Checkout (env-based; stubbed until keys are configured). Built for agencies and brands shipping images regularly.",
+    "teamBody": "After free tier. Live Stripe Checkout at €29/mo for agencies and brands shipping images regularly.",
     "cta": "Start with 3 free",
     "note": "Paid access unlocks continued record creation on this product. It does not purchase verification, signing, attestation, or legal advice."
   },
@@ -141,7 +141,7 @@
   },
   "create": {
     "title": "Create a disclosure record",
-    "lead": "First 3 records are free per contact email. After that you will see a soft gate for €29/mo (Stripe Checkout when configured)."
+    "lead": "First 3 records are free per contact email. After that you’ll see a soft gate for €29/mo via Stripe Checkout."
   },
   "form": {
     "dropTitle": "Drop a publish-bound image here",
@@ -165,7 +165,7 @@
     "emailPlaceholder": "for account / billing later",
     "gatedDefault": "Free tier used (3 records for this email). Subscribe at €29/mo to continue.",
     "checkout": "Continue with Stripe Checkout (€29/mo)",
-    "checkoutStub": "Checkout is env-based and may be stubbed until Stripe keys are set.",
+    "checkoutStub": "Opens Stripe Checkout for €29/mo. You’ll finish payment on Stripe.",
     "submit": "Publish permanent public record",
     "submitting": "Saving record…",
     "previewAlt": "Selected preview",
@@ -212,7 +212,7 @@
     "title": "Team",
     "price": "€29",
     "period": "/mo",
-    "body": "After free tier. Stripe Checkout (env-based; stubbed until keys are configured). Built for agencies and brands shipping images regularly.",
+    "body": "After free tier. Live Stripe Checkout at €29/mo for agencies and brands shipping images regularly.",
     "cta": "Start with 3 free"
   },
   "privacy": {
@@ -221,7 +221,7 @@
     "controllerTitle": "Controller",
     "controllerBody": "Atlas AG LLC, Melba, ID 83641, United States. Contact: hello@discloseledger.com. Product: Disclosure Ledger (https://discloseledger.com).",
     "purposesTitle": "Purposes",
-    "purposesBody": "We process data to operate the declaration and audit-trail service: create and display public disclosure records, provide CSV export, manage the free-tier gate and (when configured) billing, keep security and operational logs, and respond to privacy requests.",
+    "purposesBody": "We process data to operate the declaration and audit-trail service: create and display public disclosure records, provide CSV export, manage the free-tier gate and Stripe billing, keep security and operational logs, and respond to privacy requests.",
     "basesTitle": "Legal bases",
     "basesBody": "Depending on the processing: performance of a contract or steps prior to a contract (providing the service you request); legitimate interests (security, abuse prevention, product improvement that does not override your rights); and, where required, consent (for optional contact email used beyond core record creation).",
     "dataTitle": "Data we process",
@@ -241,7 +241,8 @@
     "publicTitle": "Public records caveat",
     "publicBody": "Disclosure records you publish are designed to be publicly viewable at /r/[id] (and via CSV/JSON APIs without contact email). Do not include personal data in notes or file names that you do not want public. Contact email is not included in public CSV or public JSON exports.",
     "claimsTitle": "What this product is not",
-    "claimsBody": "Disclosure Ledger is not an EU AI Act Article 50 compliance product, does not verify or cryptographically sign images, and does not provide legal advice."
+    "claimsBody": "Disclosure Ledger is not an EU AI Act Article 50 compliance product, does not verify or cryptographically sign images, and does not provide legal advice.",
+    "pricingBody": "The free tier allows three records per contact email. Thereafter, continued record creation may require a Team subscription at €29/mo (EUR), billed via Stripe Checkout. Paid access unlocks continued use of the declaration tool for that email — it does not purchase verification, signing, attestation, or legal advice."
   },
   "terms": {
     "title": "Terms of Service",
@@ -255,7 +256,7 @@
     "liabilityTitle": "Liability limits",
     "liabilityBody": "To the maximum extent permitted by law, Atlas AG LLC is not liable for indirect, incidental, special, consequential, or punitive damages, or for loss of profits, data, or goodwill arising from use of the service. Our aggregate liability for claims relating to the service is limited to the greater of (a) fees you paid us for the service in the three months before the claim or (b) €29. Nothing in these terms excludes liability that cannot be limited under applicable mandatory law (including mandatory EU consumer protections).",
     "pricingTitle": "Pricing",
-    "pricingBody": "The free tier allows three records per contact email. Thereafter, continued record creation may require a Team subscription at €29/mo (EUR), billed via Stripe when configured. Paid access unlocks continued use of the declaration tool for that email — it does not purchase verification, signing, attestation, or legal advice.",
+    "pricingBody": "The free tier allows three records per contact email. Thereafter, continued record creation may require a Team subscription at €29/mo (EUR), billed via Stripe. Paid access unlocks continued use of the declaration tool for that email — it does not purchase verification, signing, attestation, or legal advice.",
     "lawTitle": "Governing law",
     "lawBody": "These terms are governed by the laws of the State of Idaho, United States, without regard to conflict-of-law rules, subject to mandatory consumer protections that apply in your country of residence in the EU/EEA/UK where those protections cannot be waived.",
     "contactTitle": "Contact",

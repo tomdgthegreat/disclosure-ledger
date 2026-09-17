@@ -94,7 +94,7 @@
     "teamTitle": "Team",
     "teamPrice": "29 €",
     "teamPeriod": "/Monat",
-    "teamBody": "Nach dem Free-Tier. Stripe Checkout (umgebungsbasiert; stubbed bis Schlüssel konfiguriert). Für Agenturen und Marken mit regelmäßigem Bildversand.",
+    "teamBody": "Nach dem Free-Tier. Live Stripe Checkout für €29/Monat — für Agenturen und Marken mit regelmäßigem Bildversand.",
     "cta": "Mit 3 kostenlos starten",
     "note": "Bezahlter Zugang ermöglicht weiteres Erstellen von Einträgen. Er kauft keine Verifikation, Signierung, Attestierung oder Rechtsberatung."
   },
@@ -165,7 +165,7 @@
     "emailPlaceholder": "für Konto / Abrechnung später",
     "gatedDefault": "Free-Tier verbraucht (3 Einträge). Weiter mit 29 €/Monat.",
     "checkout": "Mit Stripe Checkout fortfahren (29 €/Monat)",
-    "checkoutStub": "Checkout ist umgebungsbasiert und kann stubbed sein, bis Stripe-Schlüssel gesetzt sind.",
+    "checkoutStub": "Öffnet Stripe Checkout für €29/Monat. Zahlung schließt du bei Stripe ab.",
     "submit": "Dauerhaften öffentlichen Eintrag veröffentlichen",
     "submitting": "Eintrag wird gespeichert…",
     "previewAlt": "Ausgewählte Vorschau",
@@ -212,7 +212,7 @@
     "title": "Team",
     "price": "29 €",
     "period": "/Monat",
-    "body": "Nach dem Free-Tier. Stripe Checkout (umgebungsbasiert; stubbed bis Schlüssel konfiguriert). Für Agenturen und Marken mit regelmäßigem Bildversand.",
+    "body": "Nach dem Free-Tier. Live Stripe Checkout für €29/Monat — für Agenturen und Marken mit regelmäßigem Bildversand.",
     "cta": "Mit 3 kostenlos starten"
   },
   "privacy": {
