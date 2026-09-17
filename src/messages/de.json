@@ -233,7 +233,7 @@
     "retentionTitle": "Speicherdauer",
     "retentionBody": "Öffentliche Disclosure-Einträge bleiben als Audit-Trail bestehen, solange der öffentliche Ledger betrieben wird, sofern wir nicht verpflichtet oder rechtmäßig gebeten werden, nicht notwendige personenbezogene Daten zu entfernen oder einzuschränken. Optionale Kontakt-E-Mail für Konto/Abrechnung bis zur Entbehrlichkeit. Technische Logs für einen kürzeren Betriebszeitraum.",
     "processorsTitle": "Auftragsverarbeiter",
-    "processorsBody": "Wir nutzen Vercel für Hosting und Auslieferung. Wenn Stripe konfiguriert ist, verarbeitet Stripe zahlungsbezogene Daten. Weitere Unterauftragsverarbeiter können hinzukommen; bei wesentlichen Änderungen aktualisieren wir diese Erklärung.",
+    "processorsBody": "Wir nutzen Vercel für Hosting und Auslieferung. Stripe verarbeitet zahlungsbezogene Daten für Checkout und Abos. Weitere Unterauftragsverarbeiter können hinzukommen; bei wesentlichen Änderungen aktualisieren wir diese Erklärung.",
     "transfersTitle": "Internationale Übermittlungen",
     "transfersBody": "Der Betreiber hat seinen Sitz in Idaho, USA. Daten können in den USA und — je nach Hosting — in der EU verarbeitet werden (z. B. Region Frankfurt / EU). Bei Übermittlungen aus dem EWR/UK können geeignete Garantien nach geltendem Recht greifen.",
     "rightsTitle": "Ihre Rechte",

@@ -233,7 +233,7 @@
     "retentionTitle": "Conservación",
     "retentionBody": "Los registros públicos se conservan como pista de auditoría mientras opere el libro público, salvo que debamos o se nos solicite lícitamente eliminar o restringir datos personales no esenciales al registro público. El correo de contacto opcional se conserva para seguimiento de cuenta/facturación mientras sea necesario. Los registros técnicos se conservan durante un periodo operativo más corto.",
     "processorsTitle": "Encargados del tratamiento",
-    "processorsBody": "Usamos Vercel para alojamiento y entrega. Cuando Stripe está configurado, Stripe trata datos relacionados con pagos. Pueden añadirse otros subencargados; actualizaremos esta política ante cambios materiales.",
+    "processorsBody": "Usamos Vercel para alojamiento y entrega. Stripe trata datos relacionados con pagos para Checkout y suscripciones. Pueden añadirse otros subencargados; actualizaremos esta política ante cambios materiales.",
     "transfersTitle": "Transferencias internacionales",
     "transfersBody": "El operador está en Idaho, Estados Unidos. Los datos pueden tratarse en EE. UU. y, según la configuración de alojamiento, en la UE (por ejemplo región Fráncfort / UE). Cuando las transferencias salgan del EEE/Reino Unido, pueden aplicarse garantías adecuadas conforme a la ley aplicable.",
     "rightsTitle": "Tus derechos",

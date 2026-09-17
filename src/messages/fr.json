@@ -233,7 +233,7 @@
     "retentionTitle": "Conservation",
     "retentionBody": "Les fiches publiques sont conservées comme piste d’audit tant que le registre public est exploité, sauf obligation ou demande légitime de supprimer ou restreindre des données personnelles non essentielles à la fiche publique. L’e-mail de contact optionnel est conservé pour le suivi compte/facturation tant qu’il est nécessaire. Les journaux techniques sont conservés plus brièvement.",
     "processorsTitle": "Sous-traitants",
-    "processorsBody": "Nous utilisons Vercel pour l’hébergement et la diffusion. Lorsque Stripe est configuré, Stripe traite les données liées au paiement. D’autres sous-traitants peuvent s’ajouter ; nous mettrons à jour cette politique en cas de changement matériel.",
+    "processorsBody": "Nous utilisons Vercel pour l’hébergement et la diffusion. Stripe traite les données liées au paiement pour Checkout et les abonnements. D’autres sous-traitants peuvent s’ajouter ; nous mettrons à jour cette politique en cas de changement matériel.",
     "transfersTitle": "Transferts internationaux",
     "transfersBody": "L’opérateur est basé dans l’Idaho (États-Unis). Les données peuvent être traitées aux États-Unis et, selon la configuration d’hébergement, dans l’UE (par ex. région Francfort / UE). Lorsque des transferts quittent l’EEE/Royaume-Uni, des garanties appropriées peuvent s’appliquer.",
     "rightsTitle": "Vos droits",

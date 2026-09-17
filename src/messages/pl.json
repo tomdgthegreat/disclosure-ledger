@@ -233,7 +233,7 @@
     "retentionTitle": "Okres przechowywania",
     "retentionBody": "Publiczne rekordy są przechowywane jako ślad audytowy tak długo, jak działa publiczny rejestr, chyba że jesteśmy zobowiązani lub zgodnie z prawem poproszeni o usunięcie lub ograniczenie danych osobowych nieistotnych dla publicznego rekordu. Opcjonalny e-mail kontaktowy jest przechowywany na potrzeby konta/rozliczeń do czasu, gdy przestanie być potrzebny. Logi techniczne są przechowywane krócej.",
     "processorsTitle": "Podmioty przetwarzające",
-    "processorsBody": "Korzystamy z Vercel do hostingu i dostarczania. Gdy Stripe jest skonfigurowany, Stripe przetwarza dane związane z płatnościami. Mogą zostać dodani inni podwykonawcy; zaktualizujemy tę politykę przy istotnych zmianach.",
+    "processorsBody": "Korzystamy z Vercel do hostingu i dostarczania. Stripe przetwarza dane związane z płatnościami dla Checkout i subskrypcji. Mogą zostać dodani inni podwykonawcy; zaktualizujemy tę politykę przy istotnych zmianach.",
     "transfersTitle": "Transfery międzynarodowe",
     "transfersBody": "Operator ma siedzibę w Idaho, Stany Zjednoczone. Dane mogą być przetwarzane w USA oraz — w zależności od konfiguracji hostingu — w UE (np. region Frankfurt / UE). Gdy transfery wychodzą poza EOG/Wielką Brytanię, mogą obowiązywać odpowiednie zabezpieczenia zgodnie z obowiązującym prawem.",
     "rightsTitle": "Twoje prawa",

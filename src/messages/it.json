@@ -233,7 +233,7 @@
     "retentionTitle": "Conservazione",
     "retentionBody": "Le schede pubbliche sono conservate come audit trail finché il registro pubblico è operativo, salvo obbligo o richiesta legittima di rimuovere o limitare dati personali non essenziali alla scheda pubblica. L’e-mail di contatto facoltativa è conservata per follow-up di account/fatturazione finché necessaria. I log tecnici sono conservati per un periodo operativo più breve.",
     "processorsTitle": "Responsabili del trattamento",
-    "processorsBody": "Usiamo Vercel per hosting e distribuzione. Quando Stripe è configurato, Stripe tratta i dati relativi ai pagamenti. Altri sub-responsabili possono essere aggiunti; aggiorneremo questa informativa in caso di cambiamenti rilevanti.",
+    "processorsBody": "Usiamo Vercel per hosting e distribuzione. Stripe tratta i dati relativi ai pagamenti per Checkout e abbonamenti. Altri sub-responsabili possono essere aggiunti; aggiorneremo questa informativa in caso di cambiamenti rilevanti.",
     "transfersTitle": "Trasferimenti internazionali",
     "transfersBody": "L’operatore ha sede in Idaho, Stati Uniti. I dati possono essere trattati negli USA e, a seconda della configurazione di hosting, nell’UE (ad es. regione Francoforte / UE). Quando i trasferimenti escono da SEE/UK, possono applicarsi garanzie adeguate ai sensi della legge applicabile.",
     "rightsTitle": "I tuoi diritti",

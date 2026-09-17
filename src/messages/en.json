@@ -233,7 +233,7 @@
     "retentionTitle": "Retention",
     "retentionBody": "Public disclosure records are retained as an audit trail for as long as the service operates the public ledger, unless we are required or lawfully asked to remove or restrict personal data that is not essential to the public record. Optional contact email is kept for account or billing follow-up until no longer needed. Technical logs are kept for a shorter operational period.",
     "processorsTitle": "Processors",
-    "processorsBody": "We use Vercel for hosting and delivery. When Stripe is configured, Stripe processes payment-related data. Other subprocessors may be added; we will update this policy when material changes occur.",
+    "processorsBody": "We use Vercel for hosting and delivery. Stripe processes payment-related data for Checkout and subscriptions. Other subprocessors may be added; we will update this policy when material changes occur.",
     "transfersTitle": "International transfers",
     "transfersBody": "The operator is based in Idaho, United States. Data may be processed in the US and, depending on hosting configuration, in the EU (for example if the deployment region is set to Frankfurt / EU). Where transfers leave the EEA/UK, appropriate safeguards may apply under applicable law.",
     "rightsTitle": "Your rights",
