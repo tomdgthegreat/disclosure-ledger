@@ -41,15 +41,16 @@ export default async function RecordPage({
         : t("aiNo");
 
   return (
+    <div className="hero-gradient-light">
     <div className="mx-auto max-w-2xl px-4 py-10">
-      <p className="text-xs font-medium uppercase tracking-wider text-slate-500">
+      <p className="eyebrow">
         {t("eyebrow")}
       </p>
-      <h1 className="mt-1 text-2xl font-bold text-slate-900">
+      <h1 className="mt-1 text-2xl font-bold text-ink">
         {t("title")}{" "}
         <span className="font-mono text-lg">{record.id}</span>
       </h1>
-      <p className="mt-1 text-sm text-slate-500">
+      <p className="mt-1 text-sm text-ink-muted">
         {t("created", { date: record.createdAt })}
       </p>
 
@@ -57,57 +58,57 @@ export default async function RecordPage({
         <DisclaimerBanner />
       </div>
 
-      <dl className="mt-8 space-y-5 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+      <dl className="mt-8 space-y-5 rounded-xl border border-azure/20 bg-white/95 p-6 shadow-card">
         <div>
-          <dt className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+          <dt className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
             {t("hash")}
           </dt>
-          <dd className="mt-1 break-all font-mono text-sm text-slate-900">
+          <dd className="mt-1 break-all font-mono text-sm text-ink">
             {record.contentHashSha256}
           </dd>
         </div>
         <div>
-          <dt className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+          <dt className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
             {t("source")}
           </dt>
-          <dd className="mt-1 text-sm text-slate-800">
+          <dd className="mt-1 text-sm text-ink">
             {record.fileName} · {record.fileSizeBytes.toLocaleString()} bytes ·{" "}
             {record.mimeType}
           </dd>
         </div>
         <div>
-          <dt className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+          <dt className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
             {t("ai")}
           </dt>
-          <dd className="mt-1 text-sm font-medium text-slate-900">
+          <dd className="mt-1 text-sm font-medium text-ink">
             {declarationLabel}
           </dd>
           {record.notes && (
-            <dd className="mt-2 whitespace-pre-wrap text-sm text-slate-700">
+            <dd className="mt-2 whitespace-pre-wrap text-sm text-ink-muted">
               {t("notes", { notes: record.notes })}
             </dd>
           )}
         </div>
         <div>
-          <dt className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+          <dt className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
             {t("prov")}
           </dt>
-          <dd className="mt-1 text-sm text-slate-800">
+          <dd className="mt-1 text-sm text-ink">
             {record.provenance.found ? t("provFound") : t("provNone")}
           </dd>
-          <dd className="mt-1 text-xs text-slate-500">
+          <dd className="mt-1 text-xs text-ink-muted">
             {record.provenance.details}
           </dd>
           {record.provenance.signals.length > 0 && (
             <dd className="mt-2">
-              <ul className="list-inside list-disc text-xs text-slate-600">
+              <ul className="list-inside list-disc text-xs text-ink-muted">
                 {record.provenance.signals.map((s) => (
                   <li key={s}>{s}</li>
                 ))}
               </ul>
             </dd>
           )}
-          <dd className="mt-2 text-xs italic text-slate-500">
+          <dd className="mt-2 text-xs italic text-ink-muted">
             {t("method", { method: record.provenance.method })}
           </dd>
         </div>
@@ -116,13 +117,13 @@ export default async function RecordPage({
       <div className="mt-6 flex flex-wrap gap-3">
         <a
           href={`/api/records/${record.id}/csv`}
-          className="rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50"
+          className="rounded-md border border-azure/25 bg-white px-4 py-2 text-sm font-medium text-ink hover:bg-azure-soft"
         >
           {t("csv")}
         </a>
         <Link
           href="/create"
-          className="rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800"
+          className="btn-primary !rounded-md"
         >
           {t("another")}
         </Link>
@@ -131,6 +132,7 @@ export default async function RecordPage({
       <p className="mt-8 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-950">
         <strong>{t("reminder")}</strong>
       </p>
+        </div>
     </div>
   );
 }

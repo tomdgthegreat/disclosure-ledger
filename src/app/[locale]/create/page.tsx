@@ -27,11 +27,11 @@ export default async function CreatePage({
   const t = await getTranslations("create");
 
   return (
-    <div className="hero-gradient">
+    <div className="hero-gradient-light">
       <div className="mx-auto max-w-2xl px-4 py-12">
         <HreflangLinks path="/create" />
         <p className="eyebrow">Disclosure Ledger</p>
-        <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink">
+        <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
           {t("title")}
         </h1>
         <p className="mt-3 text-sm leading-relaxed text-ink-muted">{t("lead")}</p>
