@@ -164,7 +164,8 @@
     "submit": "Publier un dossier public permanent",
     "submitting": "Enregistrement du dossier…",
     "previewAlt": "Aperçu sélectionné",
-    "emailPrivacy": "Facultatif. Uniquement pour le compte ou la facturation. Voir notre <privacy>politique de confidentialité</privacy>."
+    "emailPrivacy": "Facultatif. Uniquement pour le compte ou la facturation. Voir notre <privacy>politique de confidentialité</privacy>.",
+    "emailRequired": "Contact email is required. Free tier is 3 records per email."
   },
   "record": {
     "eyebrow": "Dossier public de divulgation",

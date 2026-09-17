@@ -1,0 +1,58 @@
+// Disclosure Ledger — Postgres (prefer EU: Neon eu-central-1 / Vercel Postgres fra1)
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// Paid / free entitlement keyed by contact email (and optional Stripe ids)
+model Entitlement {
+  id                   String   @id @default(cuid())
+  email                String   @unique
+  stripeCustomerId     String?  @unique @map("stripe_customer_id")
+  stripeSubscriptionId String?  @map("stripe_subscription_id")
+  /// none | active | trialing | past_due | canceled | unpaid | incomplete | incomplete_expired | paused
+  subscriptionStatus   String   @default("none") @map("subscription_status")
+  createdAt            DateTime @default(now()) @map("created_at")
+  updatedAt            DateTime @updatedAt @map("updated_at")
+  records              DisclosureRecord[]
+
+  @@map("entitlements")
+}
+
+model DisclosureRecord {
+  id                String   @id
+  createdAt         DateTime @default(now()) @map("created_at")
+  contentHashSha256 String   @map("content_hash_sha256")
+  fileName          String   @map("file_name")
+  fileSizeBytes     Int      @map("file_size_bytes")
+  mimeType          String   @map("mime_type")
+  aiDeclaration     String   @map("ai_declaration")
+  notes             String   @default("")
+  contactEmail      String?  @map("contact_email")
+  /// ProvenanceSummary JSON: { found, method, details, signals }
+  provenance        Json
+  entitlementId     String?  @map("entitlement_id")
+  entitlement       Entitlement? @relation(fields: [entitlementId], references: [id], onDelete: SetNull)
+
+  @@index([entitlementId])
+  @@index([contactEmail])
+  @@index([createdAt])
+  @@map("disclosure_records")
+}
+
+model PrivacyRequest {
+  id        String   @id
+  createdAt DateTime @default(now()) @map("created_at")
+  email     String
+  /// access | erasure | rectification
+  type      String
+  note      String?
+
+  @@index([email])
+  @@index([createdAt])
+  @@map("privacy_requests")
+}

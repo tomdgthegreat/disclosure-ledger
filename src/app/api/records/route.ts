@@ -1,21 +1,33 @@
 import { NextRequest, NextResponse } from "next/server";
 import {
-  countRecords,
   createRecord,
   FREE_TIER_LIMIT,
-  listRecords,
+  normalizeEmail,
+  resolveEntitlement,
 } from "@/lib/db";
 import { isStripeConfigured } from "@/lib/stripe";
 import type { AiDeclaration, ProvenanceSummary } from "@/lib/types";
 
 const ALLOWED: AiDeclaration[] = ["yes", "no", "partial"];
 
-export async function GET() {
-  const records = await listRecords();
+export async function GET(req: NextRequest) {
+  const email = normalizeEmail(req.nextUrl.searchParams.get("email"));
+  if (!email) {
+    return NextResponse.json({
+      freeLimit: FREE_TIER_LIMIT,
+      message:
+        "Pass ?email= to check free remaining for a contact email (3 free records per email).",
+    });
+  }
+  const entitlement = await resolveEntitlement({ email });
   return NextResponse.json({
-    count: records.length,
-    freeRemaining: Math.max(0, FREE_TIER_LIMIT - records.length),
+    email,
     freeLimit: FREE_TIER_LIMIT,
+    freeUsed: entitlement?.freeUsed ?? 0,
+    freeRemaining: entitlement?.freeRemaining ?? FREE_TIER_LIMIT,
+    isPaid: entitlement?.isPaid ?? false,
+    canCreate: entitlement?.canCreate ?? true,
+    subscriptionStatus: entitlement?.subscriptionStatus ?? "none",
   });
 }
 
@@ -54,7 +66,10 @@ export async function POST(req: NextRequest) {
         { status: 400 }
       );
     }
-    if (!body.aiDeclaration || !ALLOWED.includes(body.aiDeclaration as AiDeclaration)) {
+    if (
+      !body.aiDeclaration ||
+      !ALLOWED.includes(body.aiDeclaration as AiDeclaration)
+    ) {
       return NextResponse.json(
         { error: "aiDeclaration must be yes|no|partial" },
         { status: 400 }
@@ -67,42 +82,70 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const count = await countRecords();
-    if (count >= FREE_TIER_LIMIT) {
+    const email = normalizeEmail(body.contactEmail);
+    if (!email) {
+      return NextResponse.json(
+        {
+          error: "contact_email_required",
+          message:
+            "Contact email is required so free-tier usage (3 records) can be counted per email.",
+        },
+        { status: 400 }
+      );
+    }
+
+    const entitlement = await resolveEntitlement({ email });
+    if (!entitlement?.canCreate) {
       const stripeReady = isStripeConfigured();
       return NextResponse.json(
         {
           gated: true,
           error: "free_tier_exhausted",
           message: stripeReady
-            ? "Free tier (3 records) used. Subscribe via Stripe Checkout (€29/mo) to continue."
-            : "Free tier (3 records) used. Soft-gated: Stripe is not configured yet. Set STRIPE_SECRET_KEY and STRIPE_PRICE_ID, or clear data/records.json for local testing.",
+            ? "Free tier (3 records for this email) used. Subscribe via Stripe Checkout (€29/mo) to continue."
+            : "Free tier (3 records for this email) used. Soft-gated: set STRIPE_SECRET_KEY and STRIPE_PRICE_ID to enable Checkout.",
           freeLimit: FREE_TIER_LIMIT,
+          freeUsed: entitlement?.freeUsed ?? FREE_TIER_LIMIT,
           stripeConfigured: stripeReady,
         },
         { status: 402 }
       );
     }
 
-    const record = await createRecord({
-      contentHashSha256: body.contentHashSha256,
-      fileName: body.fileName,
-      fileSizeBytes: Math.floor(body.fileSizeBytes),
-      mimeType: body.mimeType || "application/octet-stream",
-      aiDeclaration: body.aiDeclaration as AiDeclaration,
-      notes: body.notes ?? "",
-      contactEmail: body.contactEmail ?? null,
-      provenance: {
-        found: Boolean(body.provenance.found),
-        method: String(body.provenance.method ?? "unknown").slice(0, 200),
-        details: String(body.provenance.details ?? "").slice(0, 2000),
-        signals: Array.isArray(body.provenance.signals)
-          ? body.provenance.signals.map(String).slice(0, 50)
-          : [],
+    const record = await createRecord(
+      {
+        contentHashSha256: body.contentHashSha256,
+        fileName: body.fileName,
+        fileSizeBytes: Math.floor(body.fileSizeBytes),
+        mimeType: body.mimeType || "application/octet-stream",
+        aiDeclaration: body.aiDeclaration as AiDeclaration,
+        notes: body.notes ?? "",
+        contactEmail: email,
+        provenance: {
+          found: Boolean(body.provenance.found),
+          method: String(body.provenance.method ?? "unknown").slice(0, 200),
+          details: String(body.provenance.details ?? "").slice(0, 2000),
+          signals: Array.isArray(body.provenance.signals)
+            ? body.provenance.signals.map(String).slice(0, 50)
+            : [],
+        },
       },
-    });
+      entitlement.entitlementId
+    );
 
-    return NextResponse.json({ record }, { status: 201 });
+    return NextResponse.json(
+      {
+        record,
+        entitlement: {
+          isPaid: entitlement.isPaid,
+          freeUsed: entitlement.freeUsed + 1,
+          freeRemaining: entitlement.isPaid
+            ? entitlement.freeLimit
+            : Math.max(0, entitlement.freeRemaining - 1),
+        },
+      },
+      { status: 201 }
+    );
   } catch (e) {
     console.error(e);
     return NextResponse.json(

@@ -85,7 +85,7 @@
     "lead": "Simple tiers for trying the flow and for teams shipping images regularly. Pricing is for a declaration / audit-trail tool — not for compliance certification.",
     "freeTitle": "Free trial",
     "freePrice": "3 records",
-    "freeBody": "Enough to try the flow end-to-end. No card required for the first three records on this instance.",
+    "freeBody": "Enough to try the flow end-to-end. No card required for the first three records per contact email.",
     "teamTitle": "Team",
     "teamPrice": "€29",
     "teamPeriod": "/mo",
@@ -136,7 +136,7 @@
   },
   "create": {
     "title": "Create a disclosure record",
-    "lead": "First 3 records are free on this instance. After that you will see a soft gate for €29/mo (Stripe Checkout when configured)."
+    "lead": "First 3 records are free per contact email. After that you will see a soft gate for €29/mo (Stripe Checkout when configured)."
   },
   "form": {
     "dropTitle": "Drop a publish-bound image here",
@@ -156,15 +156,16 @@
     "aiPartial": "Partial / mixed (self-reported)",
     "notes": "Short notes (optional)",
     "notesPlaceholder": "e.g. background inpainted; face untouched",
-    "email": "Contact email (optional)",
+    "email": "Contact email",
     "emailPlaceholder": "for account / billing later",
-    "gatedDefault": "Free tier used (3 records). Subscribe at €29/mo to continue.",
+    "gatedDefault": "Free tier used (3 records for this email). Subscribe at €29/mo to continue.",
     "checkout": "Continue with Stripe Checkout (€29/mo)",
     "checkoutStub": "Checkout is env-based and may be stubbed until Stripe keys are set.",
     "submit": "Publish permanent public record",
     "submitting": "Saving record…",
     "previewAlt": "Selected preview",
-    "emailPrivacy": "Optional. Used only for account or billing follow-up. See our <privacy>privacy policy</privacy>."
+    "emailPrivacy": "Optional. Used only for account or billing follow-up. See our <privacy>privacy policy</privacy>.",
+    "emailRequired": "Contact email is required. Free tier is 3 records per email."
   },
   "record": {
     "eyebrow": "Public disclosure record",
@@ -249,7 +250,7 @@
     "liabilityTitle": "Liability limits",
     "liabilityBody": "To the maximum extent permitted by law, Atlas AG LLC is not liable for indirect, incidental, special, consequential, or punitive damages, or for loss of profits, data, or goodwill arising from use of the service. Our aggregate liability for claims relating to the service is limited to the greater of (a) fees you paid us for the service in the three months before the claim or (b) €29. Nothing in these terms excludes liability that cannot be limited under applicable mandatory law (including mandatory EU consumer protections).",
     "pricingTitle": "Pricing",
-    "pricingBody": "The free tier allows three records on this instance. Thereafter, continued record creation may require a Team subscription at €29/mo (EUR), billed via Stripe when configured. Paid access unlocks continued use of the declaration tool — it does not purchase verification, signing, attestation, or legal advice.",
+    "pricingBody": "The free tier allows three records per contact email. Thereafter, continued record creation may require a Team subscription at €29/mo (EUR), billed via Stripe when configured. Paid access unlocks continued use of the declaration tool for that email — it does not purchase verification, signing, attestation, or legal advice.",
     "lawTitle": "Governing law",
     "lawBody": "These terms are governed by the laws of the State of Idaho, United States, without regard to conflict-of-law rules, subject to mandatory consumer protections that apply in your country of residence in the EU/EEA/UK where those protections cannot be waived.",
     "contactTitle": "Contact",

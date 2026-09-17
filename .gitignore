@@ -42,3 +42,6 @@ next-env.d.ts
 
 gh-auth.log
 *.log
+.env*.local
+/data/entitlements.json
+/data/db.json

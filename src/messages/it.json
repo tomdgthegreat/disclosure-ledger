@@ -164,7 +164,8 @@
     "submit": "Pubblica record pubblico permanente",
     "submitting": "Salvataggio record…",
     "previewAlt": "Anteprima selezionata",
-    "emailPrivacy": "Facoltativo. Solo per account o fatturazione. Vedi la nostra <privacy>informativa sulla privacy</privacy>."
+    "emailPrivacy": "Facoltativo. Solo per account o fatturazione. Vedi la nostra <privacy>informativa sulla privacy</privacy>.",
+    "emailRequired": "Contact email is required. Free tier is 3 records per email."
   },
   "record": {
     "eyebrow": "Record pubblico di disclosure",
