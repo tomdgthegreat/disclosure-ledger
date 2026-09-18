@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { resolveGatedEmail } from "@/lib/auth";
 import {
   createRecord,
   FREE_TIER_LIMIT,
@@ -82,17 +83,17 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const email = normalizeEmail(body.contactEmail);
-    if (!email) {
+    const gated = resolveGatedEmail(req, body.contactEmail);
+    if (!gated.ok) {
       return NextResponse.json(
         {
-          error: "contact_email_required",
-          message:
-            "Contact email is required so free-tier usage (3 records) can be counted per email.",
+          error: gated.code,
+          message: gated.message,
         },
-        { status: 400 }
+        { status: gated.code === "auth_misconfigured" ? 503 : 401 }
       );
     }
+    const email = gated.email;
 
     const entitlement = await resolveEntitlement({ email });
     if (!entitlement?.canCreate) {

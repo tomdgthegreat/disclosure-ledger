@@ -27,7 +27,9 @@
     "scanTitle": "Hygiene scan — Disclosure Ledger",
     "scanDescription": "Crawl a public site for possible disclosure gaps to review: nearby notices, ledger links, and lightweight provenance hints. Not an audit or compliance product.",
     "scanResultTitle": "Hygiene scan results — Disclosure Ledger",
-    "scanResultDescription": "Possible disclosure gaps to review from a public-site hygiene scan. Not an audit or Art. 50 certification."
+    "scanResultDescription": "Possible disclosure gaps to review from a public-site hygiene scan. Not an audit or Art. 50 certification.",
+    "loginTitle": "Accedi — Disclosure Ledger",
+    "loginDescription": "Richiedi un magic link monouso per verificare la tua e-mail. Niente password. Necessario prima di creare record, checkout o scan di igiene."
   },
   "nav": {
     "home": "Home",
@@ -40,7 +42,9 @@
     "terms": "Termini",
     "legal": "Note legali",
     "cookies": "Cookie",
-    "scan": "Scan"
+    "scan": "Scan",
+    "login": "Accedi",
+    "logout": "Esci"
   },
   "disclaimer": {
     "title": "Auto-dichiarato e non verificato",
@@ -175,7 +179,9 @@
     "submitting": "Salvataggio record…",
     "previewAlt": "Anteprima selezionata",
     "emailPrivacy": "Facoltativo. Solo per account o fatturazione. Vedi la nostra <privacy>informativa sulla privacy</privacy>.",
-    "emailRequired": "Contact email is required. Free tier is 3 records per email."
+    "emailRequired": "Contact email is required. Free tier is 3 records per email.",
+    "authRequired": "Verifica la tua e-mail con un magic link prima di creare un record o avviare il checkout.",
+    "goLogin": "Vai all’accesso"
   },
   "record": {
     "eyebrow": "Record pubblico di disclosure",
@@ -326,6 +332,32 @@
     "severityReview": "review",
     "page": "Page",
     "asset": "Asset",
-    "runAnother": "Another scan"
+    "runAnother": "Another scan",
+    "authRequired": "Verifica la tua e-mail con un magic link prima di avviare uno scan di igiene.",
+    "goLogin": "Vai all’accesso"
+  },
+  "login": {
+    "title": "Accedi con e-mail",
+    "lead": "Inserisci la tua e-mail: invieremo un magic link monouso. Niente password. Il link verifica quella casella e sblocca creazione, checkout e scan per quell’e-mail.",
+    "email": "E-mail di lavoro",
+    "emailPlaceholder": "tu@agenzia.it",
+    "emailRequired": "Inserisci un indirizzo e-mail valido.",
+    "submit": "Invia magic link",
+    "sending": "Invio…",
+    "failed": "Impossibile inviare il link. Riprova.",
+    "rateLimited": "Attendi circa un minuto prima di richiedere un altro link.",
+    "checkTitle": "Controlla la tua e-mail",
+    "checkBody": "Se l’invio è configurato, abbiamo inviato un link monouso a {email}. Aprilo su questo dispositivo per completare l’accesso.",
+    "checkHint": "Il link scade in circa 20 minuti e può essere usato una sola volta.",
+    "sendAnother": "Usa un’altra e-mail",
+    "honest": "Nota onesta: dimostriamo solo che puoi aprire quella casella. Nessuna conformità all’Art. 50 né verifica delle dichiarazioni.",
+    "privacyNote": "Vedi la nostra <privacy>Informativa sulla privacy</privacy> sul trattamento dell’e-mail di contatto.",
+    "verified": "E-mail verificata — hai effettuato l’accesso. Puoi creare record, avviare il checkout o uno scan.",
+    "errorInvalid": "Quel magic link non è valido. Richiedine uno nuovo.",
+    "errorExpired": "Quel magic link è scaduto. Richiedine uno nuovo.",
+    "errorUsed": "Quel magic link è già stato usato. Richiedine uno nuovo.",
+    "errorMisconfigured": "L’accesso non è configurato su questo server (AUTH_SECRET mancante). Contatta l’operatore.",
+    "signedInAs": "Accesso come {email}.",
+    "continueCreate": "Continua a creare un record"
   }
 }

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { resolveGatedEmail } from "@/lib/auth";
 import { normalizeEmail } from "@/lib/db";
 import { isStripeConfigured } from "@/lib/stripe";
 import {
@@ -52,7 +53,6 @@ export async function POST(req: NextRequest) {
       email?: string;
     };
 
-    const email = normalizeEmail(body.contactEmail ?? body.email);
     const rawUrl = String(body.url ?? body.targetUrl ?? "").trim();
 
     if (!rawUrl) {
@@ -61,6 +61,18 @@ export async function POST(req: NextRequest) {
         { status: 400 }
       );
     }
+
+    const gated = resolveGatedEmail(req, body.contactEmail ?? body.email);
+    if (!gated.ok) {
+      return NextResponse.json(
+        {
+          error: gated.code,
+          message: gated.message,
+        },
+        { status: gated.code === "auth_misconfigured" ? 503 : 401 }
+      );
+    }
+    const email = gated.email;
 
     const gate = await resolveScanGate({ email });
     if (!gate.allowed) {

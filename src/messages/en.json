@@ -27,7 +27,9 @@
     "scanTitle": "Hygiene scan — Disclosure Ledger",
     "scanDescription": "Crawl a public site for possible disclosure gaps to review: nearby notices, ledger links, and lightweight provenance hints. Not an audit or compliance product.",
     "scanResultTitle": "Hygiene scan results — Disclosure Ledger",
-    "scanResultDescription": "Possible disclosure gaps to review from a public-site hygiene scan. Not an audit or Art. 50 certification."
+    "scanResultDescription": "Possible disclosure gaps to review from a public-site hygiene scan. Not an audit or Art. 50 certification.",
+    "loginTitle": "Sign in — Disclosure Ledger",
+    "loginDescription": "Request a one-time magic link to verify your email. No passwords. Required before creating records, checkout, or hygiene scans."
   },
   "nav": {
     "home": "Home",
@@ -40,7 +42,9 @@
     "terms": "Terms",
     "legal": "Legal",
     "cookies": "Cookies",
-    "scan": "Scan"
+    "scan": "Scan",
+    "login": "Log in",
+    "logout": "Log out"
   },
   "disclaimer": {
     "title": "Self-reported & unverified",
@@ -175,7 +179,9 @@
     "submitting": "Saving record…",
     "previewAlt": "Selected preview",
     "emailPrivacy": "Optional. Used only for account or billing follow-up. See our <privacy>privacy policy</privacy>.",
-    "emailRequired": "Contact email is required. Free tier is 3 records per email."
+    "emailRequired": "Contact email is required. Free tier is 3 records per email.",
+    "authRequired": "Verify your email with a magic link before creating a record or starting checkout.",
+    "goLogin": "Go to sign in"
   },
   "record": {
     "eyebrow": "Public disclosure record",
@@ -327,6 +333,32 @@
     "severityReview": "review",
     "page": "Page",
     "asset": "Asset",
-    "runAnother": "Run another scan"
+    "runAnother": "Run another scan",
+    "authRequired": "Verify your email with a magic link before running a hygiene scan.",
+    "goLogin": "Go to sign in"
+  },
+  "login": {
+    "title": "Sign in with email",
+    "lead": "Enter your email and we will send a one-time magic link. No passwords. Clicking the link verifies that inbox and unlocks create, checkout, and scan for that email.",
+    "email": "Work email",
+    "emailPlaceholder": "you@agency.com",
+    "emailRequired": "Enter a valid email address.",
+    "submit": "Send magic link",
+    "sending": "Sending…",
+    "failed": "Could not send a magic link. Try again.",
+    "rateLimited": "Please wait about a minute before requesting another link.",
+    "checkTitle": "Check your email",
+    "checkBody": "If delivery is configured, we sent a one-time link to {email}. Open it on this device to finish signing in.",
+    "checkHint": "The link expires in about 20 minutes and can be used only once.",
+    "sendAnother": "Use a different email",
+    "honest": "Honest note: we only prove you can open that inbox. We do not claim Art. 50 compliance or verify your declarations.",
+    "privacyNote": "See our <privacy>Privacy Policy</privacy> for how we process contact email.",
+    "verified": "Email verified — you are signed in. You can create records, start checkout, or run a scan.",
+    "errorInvalid": "That magic link is invalid. Request a new one.",
+    "errorExpired": "That magic link expired. Request a new one.",
+    "errorUsed": "That magic link was already used. Request a new one.",
+    "errorMisconfigured": "Sign-in is not configured on this server (missing AUTH_SECRET). Contact the operator.",
+    "signedInAs": "Signed in as {email}.",
+    "continueCreate": "Continue to create a record"
   }
 }

@@ -28,20 +28,30 @@ type PublicScan = {
   summary?: { truncated?: boolean; host?: string };
 };
 
-export function ScanForm({ compact = false }: { compact?: boolean }) {
+export function ScanForm({
+  compact = false,
+  initialEmail = "",
+  sessionEmail = null,
+}: {
+  compact?: boolean;
+  initialEmail?: string;
+  sessionEmail?: string | null;
+}) {
   const t = useTranslations("scan");
   const router = useRouter();
   const [url, setUrl] = useState("");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(initialEmail || sessionEmail || "");
   const [phase, setPhase] = useState<Phase>("idle");
   const [error, setError] = useState<string | null>(null);
   const [gateMessage, setGateMessage] = useState<string | null>(null);
+  const [authRequired, setAuthRequired] = useState(false);
   const [scan, setScan] = useState<PublicScan | null>(null);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
     setGateMessage(null);
+    setAuthRequired(false);
     setScan(null);
     if (!url.trim()) {
       setError(t("urlRequired"));
@@ -67,6 +77,12 @@ export function ScanForm({ compact = false }: { compact?: boolean }) {
         error?: string;
         message?: string;
       };
+      if (res.status === 401 || data.error === "auth_required") {
+        setAuthRequired(true);
+        setGateMessage(data.message ?? t("authRequired"));
+        setPhase("error");
+        return;
+      }
       if (res.status === 402 || data.gated || data.error === "free_scan_exhausted") {
         setGateMessage(data.message ?? t("gatedDefault"));
         setPhase("gated");
@@ -103,7 +119,14 @@ export function ScanForm({ compact = false }: { compact?: boolean }) {
     const data = (await res.json()) as {
       url?: string | null;
       message?: string;
+      error?: string;
     };
+    if (res.status === 401 || data.error === "auth_required") {
+      setAuthRequired(true);
+      setGateMessage(data.message ?? t("authRequired"));
+      setPhase("error");
+      return;
+    }
     if (data.url) {
       window.location.href = data.url;
       return;
@@ -139,7 +162,8 @@ export function ScanForm({ compact = false }: { compact?: boolean }) {
             placeholder="you@agency.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="mt-1.5 w-full rounded-xl border border-azure/25 bg-cream/80 px-3 py-2.5 text-sm text-ink outline-none ring-azure/30 focus:ring-2"
+            readOnly={Boolean(sessionEmail)}
+            className="mt-1.5 w-full rounded-xl border border-azure/25 bg-cream/80 px-3 py-2.5 text-sm text-ink outline-none ring-azure/30 focus:ring-2 read-only:bg-azure-soft/40"
             disabled={phase === "running"}
           />
         </label>
@@ -153,7 +177,15 @@ export function ScanForm({ compact = false }: { compact?: boolean }) {
         >
           {phase === "running" ? t("running") : t("submit")}
         </button>
-        {error && (
+        {authRequired && (
+          <div className="mt-3 space-y-2 rounded-xl bg-amber-soft/70 px-3 py-2 text-sm text-ink">
+            <p>{gateMessage ?? t("authRequired")}</p>
+            <Link href="/login" className="font-semibold text-azure-deep underline">
+              {t("goLogin")}
+            </Link>
+          </div>
+        )}
+        {error && !authRequired && (
           <p className="mt-3 rounded-xl bg-coral-soft/80 px-3 py-2 text-sm text-ink">
             {error}
           </p>

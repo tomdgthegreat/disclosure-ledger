@@ -27,7 +27,9 @@
     "scanTitle": "Hygiene scan — Disclosure Ledger",
     "scanDescription": "Crawl a public site for possible disclosure gaps to review: nearby notices, ledger links, and lightweight provenance hints. Not an audit or compliance product.",
     "scanResultTitle": "Hygiene scan results — Disclosure Ledger",
-    "scanResultDescription": "Possible disclosure gaps to review from a public-site hygiene scan. Not an audit or Art. 50 certification."
+    "scanResultDescription": "Possible disclosure gaps to review from a public-site hygiene scan. Not an audit or Art. 50 certification.",
+    "loginTitle": "Iniciar sesión — Disclosure Ledger",
+    "loginDescription": "Solicita un enlace mágico de un solo uso para verificar tu correo. Sin contraseñas. Necesario antes de crear registros, pago o escaneo de higiene."
   },
   "nav": {
     "home": "Inicio",
@@ -40,7 +42,9 @@
     "terms": "Términos",
     "legal": "Aviso legal",
     "cookies": "Cookies",
-    "scan": "Escaneo"
+    "scan": "Escaneo",
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión"
   },
   "disclaimer": {
     "title": "Autoinformado y no verificado",
@@ -175,7 +179,9 @@
     "submitting": "Guardando registro…",
     "previewAlt": "Vista previa seleccionada",
     "emailPrivacy": "Opcional. Solo para cuenta o facturación. Consulta nuestra <privacy>política de privacidad</privacy>.",
-    "emailRequired": "Contact email is required. Free tier is 3 records per email."
+    "emailRequired": "Contact email is required. Free tier is 3 records per email.",
+    "authRequired": "Verifica tu correo con un enlace mágico antes de crear un registro o iniciar el pago.",
+    "goLogin": "Ir a iniciar sesión"
   },
   "record": {
     "eyebrow": "Registro público de divulgación",
@@ -326,6 +332,32 @@
     "severityReview": "review",
     "page": "Page",
     "asset": "Asset",
-    "runAnother": "Another scan"
+    "runAnother": "Another scan",
+    "authRequired": "Verifica tu correo con un enlace mágico antes de ejecutar un escaneo de higiene.",
+    "goLogin": "Ir a iniciar sesión"
+  },
+  "login": {
+    "title": "Iniciar sesión con correo",
+    "lead": "Introduce tu correo y enviaremos un enlace mágico de un solo uso. Sin contraseñas. El enlace verifica esa bandeja y desbloquea crear, pago y escaneo para ese correo.",
+    "email": "Correo de trabajo",
+    "emailPlaceholder": "tu@agencia.es",
+    "emailRequired": "Introduce un correo válido.",
+    "submit": "Enviar enlace mágico",
+    "sending": "Enviando…",
+    "failed": "No se pudo enviar el enlace. Inténtalo de nuevo.",
+    "rateLimited": "Espera unos 60 segundos antes de pedir otro enlace.",
+    "checkTitle": "Revisa tu correo",
+    "checkBody": "Si el envío está configurado, enviamos un enlace de un solo uso a {email}. Ábrelo en este dispositivo para terminar el acceso.",
+    "checkHint": "El enlace caduca en unos 20 minutos y solo se puede usar una vez.",
+    "sendAnother": "Usar otro correo",
+    "honest": "Nota honesta: solo demostramos que puedes abrir esa bandeja. No afirmamos cumplimiento del Art. 50 ni verificamos tus declaraciones.",
+    "privacyNote": "Consulta nuestra <privacy>Política de privacidad</privacy> sobre el tratamiento del correo de contacto.",
+    "verified": "Correo verificado — has iniciado sesión. Puedes crear registros, iniciar el pago o un escaneo.",
+    "errorInvalid": "Ese enlace mágico no es válido. Solicita uno nuevo.",
+    "errorExpired": "Ese enlace mágico ha caducado. Solicita uno nuevo.",
+    "errorUsed": "Ese enlace mágico ya se usó. Solicita uno nuevo.",
+    "errorMisconfigured": "El acceso no está configurado en este servidor (falta AUTH_SECRET). Contacta al operador.",
+    "signedInAs": "Sesión iniciada como {email}.",
+    "continueCreate": "Continuar para crear un registro"
   }
 }

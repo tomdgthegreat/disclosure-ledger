@@ -16,7 +16,13 @@ type Phase =
   | "gated"
   | "error";
 
-export function CreateRecordForm() {
+export function CreateRecordForm({
+  initialEmail = "",
+  sessionEmail = null,
+}: {
+  initialEmail?: string;
+  sessionEmail?: string | null;
+}) {
   const t = useTranslations("form");
   const router = useRouter();
   const [phase, setPhase] = useState<Phase>("idle");
@@ -25,9 +31,10 @@ export function CreateRecordForm() {
   const [provenance, setProvenance] = useState<ProvenanceSummary | null>(null);
   const [aiDeclaration, setAiDeclaration] = useState<AiDeclaration>("no");
   const [notes, setNotes] = useState("");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(initialEmail || sessionEmail || "");
   const [error, setError] = useState<string | null>(null);
   const [gateMessage, setGateMessage] = useState<string | null>(null);
+  const [authRequired, setAuthRequired] = useState(false);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
 
   const onFile = useCallback(
@@ -84,6 +91,7 @@ export function CreateRecordForm() {
     setPhase("submitting");
     setError(null);
     setGateMessage(null);
+    setAuthRequired(false);
     try {
       const res = await fetch("/api/records", {
         method: "POST",
@@ -105,6 +113,12 @@ export function CreateRecordForm() {
         gated?: boolean;
         message?: string;
       };
+      if (res.status === 401 || data.error === "auth_required") {
+        setAuthRequired(true);
+        setGateMessage(data.message ?? t("authRequired"));
+        setPhase("error");
+        return;
+      }
       if (res.status === 402 || data.gated) {
         setGateMessage(data.message ?? t("gatedDefault"));
         setPhase("gated");
@@ -135,7 +149,13 @@ export function CreateRecordForm() {
       url?: string | null;
       stub?: boolean;
       message?: string;
+      error?: string;
     };
+    if (res.status === 401 || data.error === "auth_required") {
+      setAuthRequired(true);
+      setGateMessage(data.message ?? t("authRequired"));
+      return;
+    }
     if (data.url) {
       window.location.href = data.url;
       return;
@@ -283,7 +303,8 @@ export function CreateRecordForm() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 w-full rounded-2xl border-0 bg-white/80 px-3 py-2.5 text-sm text-ink shadow-[0_2px_8px_rgba(26,108,255,0.08)] focus:outline-none focus:ring-2 focus:ring-azure/35"
+              readOnly={Boolean(sessionEmail)}
+              className="mt-1 w-full rounded-2xl border-0 bg-white/80 px-3 py-2.5 text-sm text-ink shadow-[0_2px_8px_rgba(26,108,255,0.08)] focus:outline-none focus:ring-2 focus:ring-azure/35 read-only:bg-azure-soft/40"
               placeholder={t("emailPlaceholder")}
             />
             <p className="mt-1 text-xs text-ink-muted">
@@ -297,7 +318,19 @@ export function CreateRecordForm() {
             </p>
           </div>
 
-          {error && (
+          {authRequired && (
+            <div className="space-y-2 rounded-2xl bg-amber-soft/70 px-4 py-3 text-sm text-ink">
+              <p>{gateMessage ?? t("authRequired")}</p>
+              <Link
+                href="/login"
+                className="font-semibold text-azure-deep underline"
+              >
+                {t("goLogin")}
+              </Link>
+            </div>
+          )}
+
+          {error && !authRequired && (
             <p className="rounded-2xl bg-coral-soft px-3 py-2 text-sm font-medium text-[#b8321a]">
               {error}
             </p>

@@ -27,7 +27,9 @@
     "scanTitle": "Hygiene scan — Disclosure Ledger",
     "scanDescription": "Crawl a public site for possible disclosure gaps to review: nearby notices, ledger links, and lightweight provenance hints. Not an audit or compliance product.",
     "scanResultTitle": "Hygiene scan results — Disclosure Ledger",
-    "scanResultDescription": "Possible disclosure gaps to review from a public-site hygiene scan. Not an audit or Art. 50 certification."
+    "scanResultDescription": "Possible disclosure gaps to review from a public-site hygiene scan. Not an audit or Art. 50 certification.",
+    "loginTitle": "Anmelden — Disclosure Ledger",
+    "loginDescription": "Einmaligen Magic Link anfordern, um Ihre E-Mail zu bestätigen. Keine Passwörter. Erforderlich vor Datensatz, Checkout oder Hygiene-Scan."
   },
   "nav": {
     "home": "Start",
@@ -40,7 +42,9 @@
     "terms": "Bedingungen",
     "legal": "Impressum",
     "cookies": "Cookies",
-    "scan": "Scan"
+    "scan": "Scan",
+    "login": "Anmelden",
+    "logout": "Abmelden"
   },
   "disclaimer": {
     "title": "Selbstberichtet & unverifiziert",
@@ -175,7 +179,9 @@
     "submitting": "Eintrag wird gespeichert…",
     "previewAlt": "Ausgewählte Vorschau",
     "emailPrivacy": "Optional. Nur für Konto- oder Abrechnungszwecke. Siehe unsere <privacy>Datenschutzerklärung</privacy>.",
-    "emailRequired": "Contact email is required. Free tier is 3 records per email."
+    "emailRequired": "Contact email is required. Free tier is 3 records per email.",
+    "authRequired": "Bestätigen Sie Ihre E-Mail per Magic Link, bevor Sie einen Datensatz erstellen oder Checkout starten.",
+    "goLogin": "Zur Anmeldung"
   },
   "record": {
     "eyebrow": "Öffentlicher Disclosure-Eintrag",
@@ -326,6 +332,32 @@
     "severityReview": "review",
     "page": "Page",
     "asset": "Asset",
-    "runAnother": "Another scan"
+    "runAnother": "Another scan",
+    "authRequired": "Bestätigen Sie Ihre E-Mail per Magic Link, bevor Sie einen Hygiene-Scan starten.",
+    "goLogin": "Zur Anmeldung"
+  },
+  "login": {
+    "title": "Mit E-Mail anmelden",
+    "lead": "Geben Sie Ihre E-Mail ein — wir senden einen einmaligen Magic Link. Keine Passwörter. Der Link bestätigt dieses Postfach und schaltet Erstellen, Checkout und Scan für diese E-Mail frei.",
+    "email": "Geschäftliche E-Mail",
+    "emailPlaceholder": "sie@agentur.de",
+    "emailRequired": "Bitte eine gültige E-Mail-Adresse eingeben.",
+    "submit": "Magic Link senden",
+    "sending": "Wird gesendet…",
+    "failed": "Magic Link konnte nicht gesendet werden. Bitte erneut versuchen.",
+    "rateLimited": "Bitte etwa eine Minute warten, bevor Sie einen neuen Link anfordern.",
+    "checkTitle": "Prüfen Sie Ihre E-Mails",
+    "checkBody": "Wenn der Versand konfiguriert ist, haben wir einen einmaligen Link an {email} gesendet. Öffnen Sie ihn auf diesem Gerät, um die Anmeldung abzuschließen.",
+    "checkHint": "Der Link läuft in etwa 20 Minuten ab und kann nur einmal verwendet werden.",
+    "sendAnother": "Andere E-Mail verwenden",
+    "honest": "Ehrlich: Wir prüfen nur, dass Sie dieses Postfach öffnen können. Keine Art.-50-Konformität und keine Prüfung Ihrer Angaben.",
+    "privacyNote": "Siehe unsere <privacy>Datenschutzerklärung</privacy> zur Verarbeitung der Kontakt-E-Mail.",
+    "verified": "E-Mail bestätigt — Sie sind angemeldet. Sie können Datensätze erstellen, Checkout starten oder einen Scan ausführen.",
+    "errorInvalid": "Dieser Magic Link ist ungültig. Bitte einen neuen anfordern.",
+    "errorExpired": "Dieser Magic Link ist abgelaufen. Bitte einen neuen anfordern.",
+    "errorUsed": "Dieser Magic Link wurde bereits verwendet. Bitte einen neuen anfordern.",
+    "errorMisconfigured": "Anmeldung ist auf diesem Server nicht konfiguriert (AUTH_SECRET fehlt). Bitte den Betreiber kontaktieren.",
+    "signedInAs": "Angemeldet als {email}.",
+    "continueCreate": "Weiter zum Datensatz erstellen"
   }
 }

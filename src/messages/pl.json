@@ -27,7 +27,9 @@
     "scanTitle": "Hygiene scan — Disclosure Ledger",
     "scanDescription": "Crawl a public site for possible disclosure gaps to review: nearby notices, ledger links, and lightweight provenance hints. Not an audit or compliance product.",
     "scanResultTitle": "Hygiene scan results — Disclosure Ledger",
-    "scanResultDescription": "Possible disclosure gaps to review from a public-site hygiene scan. Not an audit or Art. 50 certification."
+    "scanResultDescription": "Possible disclosure gaps to review from a public-site hygiene scan. Not an audit or Art. 50 certification.",
+    "loginTitle": "Zaloguj się — Disclosure Ledger",
+    "loginDescription": "Poproś o jednorazowy magic link, aby zweryfikować e-mail. Bez haseł. Wymagane przed tworzeniem rekordów, płatnością lub skanem higieny."
   },
   "nav": {
     "home": "Start",
@@ -40,7 +42,9 @@
     "terms": "Regulamin",
     "legal": "Informacje prawne",
     "cookies": "Cookies",
-    "scan": "Skan"
+    "scan": "Skan",
+    "login": "Zaloguj",
+    "logout": "Wyloguj"
   },
   "disclaimer": {
     "title": "Samodzielnie zgłoszone i niezweryfikowane",
@@ -175,7 +179,9 @@
     "submitting": "Zapisywanie rekordu…",
     "previewAlt": "Wybrany podgląd",
     "emailPrivacy": "Opcjonalnie. Tylko na potrzeby konta lub rozliczeń. Zobacz naszą <privacy>politykę prywatności</privacy>.",
-    "emailRequired": "Contact email is required. Free tier is 3 records per email."
+    "emailRequired": "Contact email is required. Free tier is 3 records per email.",
+    "authRequired": "Zweryfikuj e-mail magic linkiem przed utworzeniem rekordu lub rozpoczęciem płatności.",
+    "goLogin": "Przejdź do logowania"
   },
   "record": {
     "eyebrow": "Publiczny rekord ujawnienia",
@@ -326,6 +332,32 @@
     "severityReview": "review",
     "page": "Page",
     "asset": "Asset",
-    "runAnother": "Another scan"
+    "runAnother": "Another scan",
+    "authRequired": "Zweryfikuj e-mail magic linkiem przed uruchomieniem skanu higieny.",
+    "goLogin": "Przejdź do logowania"
+  },
+  "login": {
+    "title": "Zaloguj się e-mailem",
+    "lead": "Podaj e-mail — wyślemy jednorazowy magic link. Bez haseł. Link potwierdza tę skrzynkę i odblokowuje tworzenie, płatność oraz skan dla tego e-maila.",
+    "email": "E-mail służbowy",
+    "emailPlaceholder": "ty@agencja.pl",
+    "emailRequired": "Podaj prawidłowy adres e-mail.",
+    "submit": "Wyślij magic link",
+    "sending": "Wysyłanie…",
+    "failed": "Nie udało się wysłać linku. Spróbuj ponownie.",
+    "rateLimited": "Poczekaj około minuty, zanim poprosisz o kolejny link.",
+    "checkTitle": "Sprawdź skrzynkę",
+    "checkBody": "Jeśli wysyłka jest skonfigurowana, wysłaliśmy jednorazowy link na {email}. Otwórz go na tym urządzeniu, aby dokończyć logowanie.",
+    "checkHint": "Link wygasa po ok. 20 minutach i można go użyć tylko raz.",
+    "sendAnother": "Użyj innego e-maila",
+    "honest": "Szczera uwaga: potwierdzamy tylko, że możesz otworzyć tę skrzynkę. Nie twierdzimy o zgodności z art. 50 ani nie weryfikujemy oświadczeń.",
+    "privacyNote": "Zobacz naszą <privacy>Politykę prywatności</privacy> dotyczącą przetwarzania e-maila kontaktowego.",
+    "verified": "E-mail zweryfikowany — jesteś zalogowany. Możesz tworzyć rekordy, rozpocząć płatność lub skan.",
+    "errorInvalid": "Ten magic link jest nieprawidłowy. Poproś o nowy.",
+    "errorExpired": "Ten magic link wygasł. Poproś o nowy.",
+    "errorUsed": "Ten magic link został już użyty. Poproś o nowy.",
+    "errorMisconfigured": "Logowanie nie jest skonfigurowane na tym serwerze (brak AUTH_SECRET). Skontaktuj się z operatorem.",
+    "signedInAs": "Zalogowano jako {email}.",
+    "continueCreate": "Przejdź do tworzenia rekordu"
   }
 }

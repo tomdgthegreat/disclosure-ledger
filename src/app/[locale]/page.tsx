@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 import { ScanForm } from "@/components/ScanForm";
+import { getSessionEmail } from "@/lib/auth";
 import { FaqSection } from "@/components/FaqSection";
 import {
   JsonLd,
@@ -50,6 +51,7 @@ export default async function HomePage({
   params: { locale: string };
 }) {
   setRequestLocale(params.locale);
+  const sessionEmail = getSessionEmail();
   const t = await getTranslations("home");
   const tMeta = await getTranslations("meta");
   const tp = await getTranslations("pricing");
@@ -213,7 +215,7 @@ export default async function HomePage({
                   {t("scanLink")}
                 </Link>
               </div>
-              <ScanForm compact />
+              <ScanForm compact sessionEmail={sessionEmail} initialEmail={sessionEmail ?? ""} />
             </div>
           </div>
         </section>
