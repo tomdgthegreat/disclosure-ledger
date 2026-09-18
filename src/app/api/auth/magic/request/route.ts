@@ -7,6 +7,17 @@ import { routing } from "@/i18n/routing";
 
 export const dynamic = "force-dynamic";
 
+function deliveryMessage(sent: boolean, reason?: string): string {
+  if (sent) return "Check your email for a one-time sign-in link.";
+  if (reason === "not_configured") {
+    return "Email delivery is not configured. Ask the operator to set RESEND_API_KEY on Vercel and verify discloseledger.com in Resend.";
+  }
+  if (reason === "provider_error") {
+    return "Could not deliver the sign-in email. Ask the operator to verify discloseledger.com in Resend (or set RESEND_FROM to a verified sender) and check Vercel runtime logs for Resend errors.";
+  }
+  return "Could not deliver the sign-in email. Try again shortly, or contact the operator.";
+}
+
 export async function POST(req: NextRequest) {
   if (!isAuthSecretConfigured()) {
     return NextResponse.json(
@@ -64,16 +75,25 @@ export async function POST(req: NextRequest) {
   // Locale-agnostic verify under /api; redirect carries locale via query.
   const url = `${base}/api/auth/magic/verify?token=${encodeURIComponent(created.token)}&locale=${encodeURIComponent(locale)}`;
 
-  const sent = await sendMagicLinkEmail({ to: email, url });
+  const result = await sendMagicLinkEmail({ to: email, url });
+  const sent = result.ok;
+  const reason = result.ok ? undefined : result.reason;
 
-  // Always return the same shape so we do not leak whether Resend is configured.
-  // When Resend is unset, link is not delivered — log is already emitted by helper.
+  if (!sent) {
+    console.warn(
+      "[disclosure-ledger] magic-link email not sent:",
+      reason ?? "unknown",
+      `| to_domain=${email.split("@")[1] ?? "?"}`
+    );
+  }
+
+  // Keep a stable public shape. `reason` is a coarse ops hint only
+  // (not_configured | provider_error | invalid_input) — no Resend internals.
   return NextResponse.json({
     ok: true,
     email,
     sent,
-    message: sent
-      ? "Check your email for a one-time sign-in link."
-      : "If email delivery is configured, a link was sent. Otherwise ask the operator to set RESEND_API_KEY.",
+    ...(reason ? { reason } : {}),
+    message: deliveryMessage(sent, reason),
   });
 }

@@ -345,6 +345,8 @@
     "submit": "Invia magic link",
     "sending": "Invio…",
     "failed": "Impossibile inviare il link. Riprova.",
+    "deliveryFailed": "Non siamo riusciti a consegnare l’email di accesso. L’operatore deve completare Resend (chiave API + dominio verificato).",
+    "deliveryNotConfigured": "L’invio email non è configurato su questo server. Chiedi all’operatore di impostare RESEND_API_KEY.",
     "rateLimited": "Attendi circa un minuto prima di richiedere un altro link.",
     "checkTitle": "Controlla la tua e-mail",
     "checkBody": "Se l’invio è configurato, abbiamo inviato un link monouso a {email}. Aprilo su questo dispositivo per completare l’accesso.",

@@ -44,11 +44,35 @@ After first deploy with `DATABASE_URL`, run migrations once (Vercel build does `
 
 ### Resend (transactional email)
 
-1. Create a Resend account and API key → set `RESEND_API_KEY` on Vercel (never commit).
-2. **Tom must verify `discloseledger.com` in Resend** (Domains → Add → DNS records Resend shows).
-3. Until the domain is verified, sending from `hello@discloseledger.com` will fail — use Resend’s onboarding / test domain temporarily, or set `RESEND_FROM` to that verified sender.
-4. Default from: `Disclosure Ledger <hello@discloseledger.com>` via `RESEND_FROM`.
-5. If `RESEND_API_KEY` is unset, privacy/checkout email helpers **no-op** (log warning only) and never break create/checkout.
+Magic-link `POST /api/auth/magic/request` returns `{ ok: true, sent: false }` when Resend cannot deliver. `AUTH_SECRET` being set (no 503) does **not** imply email works.
+
+#### Operator checklist (Tom) — do in order
+
+1. **Resend account** → [resend.com](https://resend.com) → create API key (Sending access).
+2. **Vercel → Project → Settings → Environment Variables → Production**
+   - `RESEND_API_KEY` = the Resend key (never commit; do not invent values in git).
+   - `RESEND_FROM` = `Disclosure Ledger <hello@discloseledger.com>`  
+     Format must be either `email@domain` or `Display Name <email@domain>` (Resend rejects other shapes).
+3. **Verify domain in Resend** (required to send to arbitrary recipients):
+   - Resend → **Domains → Add** → `discloseledger.com`
+   - Add the DNS records Resend shows (SPF / DKIM; optionally DMARC) at the registrar
+   - Wait until status is **Verified**
+4. **Until the domain is verified**, sending from `hello@discloseledger.com` **fails** (Resend 403 / validation_error). Temporary workaround:
+   - Set `RESEND_FROM` to Resend’s onboarding address (e.g. `Disclosure Ledger <onboarding@resend.dev>`) **and** only test to the Resend account owner’s inbox, **or**
+   - Verify a subdomain you control and set `RESEND_FROM` to an address on that verified domain.
+5. **Redeploy** Production after adding/changing env vars (Vercel → Deployments → Redeploy, or push an empty commit). Env changes do not apply to the live deployment until redeploy.
+6. **Smoke test**
+   ```bash
+   curl -sS -X POST 'https://www.discloseledger.com/api/auth/magic/request' \
+     -H 'content-type: application/json' \
+     -d '{"email":"YOUR_REAL_INBOX@example.com","locale":"en"}'
+   ```
+   Expect `"sent": true`. If `"sent": false`:
+   - `"reason":"not_configured"` → `RESEND_API_KEY` missing on Production
+   - `"reason":"provider_error"` → open Vercel → Runtime Logs; search `Resend send failed` (domain not verified / FROM mismatch / bad key are the usual causes). Also check Resend → Logs.
+7. If `RESEND_API_KEY` is unset, privacy/checkout/magic email helpers **no-op** (server warning only) and never throw into create/checkout.
+
+Default from (code + docs): `Disclosure Ledger <hello@discloseledger.com>`.
 
 ### Magic-link auth (session)
 
