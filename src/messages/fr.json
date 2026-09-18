@@ -27,7 +27,9 @@
     "scanTitle": "Hygiene scan — Disclosure Ledger",
     "scanDescription": "Crawl a public site for possible disclosure gaps to review: nearby notices, ledger links, and lightweight provenance hints. Not an audit or compliance product.",
     "scanResultTitle": "Hygiene scan results — Disclosure Ledger",
-    "scanResultDescription": "Possible disclosure gaps to review from a public-site hygiene scan. Not an audit or Art. 50 certification."
+    "scanResultDescription": "Possible disclosure gaps to review from a public-site hygiene scan. Not an audit or Art. 50 certification.",
+    "loginTitle": "Connexion — Disclosure Ledger",
+    "loginDescription": "Demandez un lien magique à usage unique pour vérifier votre e-mail. Pas de mot de passe. Requis avant création, paiement ou scan d’hygiène."
   },
   "nav": {
     "home": "Accueil",
@@ -40,7 +42,9 @@
     "terms": "Conditions",
     "legal": "Mentions légales",
     "cookies": "Cookies",
-    "scan": "Scan"
+    "scan": "Scan",
+    "login": "Connexion",
+    "logout": "Déconnexion"
   },
   "disclaimer": {
     "title": "Auto-déclaré et non vérifié",
@@ -175,7 +179,9 @@
     "submitting": "Enregistrement du dossier…",
     "previewAlt": "Aperçu sélectionné",
     "emailPrivacy": "Facultatif. Uniquement pour le compte ou la facturation. Voir notre <privacy>politique de confidentialité</privacy>.",
-    "emailRequired": "Contact email is required. Free tier is 3 records per email."
+    "emailRequired": "Contact email is required. Free tier is 3 records per email.",
+    "authRequired": "Vérifiez votre e-mail avec un lien magique avant de créer un enregistrement ou de démarrer le paiement.",
+    "goLogin": "Aller à la connexion"
   },
   "record": {
     "eyebrow": "Dossier public de divulgation",
@@ -326,6 +332,32 @@
     "severityReview": "review",
     "page": "Page",
     "asset": "Asset",
-    "runAnother": "Another scan"
+    "runAnother": "Another scan",
+    "authRequired": "Vérifiez votre e-mail avec un lien magique avant de lancer un scan d’hygiène.",
+    "goLogin": "Aller à la connexion"
+  },
+  "login": {
+    "title": "Connexion par e-mail",
+    "lead": "Saisissez votre e-mail — nous envoyons un lien magique à usage unique. Pas de mot de passe. Le lien prouve cette boîte et débloque création, paiement et scan pour cet e-mail.",
+    "email": "E-mail professionnel",
+    "emailPlaceholder": "vous@agence.fr",
+    "emailRequired": "Saisissez une adresse e-mail valide.",
+    "submit": "Envoyer le lien magique",
+    "sending": "Envoi…",
+    "failed": "Impossible d’envoyer le lien. Réessayez.",
+    "rateLimited": "Attendez environ une minute avant de demander un autre lien.",
+    "checkTitle": "Vérifiez votre e-mail",
+    "checkBody": "Si l’envoi est configuré, un lien à usage unique a été envoyé à {email}. Ouvrez-le sur cet appareil pour terminer la connexion.",
+    "checkHint": "Le lien expire en environ 20 minutes et ne peut être utilisé qu’une fois.",
+    "sendAnother": "Utiliser un autre e-mail",
+    "honest": "Note honnête : nous prouvons seulement que vous pouvez ouvrir cette boîte. Pas de conformité Art. 50 ni de vérification de vos déclarations.",
+    "privacyNote": "Voir notre <privacy>Politique de confidentialité</privacy> sur le traitement de l’e-mail de contact.",
+    "verified": "E-mail vérifié — vous êtes connecté. Vous pouvez créer des enregistrements, lancer le paiement ou un scan.",
+    "errorInvalid": "Ce lien magique est invalide. Demandez-en un nouveau.",
+    "errorExpired": "Ce lien magique a expiré. Demandez-en un nouveau.",
+    "errorUsed": "Ce lien magique a déjà été utilisé. Demandez-en un nouveau.",
+    "errorMisconfigured": "La connexion n’est pas configurée sur ce serveur (AUTH_SECRET manquant). Contactez l’opérateur.",
+    "signedInAs": "Connecté en tant que {email}.",
+    "continueCreate": "Continuer vers la création"
   }
 }

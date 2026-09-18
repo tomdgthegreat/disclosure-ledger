@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { CreateRecordForm } from "@/components/CreateRecordForm";
+import { getSessionEmail } from "@/lib/auth";
 import { HreflangLinks } from "@/components/HreflangLinks";
 import { buildPageMetadata } from "@/lib/seo";
 import type { AppLocale } from "@/i18n/routing";
@@ -25,6 +26,7 @@ export default async function CreatePage({
 }) {
   setRequestLocale(params.locale);
   const t = await getTranslations("create");
+  const sessionEmail = getSessionEmail();
 
   return (
     <div className="hero-gradient-light">
@@ -36,7 +38,7 @@ export default async function CreatePage({
         </h1>
         <p className="mt-3 text-sm leading-relaxed text-ink-muted">{t("lead")}</p>
         <div className="mt-8">
-          <CreateRecordForm />
+          <CreateRecordForm sessionEmail={sessionEmail} initialEmail={sessionEmail ?? ""} />
         </div>
       </div>
     </div>

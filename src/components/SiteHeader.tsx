@@ -2,9 +2,12 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { BrandMark } from "./BrandMark";
+import { getSessionEmail, truncateEmail } from "@/lib/auth";
+import { HeaderAuth } from "./HeaderAuth";
 
 export async function SiteHeader() {
   const t = await getTranslations("nav");
+  const sessionEmail = getSessionEmail();
   return (
     <header className="sticky top-0 z-40 border-b border-azure/20 bg-gradient-to-r from-cream/95 via-azure-soft/70 to-coral-soft/50 text-ink shadow-[0_4px_24px_rgba(26,108,255,0.08)] backdrop-blur-md">
       <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-4 py-3.5">
@@ -46,6 +49,11 @@ export async function SiteHeader() {
             {t("scan")}
           </Link>
           <LanguageSwitcher variant="light" />
+          <HeaderAuth
+            email={sessionEmail ? truncateEmail(sessionEmail) : null}
+            loginLabel={t("login")}
+            logoutLabel={t("logout")}
+          />
           <Link href="/create" className="btn-coral ml-1 !px-4 !py-1.5">
             {t("create")}
           </Link>

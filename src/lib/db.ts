@@ -3,6 +3,12 @@ import path from "path";
 import { nanoid } from "nanoid";
 import type { Prisma } from "@prisma/client";
 import { getPrisma } from "./prisma";
+import {
+  MAGIC_REQUEST_COOLDOWN_MS,
+  MAGIC_TOKEN_TTL_MS,
+  generateMagicToken,
+  hashToken,
+} from "./auth";
 import type {
   CreateRecordInput,
   DisclosureRecord,
@@ -34,10 +40,20 @@ type JsonPrivacyRequest = {
   note?: string;
 };
 
+type JsonMagicLinkToken = {
+  id: string;
+  email: string;
+  tokenHash: string;
+  expiresAt: string;
+  usedAt: string | null;
+  createdAt: string;
+};
+
 type JsonDbShape = {
   records: DisclosureRecord[];
   entitlements: JsonEntitlement[];
   privacyRequests: JsonPrivacyRequest[];
+  magicLinkTokens: JsonMagicLinkToken[];
 };
 
 let warnedJsonFallback = false;
@@ -69,12 +85,16 @@ async function readJsonDb(): Promise<JsonDbShape> {
       privacyRequests: Array.isArray(parsed.privacyRequests)
         ? parsed.privacyRequests
         : [],
+      magicLinkTokens: Array.isArray(parsed.magicLinkTokens)
+        ? parsed.magicLinkTokens
+        : [],
     };
   } catch {
     const empty: JsonDbShape = {
       records: [],
       entitlements: [],
       privacyRequests: [],
+      magicLinkTokens: [],
     };
     await fs.writeFile(JSON_DB_PATH, JSON.stringify(empty, null, 2), "utf8");
     return empty;
@@ -428,4 +448,127 @@ export async function createPrivacyRequest(input: {
     },
   });
   return { id };
+}
+
+
+// --- Magic-link tokens (Prisma when DATABASE_URL set; else data/db.json) ---
+
+export type CreateMagicLinkResult =
+  | { ok: true; token: string; expiresAt: Date }
+  | { ok: false; reason: "rate_limited"; retryAfterMs: number }
+  | { ok: false; reason: "invalid_email" };
+
+export async function createMagicLinkToken(
+  emailInput: string
+): Promise<CreateMagicLinkResult> {
+  const email = normalizeEmail(emailInput);
+  if (!email) return { ok: false, reason: "invalid_email" };
+
+  const now = Date.now();
+  const expiresAt = new Date(now + MAGIC_TOKEN_TTL_MS);
+  const rawToken = generateMagicToken();
+  const tokenHash = hashToken(rawToken);
+  const id = `ml_${nanoid(12)}`;
+
+  if (!isDatabaseUrlConfigured()) {
+    const db = await readJsonDb();
+    const recent = db.magicLinkTokens
+      .filter((t) => t.email === email)
+      .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1))[0];
+    if (recent) {
+      const age = now - new Date(recent.createdAt).getTime();
+      if (age < MAGIC_REQUEST_COOLDOWN_MS) {
+        return {
+          ok: false,
+          reason: "rate_limited",
+          retryAfterMs: MAGIC_REQUEST_COOLDOWN_MS - age,
+        };
+      }
+    }
+    // Drop prior tokens for this email + expired/used globally (JSON hygiene)
+    db.magicLinkTokens = db.magicLinkTokens.filter((t) => {
+      if (t.email === email) return false;
+      if (t.usedAt) return false;
+      if (new Date(t.expiresAt).getTime() <= now) return false;
+      return true;
+    });
+    db.magicLinkTokens.push({
+      id,
+      email,
+      tokenHash,
+      expiresAt: expiresAt.toISOString(),
+      usedAt: null,
+      createdAt: new Date(now).toISOString(),
+    });
+    await writeJsonDb(db);
+    return { ok: true, token: rawToken, expiresAt };
+  }
+
+  const prisma = getPrisma();
+  const latest = await prisma.magicLinkToken.findFirst({
+    where: { email },
+    orderBy: { createdAt: "desc" },
+  });
+  if (latest) {
+    const age = now - latest.createdAt.getTime();
+    if (age < MAGIC_REQUEST_COOLDOWN_MS) {
+      return {
+        ok: false,
+        reason: "rate_limited",
+        retryAfterMs: MAGIC_REQUEST_COOLDOWN_MS - age,
+      };
+    }
+  }
+
+  await prisma.magicLinkToken.create({
+    data: {
+      id,
+      email,
+      tokenHash,
+      expiresAt,
+    },
+  });
+  return { ok: true, token: rawToken, expiresAt };
+}
+
+export type ConsumeMagicLinkResult =
+  | { ok: true; email: string }
+  | { ok: false; reason: "invalid" | "expired" | "used" };
+
+export async function consumeMagicLinkToken(
+  rawToken: string
+): Promise<ConsumeMagicLinkResult> {
+  if (!rawToken || rawToken.length < 16) {
+    return { ok: false, reason: "invalid" };
+  }
+  const tokenHash = hashToken(rawToken);
+  const now = Date.now();
+
+  if (!isDatabaseUrlConfigured()) {
+    const db = await readJsonDb();
+    const row = db.magicLinkTokens.find((t) => t.tokenHash === tokenHash);
+    if (!row) return { ok: false, reason: "invalid" };
+    if (row.usedAt) return { ok: false, reason: "used" };
+    if (new Date(row.expiresAt).getTime() < now) {
+      return { ok: false, reason: "expired" };
+    }
+    row.usedAt = new Date(now).toISOString();
+    await writeJsonDb(db);
+    return { ok: true, email: row.email };
+  }
+
+  const prisma = getPrisma();
+  const row = await prisma.magicLinkToken.findUnique({
+    where: { tokenHash },
+  });
+  if (!row) return { ok: false, reason: "invalid" };
+  if (row.usedAt) return { ok: false, reason: "used" };
+  if (row.expiresAt.getTime() < now) return { ok: false, reason: "expired" };
+
+  const updated = await prisma.magicLinkToken.updateMany({
+    where: { id: row.id, usedAt: null },
+    data: { usedAt: new Date(now) },
+  });
+  if (updated.count === 0) return { ok: false, reason: "used" };
+  return { ok: true, email: row.email };
 }

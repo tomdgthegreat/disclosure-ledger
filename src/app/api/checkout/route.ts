@@ -1,24 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
+import { resolveGatedEmail } from "@/lib/auth";
 import { createCheckoutSession } from "@/lib/stripe";
 import { getSiteUrl } from "@/lib/seo";
-import { normalizeEmail } from "@/lib/db";
 
 export async function POST(req: NextRequest) {
   const body = (await req.json().catch(() => ({}))) as {
     email?: string;
   };
-  const email = normalizeEmail(body.email);
-  if (!email) {
+  const gated = resolveGatedEmail(req, body.email);
+  if (!gated.ok) {
     return NextResponse.json(
       {
         url: null,
         stub: false,
-        message: "A valid contact email is required to start Checkout.",
-        error: "email_required",
+        message: gated.message,
+        error: gated.code,
       },
-      { status: 400 }
+      { status: gated.code === "auth_misconfigured" ? 503 : 401 }
     );
   }
+  const email = gated.email;
 
   const base = getSiteUrl();
   try {

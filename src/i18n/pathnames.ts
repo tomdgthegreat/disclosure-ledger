@@ -10,6 +10,7 @@ export const MARKETING_PATHS = [
   "/terms",
   "/legal",
   "/cookies",
+  "/login",
 ] as const;
 
 export const SITE_NAME = "Disclosure Ledger";

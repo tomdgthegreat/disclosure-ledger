@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { HreflangLinks } from "@/components/HreflangLinks";
 import { ScanForm } from "@/components/ScanForm";
+import { getSessionEmail } from "@/lib/auth";
 import { buildPageMetadata } from "@/lib/seo";
 import type { AppLocale } from "@/i18n/routing";
 
@@ -25,6 +26,7 @@ export default async function ScanPage({
 }) {
   setRequestLocale(params.locale);
   const t = await getTranslations("scan");
+  const sessionEmail = getSessionEmail();
 
   return (
     <div className="hero-gradient-light">
@@ -44,7 +46,7 @@ export default async function ScanPage({
           {t("notAudit")}
         </p>
         <div className="mt-8">
-          <ScanForm />
+          <ScanForm sessionEmail={sessionEmail} initialEmail={sessionEmail ?? ""} />
         </div>
       </div>
     </div>

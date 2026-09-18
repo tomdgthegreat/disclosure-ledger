@@ -28,6 +28,7 @@ In the Vercel project → **Settings → Environment Variables** (Production at 
 | `OPS_PASSWORD` | Optional; gates `/ops` |
 | `RESEND_API_KEY` | Resend API key (operator sets; do not invent) |
 | `RESEND_FROM` | Default `Disclosure Ledger <hello@discloseledger.com>` |
+| `AUTH_SECRET` | Long random secret for signed session cookies (or `SESSION_SECRET`) |
 
 Redeploy after changing env vars so `NEXT_PUBLIC_*` is baked into the client/SEO build.
 
@@ -48,6 +49,18 @@ After first deploy with `DATABASE_URL`, run migrations once (Vercel build does `
 3. Until the domain is verified, sending from `hello@discloseledger.com` will fail — use Resend’s onboarding / test domain temporarily, or set `RESEND_FROM` to that verified sender.
 4. Default from: `Disclosure Ledger <hello@discloseledger.com>` via `RESEND_FROM`.
 5. If `RESEND_API_KEY` is unset, privacy/checkout email helpers **no-op** (log warning only) and never break create/checkout.
+
+### Magic-link auth (session)
+
+1. Set **`AUTH_SECRET`** (preferred) or **`SESSION_SECRET`** to a long random value (`openssl rand -base64 32`). Required to issue/verify the `dl_session` httpOnly cookie.
+2. Cookie: `Secure` (production), `HttpOnly`, `SameSite=Lax`, `path=/`, max-age ~30 days. Payload: verified email + expiry, HMAC-signed.
+3. Flow: `/login` → `POST /api/auth/magic/request` → Resend email → `GET /api/auth/magic/verify?token=…` sets cookie → redirect to `/{locale}/login?verified=1`.
+4. Tokens: Prisma `MagicLinkToken` (sha256 hash only, ~20 min TTL, single-use). If `DATABASE_URL` is unset, hashed tokens fall back to `data/db.json` (same caveat as entitlements — not durable on Vercel).
+5. Rate limit: ~1 magic-link request per email per 60 seconds.
+6. Gated without verified session (HTTP 401 `auth_required`): `POST /api/records`, `POST /api/checkout`, `POST /api/scan`. UI should send users to `/login`.
+7. Logout: `GET` or `POST /api/auth/logout` clears the cookie.
+8. No passwords. No Twilio.
+
 
 ## 3. Add domains
 
@@ -103,3 +116,5 @@ npm run build   # locally before push
 5. Run `npx prisma migrate deploy` against production DB
 6. www may be primary on Vercel short-term — redirect www → apex when convenient (do not block)
 7. Verify **discloseledger.com** in Resend and set `RESEND_API_KEY` / `RESEND_FROM` on Vercel
+8. Set `AUTH_SECRET` (or `SESSION_SECRET`) on Vercel for magic-link sessions
+9. Run `npx prisma migrate deploy` so `magic_link_tokens` exists in production

@@ -150,3 +150,45 @@ export async function sendEntitlementConfirmationEmail(params: {
     text,
   });
 }
+
+/**
+ * Send a one-time magic-link sign-in email.
+ * Never throws — returns false if Resend is unset or send fails.
+ */
+export async function sendMagicLinkEmail(params: {
+  to: string;
+  url: string;
+}): Promise<boolean> {
+  const { to, url } = params;
+  if (!to || !url) return false;
+
+  const text = [
+    "Sign in to Disclosure Ledger",
+    "",
+    "Click this one-time link to verify your email and continue:",
+    url,
+    "",
+    "This link expires in about 20 minutes and can be used only once.",
+    "If you did not request this, you can ignore this email.",
+    "",
+    "Disclosure Ledger — Atlas AG LLC",
+    "This message only verifies inbox ownership for your session. It is not a compliance determination.",
+  ].join("\n");
+
+  const html = [
+    "<p><strong>Sign in to Disclosure Ledger</strong></p>",
+    "<p>Click this one-time link to verify your email and continue:</p>",
+    `<p><a href="${url}">${url}</a></p>`,
+    "<p>This link expires in about 20 minutes and can be used only once.</p>",
+    "<p>If you did not request this, you can ignore this email.</p>",
+    "<p style=\"color:#666;font-size:12px\">Disclosure Ledger — Atlas AG LLC. This message only verifies inbox ownership for your session. It is not a compliance determination.</p>",
+  ].join("\n");
+
+  return sendSafe({
+    to,
+    subject: "Your Disclosure Ledger sign-in link",
+    text,
+    html,
+  });
+}
+
