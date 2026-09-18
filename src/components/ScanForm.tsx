@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link, useRouter } from "@/i18n/routing";
 import { DisclaimerBanner } from "./DisclaimerBanner";
+import { normalizePublicSiteUrl } from "@/lib/normalizeUrl";
 
 type Phase = "idle" | "running" | "gated" | "error" | "done";
 
@@ -67,7 +68,7 @@ export function ScanForm({
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          url: url.trim(),
+          url: normalizePublicSiteUrl(url),
           contactEmail: email.trim(),
         }),
       });
@@ -145,9 +146,9 @@ export function ScanForm({
         <label className="block text-sm font-semibold text-ink">
           {t("urlLabel")}
           <input
-            type="url"
+            type="text" inputMode="url" autoCapitalize="none" autoCorrect="off"
             required
-            placeholder="https://example.com"
+            placeholder="example.com"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             className="mt-1.5 w-full rounded-xl border border-azure/25 bg-cream/80 px-3 py-2.5 text-sm text-ink outline-none ring-azure/30 focus:ring-2"

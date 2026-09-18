@@ -7,6 +7,7 @@
 import dns from "dns/promises";
 import net from "net";
 import { URL } from "url";
+import { normalizePublicSiteUrl } from "@/lib/normalizeUrl";
 
 export type ScanFindingKind =
   | "no_nearby_disclosure"
@@ -121,12 +122,13 @@ function isBlockedHostname(hostname: string): boolean {
   return false;
 }
 
+
 export async function assertSafePublicHttpUrl(
   raw: string
 ): Promise<{ ok: true; url: URL } | { ok: false; error: string }> {
   let parsed: URL;
   try {
-    parsed = new URL(raw.trim());
+    parsed = new URL(normalizePublicSiteUrl(raw));
   } catch {
     return { ok: false, error: "Invalid URL" };
   }
