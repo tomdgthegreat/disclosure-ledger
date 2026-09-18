@@ -54,6 +54,8 @@ export function LoginForm({
         error?: string;
         message?: string;
         ok?: boolean;
+        sent?: boolean;
+        reason?: string;
       };
       if (res.status === 429) {
         setError(data.message ?? t("rateLimited"));
@@ -62,6 +64,15 @@ export function LoginForm({
       }
       if (!res.ok) {
         throw new Error(data.message ?? data.error ?? t("failed"));
+      }
+      if (data.sent === false) {
+        setError(
+          data.reason === "not_configured"
+            ? t("deliveryNotConfigured")
+            : data.message ?? t("deliveryFailed")
+        );
+        setPhase("error");
+        return;
       }
       setPhase("sent");
     } catch (err) {

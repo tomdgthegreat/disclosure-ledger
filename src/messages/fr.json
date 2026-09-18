@@ -345,6 +345,8 @@
     "submit": "Envoyer le lien magique",
     "sending": "Envoi…",
     "failed": "Impossible d’envoyer le lien. Réessayez.",
+    "deliveryFailed": "Nous n’avons pas pu livrer l’e-mail de connexion. L’opérateur doit terminer la config Resend (clé API + domaine vérifié).",
+    "deliveryNotConfigured": "L’envoi d’e-mails n’est pas configuré sur ce serveur. Demandez à l’opérateur de définir RESEND_API_KEY.",
     "rateLimited": "Attendez environ une minute avant de demander un autre lien.",
     "checkTitle": "Vérifiez votre e-mail",
     "checkBody": "Si l’envoi est configuré, un lien à usage unique a été envoyé à {email}. Ouvrez-le sur cet appareil pour terminer la connexion.",

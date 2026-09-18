@@ -8,10 +8,23 @@
 import { Resend } from "resend";
 
 const OPS_INBOX = "hello@discloseledger.com";
+/** Resend accepts `email@domain` or `Display Name <email@domain>`. */
 const DEFAULT_FROM = "Disclosure Ledger <hello@discloseledger.com>";
 
+export type SendEmailReason =
+  | "not_configured"
+  | "provider_error"
+  | "invalid_input";
+
+export type SendEmailResult =
+  | { ok: true }
+  | { ok: false; reason: SendEmailReason };
+
 function getFrom(): string {
-  return process.env.RESEND_FROM?.trim() || DEFAULT_FROM;
+  const raw = process.env.RESEND_FROM?.trim() || DEFAULT_FROM;
+  // Soft normalize: if operator set a bare address, keep it; if they wrapped
+  // incorrectly we still pass through and let Resend validate (logged below).
+  return raw;
 }
 
 function getResend(): Resend | null {
@@ -25,18 +38,36 @@ function getResend(): Resend | null {
   return new Resend(key);
 }
 
+function summarizeResendError(error: unknown): string {
+  if (!error || typeof error !== "object") return String(error);
+  const e = error as Record<string, unknown>;
+  const parts: string[] = [];
+  for (const k of ["name", "message", "statusCode", "status", "code"] as const) {
+    if (e[k] != null && e[k] !== "") parts.push(`${k}=${String(e[k])}`);
+  }
+  // Avoid dumping full objects that might include request payloads.
+  return parts.length ? parts.join(" ") : "[unrecognized Resend error shape]";
+}
+
+function fromAddressForLog(from: string): string {
+  const m = from.match(/<([^>]+)>/);
+  const addr = (m ? m[1] : from).trim();
+  return addr.includes("@") ? addr : "(invalid-from)";
+}
+
 async function sendSafe(params: {
   to: string | string[];
   subject: string;
   text: string;
   html?: string;
-}): Promise<boolean> {
+}): Promise<SendEmailResult> {
   try {
     const resend = getResend();
-    if (!resend) return false;
+    if (!resend) return { ok: false, reason: "not_configured" };
 
-    const { error } = await resend.emails.send({
-      from: getFrom(),
+    const from = getFrom();
+    const { data, error } = await resend.emails.send({
+      from,
       to: params.to,
       subject: params.subject,
       text: params.text,
@@ -44,13 +75,24 @@ async function sendSafe(params: {
     });
 
     if (error) {
-      console.warn("[disclosure-ledger] Resend send failed:", error);
-      return false;
+      console.warn(
+        "[disclosure-ledger] Resend send failed:",
+        summarizeResendError(error),
+        `| from=${fromAddressForLog(from)}`
+      );
+      return { ok: false, reason: "provider_error" };
     }
-    return true;
+
+    if (data?.id) {
+      console.info("[disclosure-ledger] Resend accepted email id=", data.id);
+    }
+    return { ok: true };
   } catch (e) {
-    console.warn("[disclosure-ledger] Resend send error (non-fatal):", e);
-    return false;
+    console.warn(
+      "[disclosure-ledger] Resend send error (non-fatal):",
+      summarizeResendError(e)
+    );
+    return { ok: false, reason: "provider_error" };
   }
 }
 
@@ -153,14 +195,14 @@ export async function sendEntitlementConfirmationEmail(params: {
 
 /**
  * Send a one-time magic-link sign-in email.
- * Never throws — returns false if Resend is unset or send fails.
+ * Never throws — returns ok:false if Resend is unset or send fails.
  */
 export async function sendMagicLinkEmail(params: {
   to: string;
   url: string;
-}): Promise<boolean> {
+}): Promise<SendEmailResult> {
   const { to, url } = params;
-  if (!to || !url) return false;
+  if (!to || !url) return { ok: false, reason: "invalid_input" };
 
   const text = [
     "Sign in to Disclosure Ledger",
@@ -181,7 +223,7 @@ export async function sendMagicLinkEmail(params: {
     `<p><a href="${url}">${url}</a></p>`,
     "<p>This link expires in about 20 minutes and can be used only once.</p>",
     "<p>If you did not request this, you can ignore this email.</p>",
-    "<p style=\"color:#666;font-size:12px\">Disclosure Ledger — Atlas AG LLC. This message only verifies inbox ownership for your session. It is not a compliance determination.</p>",
+    '<p style="color:#666;font-size:12px">Disclosure Ledger — Atlas AG LLC. This message only verifies inbox ownership for your session. It is not a compliance determination.</p>',
   ].join("\n");
 
   return sendSafe({
@@ -191,4 +233,3 @@ export async function sendMagicLinkEmail(params: {
     html,
   });
 }
-

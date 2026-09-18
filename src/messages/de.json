@@ -345,6 +345,8 @@
     "submit": "Magic Link senden",
     "sending": "Wird gesendet…",
     "failed": "Magic Link konnte nicht gesendet werden. Bitte erneut versuchen.",
+    "deliveryFailed": "Die Anmelde-E-Mail konnte nicht zugestellt werden. Der Betreiber muss Resend fertig einrichten (API-Key + verifizierte Domain).",
+    "deliveryNotConfigured": "E-Mail-Versand ist auf diesem Server nicht konfiguriert. Bitte den Betreiber bitten, RESEND_API_KEY zu setzen.",
     "rateLimited": "Bitte etwa eine Minute warten, bevor Sie einen neuen Link anfordern.",
     "checkTitle": "Prüfen Sie Ihre E-Mails",
     "checkBody": "Wenn der Versand konfiguriert ist, haben wir einen einmaligen Link an {email} gesendet. Öffnen Sie ihn auf diesem Gerät, um die Anmeldung abzuschließen.",

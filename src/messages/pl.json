@@ -345,6 +345,8 @@
     "submit": "Wyślij magic link",
     "sending": "Wysyłanie…",
     "failed": "Nie udało się wysłać linku. Spróbuj ponownie.",
+    "deliveryFailed": "Nie udało się dostarczyć e-maila logowania. Operator musi dokończyć setup Resend (klucz API + zweryfikowana domena).",
+    "deliveryNotConfigured": "Wysyłka e-mail nie jest skonfigurowana na tym serwerze. Poproś operatora o ustawienie RESEND_API_KEY.",
     "rateLimited": "Poczekaj około minuty, zanim poprosisz o kolejny link.",
     "checkTitle": "Sprawdź skrzynkę",
     "checkBody": "Jeśli wysyłka jest skonfigurowana, wysłaliśmy jednorazowy link na {email}. Otwórz go na tym urządzeniu, aby dokończyć logowanie.",

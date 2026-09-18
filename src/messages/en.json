@@ -346,6 +346,8 @@
     "submit": "Send magic link",
     "sending": "Sending…",
     "failed": "Could not send a magic link. Try again.",
+    "deliveryFailed": "We could not deliver the sign-in email. The operator needs to finish Resend setup (API key + verified domain).",
+    "deliveryNotConfigured": "Email delivery is not configured on this server. Ask the operator to set RESEND_API_KEY.",
     "rateLimited": "Please wait about a minute before requesting another link.",
     "checkTitle": "Check your email",
     "checkBody": "If delivery is configured, we sent a one-time link to {email}. Open it on this device to finish signing in.",

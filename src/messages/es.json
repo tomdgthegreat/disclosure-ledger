@@ -345,6 +345,8 @@
     "submit": "Enviar enlace mágico",
     "sending": "Enviando…",
     "failed": "No se pudo enviar el enlace. Inténtalo de nuevo.",
+    "deliveryFailed": "No pudimos entregar el correo de acceso. El operador debe completar Resend (clave API + dominio verificado).",
+    "deliveryNotConfigured": "El envío de correo no está configurado en este servidor. Pide al operador que configure RESEND_API_KEY.",
     "rateLimited": "Espera unos 60 segundos antes de pedir otro enlace.",
     "checkTitle": "Revisa tu correo",
     "checkBody": "Si el envío está configurado, enviamos un enlace de un solo uso a {email}. Ábrelo en este dispositivo para terminar el acceso.",
