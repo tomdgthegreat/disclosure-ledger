@@ -332,6 +332,11 @@
     "severityReview": "review",
     "page": "Page",
     "asset": "Asset",
+    "findingsCtaEyebrow": "Siguiente paso",
+    "findingsCtaTitle": "Crear un registro de divulgación Art. 50 para estos assets",
+    "findingsCtaLead": "Convierte los puntos a revisar en un registro autodeclarado de Disclosure Ledger con hash de contenido y página pública. Enfoque Art. 50 honesto para assets de publicación — no es una auditoría, certificado ni determinación de cumplimiento.",
+    "findingsCtaPrimary": "Crear un registro de divulgación",
+    "findingsCtaSecondary": "Ver precios de equipo (29 €/mes tras 3 gratis)",
     "runAnother": "Another scan",
     "authRequired": "Verifica tu correo con un enlace mágico antes de ejecutar un escaneo de higiene.",
     "goLogin": "Ir a iniciar sesión"

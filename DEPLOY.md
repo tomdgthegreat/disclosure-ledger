@@ -37,7 +37,7 @@ After first deploy with `DATABASE_URL`, run migrations once (Vercel build does `
 ### Stripe webhook
 
 1. Stripe Dashboard → **Developers → Webhooks → Add endpoint**
-2. URL: `https://discloseledger.com/api/stripe/webhook`
+2. URL: **prefer `https://www.discloseledger.com/api/stripe/webhook`** while apex (`discloseledger.com`) 308-redirects to www. Stripe may not follow redirects for webhook POSTs — pointing the endpoint at apex can silently miss events. If/when apex becomes the live primary without redirecting to www, switch the webhook URL to apex and keep `NEXT_PUBLIC_APP_URL` aligned.
 3. Events: `checkout.session.completed`, `customer.subscription.created`, `customer.subscription.updated`, `customer.subscription.deleted`
 4. Copy signing secret → `STRIPE_WEBHOOK_SECRET`
 

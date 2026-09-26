@@ -332,6 +332,11 @@
     "severityReview": "review",
     "page": "Page",
     "asset": "Asset",
+    "findingsCtaEyebrow": "Następny krok",
+    "findingsCtaTitle": "Utwórz rekord ujawnienia Art. 50 dla tych assetów",
+    "findingsCtaLead": "Zamień punkty do przeglądu w samodzielnie zgłoszony rekord Disclosure Ledger z hashem treści i stroną publiczną. Uczciwe ujęcie Art. 50 dla assetów publikacyjnych — to nie audyt, certyfikat ani ustalenie zgodności.",
+    "findingsCtaPrimary": "Utwórz rekord ujawnienia",
+    "findingsCtaSecondary": "Zobacz ceny zespołowe (29 €/mies. po 3 darmowych)",
     "runAnother": "Another scan",
     "authRequired": "Zweryfikuj e-mail magic linkiem przed uruchomieniem skanu higieny.",
     "goLogin": "Przejdź do logowania"
