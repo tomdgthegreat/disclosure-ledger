@@ -332,6 +332,11 @@
     "severityReview": "review",
     "page": "Page",
     "asset": "Asset",
+    "findingsCtaEyebrow": "Étape suivante",
+    "findingsCtaTitle": "Créer un dossier de divulgation Art. 50 pour ces assets",
+    "findingsCtaLead": "Transformez les points à revoir en un dossier Disclosure Ledger autodéclaré avec hash de contenu et page publique. Cadre Art. 50 honnête pour les assets destinés à la publication — pas un audit, certificat ou constat de conformité.",
+    "findingsCtaPrimary": "Créer un dossier de divulgation",
+    "findingsCtaSecondary": "Voir les tarifs équipe (29 €/mois après 3 gratuits)",
     "runAnother": "Another scan",
     "authRequired": "Vérifiez votre e-mail avec un lien magique avant de lancer un scan d’hygiène.",
     "goLogin": "Aller à la connexion"

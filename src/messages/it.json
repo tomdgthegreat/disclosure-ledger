@@ -332,6 +332,11 @@
     "severityReview": "review",
     "page": "Page",
     "asset": "Asset",
+    "findingsCtaEyebrow": "Passo successivo",
+    "findingsCtaTitle": "Crea un record di disclosure Art. 50 per questi asset",
+    "findingsCtaLead": "Trasforma gli elementi da rivedere in un record Disclosure Ledger autodichiarato con content hash e pagina pubblica. Framing Art. 50 onesto per asset destinati alla pubblicazione — non è un audit, certificato o determinazione di conformità.",
+    "findingsCtaPrimary": "Crea un record di disclosure",
+    "findingsCtaSecondary": "Vedi prezzi team (€29/mese dopo 3 gratis)",
     "runAnother": "Another scan",
     "authRequired": "Verifica la tua e-mail con un magic link prima di avviare uno scan di igiene.",
     "goLogin": "Vai all’accesso"

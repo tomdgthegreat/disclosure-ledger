@@ -332,6 +332,11 @@
     "severityReview": "review",
     "page": "Page",
     "asset": "Asset",
+    "findingsCtaEyebrow": "Nächster Schritt",
+    "findingsCtaTitle": "Art.-50-Offenlegungseintrag für diese Assets erstellen",
+    "findingsCtaLead": "Überführen Sie Prüfpunkte in einen selbst gemeldeten Disclosure-Ledger-Eintrag mit Content-Hash und öffentlicher Seite. Ehrlicher Art.-50-Rahmen für publish-gebundene Assets — kein Audit, Zertifikat oder Compliance-Feststellung.",
+    "findingsCtaPrimary": "Offenlegungseintrag erstellen",
+    "findingsCtaSecondary": "Team-Preise ansehen (€29/Monat nach 3 kostenlos)",
     "runAnother": "Another scan",
     "authRequired": "Bestätigen Sie Ihre E-Mail per Magic Link, bevor Sie einen Hygiene-Scan starten.",
     "goLogin": "Zur Anmeldung"

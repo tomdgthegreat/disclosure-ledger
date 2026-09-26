@@ -137,6 +137,32 @@ export default async function ScanResultPage({
           </ul>
         )}
 
+        {scan.findings.length > 0 && (
+          <section className="card-coral relative mt-8 overflow-hidden p-6 sm:p-7">
+            <div
+              className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-coral/40 blur-2xl"
+              aria-hidden
+            />
+            <p className="relative text-xs font-semibold uppercase tracking-wider text-coral">
+              {t("findingsCtaEyebrow")}
+            </p>
+            <h2 className="relative mt-2 text-lg font-extrabold text-ink sm:text-xl">
+              {t("findingsCtaTitle")}
+            </h2>
+            <p className="relative mt-2 text-sm leading-relaxed text-ink-muted">
+              {t("findingsCtaLead")}
+            </p>
+            <div className="relative mt-5 flex flex-wrap gap-3">
+              <Link href="/create" className="btn-coral">
+                {t("findingsCtaPrimary")}
+              </Link>
+              <Link href="/pricing" className="btn-primary">
+                {t("findingsCtaSecondary")}
+              </Link>
+            </div>
+          </section>
+        )}
+
         <p className="mt-8 flex flex-wrap gap-2 text-sm">
           <Link href="/scan" className="pill-soft-azure">
             {t("runAnother")}

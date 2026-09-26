@@ -333,6 +333,11 @@
     "severityReview": "review",
     "page": "Page",
     "asset": "Asset",
+    "findingsCtaEyebrow": "Next step",
+    "findingsCtaTitle": "Create an Art. 50 disclosure record for these assets",
+    "findingsCtaLead": "Turn review items into a self-reported Disclosure Ledger record with a content hash and public page. Honest Art. 50 framing for publish-bound assets — not an audit, certificate, or compliance determination.",
+    "findingsCtaPrimary": "Create a disclosure record",
+    "findingsCtaSecondary": "See team pricing (€29/mo after 3 free)",
     "runAnother": "Run another scan",
     "authRequired": "Verify your email with a magic link before running a hygiene scan.",
     "goLogin": "Go to sign in"
